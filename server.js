@@ -51,28 +51,3 @@ function queryDatabase()
     connection.execSql(request);
 }
 
-
-/*client side code*/
-const express = require('express');
-const path = require('path');
-const app=express();
-const XMLHttpRequest = require('xmlhttprequest').XMLHttpRequest;
-
-
-app.use(express.static(__dirname));
-
-app.get('/', (request, response) => {
-    response.sendFile(path.join(__dirname + '/Login.html'))
-});
-
-
-app.post('/login/:username/:password', function (req, res) {
-    var status = checkSignIn(req.params.username, req.params.password);
-    if (status === false) {
-        res.status(404);
-    }
-    else {
-        res.status(200);
-    }
-    res.send();
-});
