@@ -12,8 +12,9 @@ var config =
             {
                 database: 'chazeDB' //update me
                 , encrypt: true
+                ,connectTimeout: 100000
             }
-    }
+    };
 var connection = new Connection(config);
 
 // Attempt to connect and execute queries if connection goes through
@@ -35,7 +36,7 @@ function queryDatabase()
 
     // Read all rows from table
     request = new Request(
-        "select * from dbo.Training",
+        "select * from dbo.Users",
         function(err, rowCount, rows)
         {
             console.log(rowCount + ' row(s) returned');
@@ -51,3 +52,39 @@ function queryDatabase()
     connection.execSql(request);
 }
 
+
+/*client side code*/
+/*const express = require('express');
+const path = require('path');
+const app=express();
+const XMLHttpRequest = require('xmlhttprequest').XMLHttpRequest;
+
+
+//app.use(express.static(__dirname));
+
+app.get('/', (request, response) => {
+    response.sendFile(path.join(__dirname + '/login.html'))
+});
+
+app.use(express.static(__dirname));
+
+app.post('/login/:username/:password', function (req, res) {
+    queryDatabase();
+    if (status === false) {
+        res.status(404);
+    }
+    else {
+        res.status(200);
+    }
+    res.send();
+});
+
+var port=22000;
+app.listen(port, (err) => {
+    if (err) {
+        return console.log('something bad happened', err)
+    }
+
+    console.log(`server is listening on ${port}`);
+});
+*/
