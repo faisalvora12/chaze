@@ -223,26 +223,11 @@ app.post('/get/:username', function (req, res) {
 
 
 var http = require('http');
-var https = require('https');
-var fs = require('fs');
-
-var privateKey  = fs.readFileSync('keys/_.chaze-sports.com_private_key.key', 'utf8');
-var certificate = fs.readFileSync('keys/chaze-sports.com_ssl_certificate.cer', 'utf8');
-
-var credentials = {key: privateKey, cert: certificate};
-
 var httpServer = http.createServer(app);
-var httpsServer = https.createServer(credentials, app);
 
 var port= process.env.PORT ||1337;
-httpServer.listen(port, function(err){
-    if(err)
-    console.log("something bad happened");
-    else
-    console.log("server running at https://IP_ADDRESS:/"+port);
-});
 
-httpsServer.listen(port, function(err){
+httpServer.listen(port, function(err){
     if(err)
     console.log("something bad happened");
     else
