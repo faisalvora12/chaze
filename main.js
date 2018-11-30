@@ -25,3 +25,4 @@ request.onreadystatechange = function () {
 request.open('POST', 'get/userid/'+localStorage.lastname, true);
 request.send();
 });
+}
