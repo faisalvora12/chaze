@@ -1,4 +1,4 @@
-/Database code
+//Database code
 
 var Connection = require('tedious').Connection;
 var Request = require('tedious').Request;
@@ -220,11 +220,24 @@ app.post('/get/:username', function (req, res) {
 
 });
 
-var port=22000;
+
+
+/*var port=22000;
 app.listen(port, (req,res,err) => {
     if (err) {
         return console.log('something bad happened', err)
     }
     console.log('the request is '+req.value);
     console.log(`server is listening on ${port}`);
+});
+*/
+
+var http = require('https');
+var fs = require('fs');
+
+
+var httpserver = http.createServer(app);
+var port= process.env.PORT ||1337;
+httpserver.listen(port, function(){
+    console.log("server running at https://IP_ADDRESS:/"+port);
 });
