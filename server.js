@@ -238,6 +238,9 @@ var fs = require('fs');
 
 var httpserver = http.createServer(app);
 var port= process.env.PORT ||1337;
-httpserver.listen(port, function(){
+httpserver.listen(port, function(err){
+    if(err)
+    console.log("something bad happened");
+    else
     console.log("server running at https://IP_ADDRESS:/"+port);
 });
