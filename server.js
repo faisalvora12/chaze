@@ -127,6 +127,45 @@ function squeryDatabase(fullname,email,pass,callback)
     connection.execSql(request);
 }
 
+/*Get user id from the user table */
+function getuserid(email,callback)
+{
+    var userid=".";
+    console.log('Reading rows from the Table...');
+    console.log('from sign in');
+    // Read all rows from table
+    request = new Request(
+        "select * from dbo.users",
+        function(err, rowCount, rows)
+        {
+            //console.log(rowCount + ' row(s) returned');
+        }
+    );
+    var call=0;
+    request.on('row', function(columns) {
+        columns.forEach(function(column) {
+            if(column.metadata.colName=="Email"){
+                if(column.value==email) {
+                 call=1;
+                }
+            }
+            if(c==1 && column.metadata.colName=="userId")
+            {
+                userid=column.value;
+            }
+            
+        });
+        setTimeout(function () {
+            if(call==0) {
+                callback(null, 200,userid);
+                call=-1;
+            }
+        },250);
+
+    });
+    connection.execSql(request);
+}
+
 /*client side code*/
 const express = require('express');
 const path = require('path');
@@ -219,7 +258,20 @@ app.post('/get/:username', function (req, res) {
     res.send();
 
 });
-
+app.post('/get/userid/:username', function (req, res) {
+    var email=req.params.username;
+    qetuserid(email, function (err, status,userid) {
+            console.log("get username :  " +status+"   "+userid);
+            if (status === 200) {
+                res.status(200);
+                res.send(userid);
+            }
+            else {
+                res.status(404);
+            res.send();
+            }
+        });
+  });
 
 
 var http = require('http');
