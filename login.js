@@ -42,7 +42,7 @@ function signup() {
                 alert("your email did not pass the server test")
             }
         };
-        request.open('POST', 'http://localhost:22000/signup/'+fname+"/"+email+"/"+spass, true);
+        request.open('POST', '/signup/'+fname+"/"+email+"/"+spass, true);
         request.send();
     }
 }
@@ -81,7 +81,7 @@ function login() {
                 alert("your email did not pass the server test")
             }
         };
-        request.open('POST', 'http://localhost:22000/login/'+email+"/"+pass, true);
+        request.open('POST', '/login/'+email+"/"+pass, true);
         request.send();
     }
 }
