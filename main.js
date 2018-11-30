@@ -10,6 +10,6 @@ request.onreadystatechange = function () {
         location.replace('login.html');
     }
 };
-request.open('POST', '/get/'+localStorage.lastname, true);
+request.open('POST', 'get/'+localStorage.lastname, true);
 request.send();
 });
