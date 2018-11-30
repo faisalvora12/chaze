@@ -13,3 +13,15 @@ request.onreadystatechange = function () {
 request.open('POST', 'get/'+localStorage.lastname, true);
 request.send();
 });
+request.onreadystatechange = function () {
+    if (request.readyState === 4 && request.status === 200) {
+        alert("the user if is :"+request.response);
+    }
+    else if(request.status === 404 && request.readyState===4)
+    {
+        alert('The user could not be found');
+    }
+};
+request.open('POST', 'get/userid/'+localStorage.lastname, true);
+request.send();
+});
