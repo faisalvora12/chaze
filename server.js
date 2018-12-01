@@ -29,6 +29,7 @@ connection.on('connect', function(err)
         }
         else
         {
+            console("got a connection");
             //queryDatabase()
         }
     }
@@ -160,7 +161,7 @@ function getuserid(email,callback)
                 callback(null, 200,userid);
                 call=-1;
             }
-        },250);
+        },750);
 
     });
     connection.execSql(request);
@@ -194,7 +195,7 @@ app.post('/login/:username/:password', function (req, res) {
         queryDatabasel(req.params.username, req.params.password, function (err, status) {
             //console.log("login:  " +status);
             if (status === 200) {
-
+                   console.log("logged in");
                 res.status(200);
             }
             else {
