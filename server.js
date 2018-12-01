@@ -29,7 +29,7 @@ connection.on('connect', function(err)
         }
         else
         {
-            console("got a connection");
+            console.log("got a connection");
             //queryDatabase()
         }
     }
