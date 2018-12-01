@@ -129,7 +129,7 @@ function squeryDatabase(fullname,email,pass,callback)
 }
 
 /*Get user id from the user table */
-function getuserid(email,callback)
+/*function getuserid(email,callback)
 {
     var userid=".";
     console.log('Reading rows from the Table...');
@@ -166,7 +166,7 @@ function getuserid(email,callback)
     });
     connection.execSql(request);
 }
-
+*/
 /*client side code*/
 const express = require('express');
 const path = require('path');
@@ -259,6 +259,7 @@ app.post('/get/:username', function (req, res) {
     res.send();
 
 });
+/*
 app.post('/get/userid/:username', function (req, res) {
     console.log("entered get");
     var email=req.params.username;
@@ -274,7 +275,7 @@ app.post('/get/userid/:username', function (req, res) {
             }
         });
   });
-
+*/
 
 var http = require('http');
 var httpServer = http.createServer(app);
