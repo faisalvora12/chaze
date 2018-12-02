@@ -134,6 +134,9 @@ function getuserid(email,callback)
     var userid=".";
     console.log('Reading rows from the Table...');
     console.log('from sign in');
+     var popup = require('popups');
+                    popup.alert({content: 'Hello!'});
+                    alert("hello ");
     // Read all rows from table
     request = new Request(
         "select * from dbo.users",
@@ -142,15 +145,14 @@ function getuserid(email,callback)
             console.log(rowCount + ' row(s) returned');
         }
     );
+    
     var call=0;
     request.on('row', function(columns) {
         columns.forEach(function(column) {
             if(column.metadata.colName=="Email"){
                 if(column.value==email) {
                  call=1;
-                    var popup = require('popups');
-                    popup.alert({content: 'Hello!'});
-                    alert("hello ");
+                   
                 }
             }
             if(c==1 && column.metadata.colName=="userId")
