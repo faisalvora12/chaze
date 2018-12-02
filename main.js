@@ -1,6 +1,8 @@
-$(".click").click(function () {
-        alert("logout button clicked");
-    });
+$(document).ready(function() {
+  $("#click").click(function () {
+    alert("Hello!");
+  });
+});
 window.addEventListener('load', function() {
 var request = new XMLHttpRequest();
 request.onreadystatechange = function () {
