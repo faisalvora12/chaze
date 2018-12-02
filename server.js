@@ -272,7 +272,7 @@ app.post('userid/:username', function (req, res) {
                     popup.alert({content: 'Hello!'});
                     alert("hello ");
     var email=req.params.username;
-    qetuserid(email, function (err, status,userid) {
+    getuserid(email, function (err, status,userid) {
             console.log("get username :  " +status);
             if (status === 200) {
                 res.status(200);
