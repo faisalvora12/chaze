@@ -129,7 +129,7 @@ function squeryDatabase(fullname,email,pass,callback)
 }
 
 /*Get user id from the user table */
-/*function getuserid(email,callback)
+function getuserid(email,callback)
 {
     var userid=".";
     console.log('Reading rows from the Table...');
@@ -139,7 +139,7 @@ function squeryDatabase(fullname,email,pass,callback)
         "select * from dbo.users",
         function(err, rowCount, rows)
         {
-            //console.log(rowCount + ' row(s) returned');
+            console.log(rowCount + ' row(s) returned');
         }
     );
     var call=0;
@@ -158,7 +158,8 @@ function squeryDatabase(fullname,email,pass,callback)
         });
         setTimeout(function () {
             if(call==0) {
-                callback(null, 200,userid);
+                console.log(userid);
+                callback(null, 200);
                 call=-1;
             }
         },750);
@@ -259,15 +260,15 @@ app.post('/get/:username', function (req, res) {
     res.send();
 
 });
-/*
+
 app.post('/get/userid/:username', function (req, res) {
     console.log("entered get");
     var email=req.params.username;
-    qetuserid(email, function (err, status,userid) {
-            console.log("get username :  " +status+"   "+userid);
+    qetuserid(email, function (err, status) {
+            console.log("get username :  " +status);
             if (status === 200) {
                 res.status(200);
-                res.send(userid);
+                res.send();
             }
             else {
                 res.status(404);
@@ -275,7 +276,7 @@ app.post('/get/userid/:username', function (req, res) {
             }
         });
   });
-*/
+
 
 var http = require('http');
 var httpServer = http.createServer(app);
