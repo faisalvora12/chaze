@@ -149,20 +149,21 @@ function getuserid(email,callback)
         columns.forEach(function(column) {
             if(column.metadata.colName=="Email"){
                 if(column.value==email) {
-                 call=1;
-                   
+                 if(call!=-1)
+                    call=1;
                 }
             }
             if(call==1 && column.metadata.colName=="userId")
             {
                 userid=column.value;
+                call=-1;
             }
             
         });
         setTimeout(function () {
             if(call==1) {
                 console.log(userid);
-                callback(null, 200,userid);
+                callback(userid, 200);
                 call=-1;
             }
         },750);
@@ -268,7 +269,7 @@ app.post('/userid/:username', function (req, res) {
     console.log("entered get");
    
     var email=req.params.username;
-    getuserid(email, function (err, status,userid) {
+    getuserid(email, function (userid,status) {
             console.log("get username :  " +status);
             if (status === 200) {
                 res.status(200);
