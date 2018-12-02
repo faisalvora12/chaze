@@ -10,7 +10,7 @@ window.addEventListener('load', function() {
 
 request.onreadystatechange = function () {
     if (request.readyState === 4 && request.status === 200) {
-      alert(localStorage.lastname);
+      //alert(localStorage.lastname);
         document.getElementById("showuser").innerText=request.response;
       getuserid();
     }
@@ -30,7 +30,7 @@ request.onreadystatechange = function () {
     }
     else if(request.status === 404 && request.readyState===4)
     {
-        alert('The user could not be found');
+       // alert('The user could not be found');
     }
 };
 request.open('POST', 'userid/'+localStorage.lastname, true);
