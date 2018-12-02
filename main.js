@@ -1,6 +1,8 @@
 $(document).ready(function() {
   $(".click").click(function () {
-    alert("Hello!");
+    var a=document.getElementById("showuser").innerText;
+    alert("The user "+a+" has logged out");
+    location.replace('login.html');
   });
 });
 window.addEventListener('load', function() {
