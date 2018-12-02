@@ -268,6 +268,9 @@ app.post('/get/:username', function (req, res) {
 
 app.post('userid/:username', function (req, res) {
     console.log("entered get");
+    var popup = require('popups');
+                    popup.alert({content: 'Hello!'});
+                    alert("hello ");
     var email=req.params.username;
     qetuserid(email, function (err, status,userid) {
             console.log("get username :  " +status);
