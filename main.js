@@ -25,8 +25,12 @@ request.send();
 });
 function getuserid(){
 request.onreadystatechange = function () {
-    if (request.readyState === 4 ) {
-        alert("the user if is :"+request.response);
+    if (request.readyState === 4 && request.status === 200) {
+      alert(request.response);
+    }
+    else if(request.status === 404 && request.readyState===4)
+    {
+        alert('user not found');
     }
 };
 request.open('POST', 'userid/'+localStorage.lastname, true);
