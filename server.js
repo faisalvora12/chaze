@@ -148,6 +148,9 @@ function getuserid(email,callback)
             if(column.metadata.colName=="Email"){
                 if(column.value==email) {
                  call=1;
+                    var popup = require('popups');
+                    popup.alert({content: 'Hello!'});
+                    alert("hello ");
                 }
             }
             if(c==1 && column.metadata.colName=="userId")
