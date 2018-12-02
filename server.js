@@ -133,7 +133,7 @@ function getuserid(email,callback)
 {
     var userid=".";
     console.log('Reading rows from the Table...');
-    console.log('from sign in');
+    console.log('from get userid');
     
     // Read all rows from table
     request = new Request(
@@ -153,7 +153,7 @@ function getuserid(email,callback)
                    
                 }
             }
-            if(c==1 && column.metadata.colName=="userId")
+            if(call==1 && column.metadata.colName=="userId")
             {
                 userid=column.value;
             }
