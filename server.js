@@ -272,12 +272,12 @@ app.post('/userid/:username', function (req, res) {
     getuserid(email, function (userid,status) {
             console.log("get username :  " +status);
             if (status === 200) {
-                res.status(200);
+      
                 res.send(userid);
                 return;
             }
             else {
-                res.status(404);
+             
             res.send();
             }
         });
