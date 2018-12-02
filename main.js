@@ -5,8 +5,9 @@ $(document).ready(function() {
     location.replace('login.html');
   });
 });
-window.addEventListener('load', function() {
 var request = new XMLHttpRequest();
+window.addEventListener('load', function() {
+
 request.onreadystatechange = function () {
     if (request.readyState === 4 && request.status === 200) {
       alert(localStorage.lastname);
