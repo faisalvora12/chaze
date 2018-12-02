@@ -2,6 +2,7 @@ $(document).ready(function() {
   $(".click").click(function () {
     var a=document.getElementById("showuser").innerText;
     alert("The user "+a+" has logged out");
+    localStorage.lastname="";
     location.replace('login.html');
   });
 });
