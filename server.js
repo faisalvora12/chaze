@@ -163,7 +163,7 @@ function getuserid(email,callback)
         setTimeout(function () {
             if(call==-1) {
                 console.log(userid);
-                callback(userid, 200);
+                callback(null,200,userid);
                 call=-1;
             }
         },750);
@@ -269,15 +269,15 @@ app.post('/userid/:username', function (req, res) {
     console.log("entered get");
    
     var email=req.params.username;
-    getuserid(email, function (userid,status) {
-            console.log("get username :  " +status);
+    getuserid(email, function (err,status,userid) {
+            console.log("get username :  " +status+" userid :"+userid);
             if (status === 200) {
-      
+                res.status=200;
                 res.send(userid);
                 return;
             }
             else {
-             
+             res.status=404;
             res.send();
             }
         });
