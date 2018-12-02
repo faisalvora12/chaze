@@ -273,7 +273,7 @@ app.post('/userid/:username', function (req, res) {
     getuserid(email, function (err,status) {
             console.log("get username :  " +status+" userid :"+userid);
             if (status === 200) {
-                res.status=200;
+                res.status(200);
                 res.send(userid);
                 return;
             }
