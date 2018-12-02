@@ -19,7 +19,6 @@ request.onreadystatechange = function () {
 };
 request.open('POST', 'get/'+localStorage.lastname, true);
 request.send();
-});
 
 request.onreadystatechange = function () {
     if (request.readyState === 4 && request.status === 200) {
