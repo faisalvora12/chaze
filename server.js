@@ -273,7 +273,8 @@ app.post('/userid/:username', function (req, res) {
             console.log("get username :  " +status);
             if (status === 200) {
                 res.status(200);
-                res.send();
+                res.send(userid);
+                return;
             }
             else {
                 res.status(404);
