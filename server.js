@@ -134,9 +134,7 @@ function getuserid(email,callback)
     var userid=".";
     console.log('Reading rows from the Table...');
     console.log('from sign in');
-     var popup = require('popups');
-                    popup.alert({content: 'Hello!'});
-                    alert("hello ");
+    
     // Read all rows from table
     request = new Request(
         "select * from dbo.users",
@@ -268,9 +266,7 @@ app.post('/get/:username', function (req, res) {
 
 app.post('/userid/:username', function (req, res) {
     console.log("entered get");
-    var popup = require('popups');
-                    popup.alert({content: 'Hello!'});
-                    alert("hello ");
+   
     var email=req.params.username;
     getuserid(email, function (err, status,userid) {
             console.log("get username :  " +status);
