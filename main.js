@@ -11,6 +11,7 @@ request.onreadystatechange = function () {
     if (request.readyState === 4 && request.status === 200) {
       alert(localStorage.lastname);
         document.getElementById("showuser").innerText=request.response;
+      getuserid();
     }
     else if(request.status === 404 && request.readyState===4)
     {
@@ -20,7 +21,8 @@ request.onreadystatechange = function () {
 };
 request.open('POST', 'get/'+localStorage.lastname, true);
 request.send();
-
+});
+function getuserid(){
 request.onreadystatechange = function () {
     if (request.readyState === 4 && request.status === 200) {
         alert("the user if is : the user was found");
@@ -32,5 +34,5 @@ request.onreadystatechange = function () {
 };
 request.open('POST', 'userid/'+localStorage.lastname, true);
 request.send();
-});
 
+}
