@@ -146,27 +146,30 @@ function getuserid(email,callback)
     );
     
     var call=0;
+    var c=0;
     request.on('row', function(columns) {
         columns.forEach(function(column) {
             if(column.metadata.colName=="Email"){
                 if(column.value==email) {
-                 if(call!=-1)
+                    if(call!=-1)
                     call=1;
                 }
             }
             if(call==1 && column.metadata.colName=="userId")
             {
                 userid=column.value;
-                call=-1;
+                c++;
             }
             
         });
         setTimeout(function () {
-            if(call==-1) {
+            if(call==1 && c==1) {
                 console.log(userid);
                 callback(null,200);
                 call=-1;
             }
+            else 
+                call=-1;
         },750);
 
     });
@@ -278,7 +281,7 @@ app.post('/userid/:username', function (req, res) {
                 return;
             }
             else {
-             res.status=404;
+             res.status(404);
             res.send();
             }
         });
