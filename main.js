@@ -29,7 +29,7 @@ request.onreadystatechange = function () {
         alert('The user could not be found');
     }
 };
-request.open('POST', 'get/userid/'+localStorage.lastname, true);
+request.open('POST', 'userid/'+localStorage.lastname, true);
 request.send();
 });
 
