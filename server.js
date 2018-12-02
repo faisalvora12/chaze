@@ -261,7 +261,7 @@ app.post('/get/:username', function (req, res) {
 
 });
 
-app.post('/get/userid/:username', function (req, res) {
+app.post('userid/:username', function (req, res) {
     console.log("entered get");
     var email=req.params.username;
     qetuserid(email, function (err, status) {
