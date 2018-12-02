@@ -1,3 +1,6 @@
+$(".click").click(function () {
+        alert("logout button clicked");
+    });
 window.addEventListener('load', function() {
 var request = new XMLHttpRequest();
 request.onreadystatechange = function () {
