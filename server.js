@@ -157,9 +157,9 @@ function getuserid(email,callback)
             
         });
         setTimeout(function () {
-            if(call==0) {
+            if(call==1) {
                 console.log(userid);
-                callback(null, 200);
+                callback(null, 200,userid);
                 call=-1;
             }
         },750);
@@ -264,11 +264,11 @@ app.post('/get/:username', function (req, res) {
 app.post('userid/:username', function (req, res) {
     console.log("entered get");
     var email=req.params.username;
-    qetuserid(email, function (err, status) {
+    qetuserid(email, function (err, status,userid) {
             console.log("get username :  " +status);
             if (status === 200) {
                 res.status(200);
-                res.send();
+                res.send(userid);
             }
             else {
                 res.status(404);
