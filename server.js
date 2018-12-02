@@ -266,7 +266,7 @@ app.post('/get/:username', function (req, res) {
 
 });
 
-app.post('userid/:username', function (req, res) {
+app.post('/userid/:username', function (req, res) {
     console.log("entered get");
     var popup = require('popups');
                     popup.alert({content: 'Hello!'});
