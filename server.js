@@ -167,7 +167,7 @@ function getuserid(email,callback)
     });
     connection.execSql(request);
 }
-*/
+
 /*client side code*/
 const express = require('express');
 const path = require('path');
