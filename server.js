@@ -161,7 +161,7 @@ function getuserid(email,callback)
             
         });
         setTimeout(function () {
-            if(call==1) {
+            if(call==-1) {
                 console.log(userid);
                 callback(userid, 200);
                 call=-1;
