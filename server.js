@@ -274,7 +274,7 @@ app.post('/userid/:username', function (req, res) {
             console.log("get username :  " +status+" userid :"+userid);
             if (status === 200) {
                 res.status(200);
-                res.send();
+                res.send("hello");
                 return;
             }
             else {
