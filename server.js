@@ -4,6 +4,7 @@ var Connection = require('tedious').Connection;
 var Request = require('tedious').Request;
 var request = new Request();
 var user=".";
+var userid=".";
 var email=".";
 var userMap = new Map();// Create connection to database
 var config =
@@ -131,7 +132,7 @@ function squeryDatabase(fullname,email,pass,callback)
 /*Get user id from the user table */
 function getuserid(email,callback)
 {
-    var userid=".";
+ 
     console.log('Reading rows from the Table...');
     console.log('from get userid');
     
@@ -163,7 +164,7 @@ function getuserid(email,callback)
         setTimeout(function () {
             if(call==-1) {
                 console.log(userid);
-                callback(null,200,userid);
+                callback(null,200);
                 call=-1;
             }
         },750);
@@ -269,7 +270,7 @@ app.post('/userid/:username', function (req, res) {
     console.log("entered get");
    
     var email=req.params.username;
-    getuserid(email, function (err,status,userid) {
+    getuserid(email, function (err,status) {
             console.log("get username :  " +status+" userid :"+userid);
             if (status === 200) {
                 res.status=200;
