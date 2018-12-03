@@ -37,12 +37,12 @@ request.onreadystatechange = function () {
         console.log(str2.length);
         jQuery(document).ready(function(){
           dist=dist+str2[4];
-    $("#training").append(i+"//"str2[1]+"  // "+str2[2]+"    //   "+str2[3]+"   //    "+str2[4]+"<br>"); 
+    $("#training").append(i+"//"+str2[1]+"  // "+str2[2]+"    //   "+str2[3]+"   //    "+str2[4]+"<br>"); 
       });
       }
       jQuery(document).ready(function(){
      var avg=dist/i;
-    $("#training").append("The average dist is: "+avg); 
+    $("#training").append("Total distance is:"+dist+" and the average dist is: "+avg); 
       });
     }
     else if(request.status === 404 && request.readyState===4)
