@@ -25,7 +25,7 @@ request.send();
 function getuserid(){
 request.onreadystatechange = function () {
     if (request.readyState === 4 && request.status === 200) {
-        
+        alert("hello");
       var str=request.response.split("!");
       $("training").append("backstroke      breaststroke       distperlength     freestyle<br>");
       for(var i=0;i<str.length;i++)
