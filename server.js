@@ -150,6 +150,7 @@ function gettrainingdata(userid,callback)
     request.on('row', function(columns) {
         columns.forEach(function(column) {
           count++;
+            training=training+"!";
             //console.log(count);
             if(c==0 && column.metadata.colName=="backstroke")
             {
