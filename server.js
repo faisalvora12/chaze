@@ -149,6 +149,8 @@ function gettrainingdata(userid,callback)
     );
     var call=0;
     request.on('row', function(columns) {
+        rowcount=rowcount-1;
+        console.log(rowcount);
         columns.forEach(function(column) {
             if(column.metadata.colName=="Userid"){
                 console.log(column.value);
@@ -175,10 +177,9 @@ function gettrainingdata(userid,callback)
             
         });
         setTimeout(function () {
-             console.log(rowcount);
             if(rowcount==1)    
             callback(null,200);
-        },1000);
+        },5000);
 
     });
     connection.execSql(request);
