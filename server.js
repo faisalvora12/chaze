@@ -163,7 +163,7 @@ function gettrainingdata(userid,callback)
             }
             if(c==0 && column.metadata.colName=="distperlength")
             {
-                 //console.log("dist:" +column.value);
+                console.log("dist:" +column.value);
                 training=training+"%"+column.value;
             }
             if(c==0 && column.metadata.colName=="freestyle")
