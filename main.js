@@ -1,17 +1,17 @@
 $(document).ready(function() {
   $(".click").click(function () {
     var a=document.getElementById("showuser").innerText;
-    alert("The user "+a+" has logged out");
     localStorage.lastname="";
     location.replace('login.html');
   });
 });
+document.getElementById("body").style.visibility = "hidden";
 var request = new XMLHttpRequest();
 window.addEventListener('load', function() {
 
 request.onreadystatechange = function () {
     if (request.readyState === 4 && request.status === 200) {
-      //alert(localStorage.lastname);
+        document.getElementById("myP").style.visibility = "visible";
         document.getElementById("showuser").innerText=request.response;
       getuserid();
     }
@@ -27,7 +27,7 @@ request.send();
 function getuserid(){
 request.onreadystatechange = function () {
     if (request.readyState === 4 && request.status === 200) {
-      alert(request.response);
+      //alert(request.response);
     }
     else if(request.status === 404 && request.readyState===4)
     {
