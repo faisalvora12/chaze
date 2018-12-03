@@ -132,7 +132,7 @@ function squeryDatabase(fullname,email,pass,callback)
 /*Get training data using the userid passed in arguments*/
 function gettrainingdata(userid,callback)
 {
-    var rowcount=".";
+    var rowcount=0;
     console.log('Reading rows from the training...');
     console.log('from get training');
     var query= "select userId,backstroke,breaststroke,butterfly,distperlength,freestyle from training where userid="+userid;
@@ -150,7 +150,6 @@ function gettrainingdata(userid,callback)
     var call=0;
     request.on('row', function(columns) {
         training=training+"!";
-        rowcount--;
         columns.forEach(function(column) {
             if(column.metadata.colName=="Userid"){
                 if(column.value==userid) {
@@ -178,6 +177,7 @@ function gettrainingdata(userid,callback)
         });
         setTimeout(function () {
              console.log(rowcount);
+            rowcount=rowcount-1;
             if(rowcount==0)    
             callback(null,200);
         },1000);
