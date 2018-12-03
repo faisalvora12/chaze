@@ -35,7 +35,7 @@ request.onreadystatechange = function () {
         var str2=str[i].split("%");
         console.log(str2.length);
         jQuery(document).ready(function(){
-    $("#training").append(count+"//"str2[1]+"  // "+str2[2]+"    //   "+str2[3]+"   //    "+str2[4]+"<br>"); 
+    $("#training").append((count++)+"//"str2[1]+"  // "+str2[2]+"    //   "+str2[3]+"   //    "+str2[4]+"<br>"); 
       });
 
       }
