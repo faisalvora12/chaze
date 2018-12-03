@@ -16,7 +16,6 @@ request.onreadystatechange = function () {
     }
     else if(request.status === 404 && request.readyState===4)
     {
-        alert('You are not signed in');
         location.replace('login.html');
     }
 };
