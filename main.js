@@ -36,13 +36,13 @@ request.onreadystatechange = function () {
         var str2=str[i].split("%");
         console.log(str2.length);
         jQuery(document).ready(function(){
-          dist=dist+str2[3];
+          dist=parseInt(dist)+parseInt(str2[3]);
     $("#training").append(i+"//"+str2[1]+"  // "+str2[2]+"    //   "+str2[3]+"   //    "+str2[4]+"<br>"); 
       });
       }
       jQuery(document).ready(function(){
-     var avg=dist/i;
-    $("#training").append("Total distance is:"+dist+" and the average dist is: "+avg); 
+     var avg=parseInt(parseInt(dist)/i);
+    $("#training").append("Total distance is:"+parseInt(dist)+" and the average dist is: "+parseInt(avg)); 
       });
     }
     else if(request.status === 404 && request.readyState===4)
