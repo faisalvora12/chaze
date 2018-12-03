@@ -157,7 +157,8 @@ function gettrainingdata(userid,callback)
             }
             if(call==1 && column.metadata.colName=="backstroke")
             {
-                training=training+"%"+column.value;
+                console.log(column.value);
+                training="%"+column.value;
             }
             if(call==1 && column.metadata.colName=="breaststroke")
             {
