@@ -25,17 +25,17 @@ request.send();
 function getuserid(){
 request.onreadystatechange = function () {
     if (request.readyState === 4 && request.status === 200) {
-        alert("hello");
+      var count=0;
       var str=request.response.split("!");
       jQuery(document).ready(function(){
-       $("#training").append("backstroke   //   breaststroke   //    distperlength  //   freestyle<br>");
+       $("#training").append("training number //backstroke   //   breaststroke   //    distperlength  //   freestyle<br>");
 });
       for(var i=1;i<str.length;i++)
       {
         var str2=str[i].split("%");
         console.log(str2.length);
         jQuery(document).ready(function(){
-    $("#training").append(str2[1]+"  // "+str2[2]+"    //   "+str2[3]+"   //    "+str2[4]+"<br>"); 
+    $("#training").append(count+"//"str2[1]+"  // "+str2[2]+"    //   "+str2[3]+"   //    "+str2[4]+"<br>"); 
       });
 
       }
