@@ -179,7 +179,7 @@ function gettrainingdata(userid,callback)
                callback(null,200);
                 c=1;
             }
-        },500);
+        },200);
 
     });
     connection.execSql(request);
