@@ -145,6 +145,7 @@ function gettrainingdata(userid,callback)
             console.log(rowCount + ' row(s) returned');
         }
     );
+    var call=0;
     request.on('row', function(columns) {
         training=training+"!";
         columns.forEach(function(column) {
