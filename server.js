@@ -147,23 +147,23 @@ function gettrainingdata(userid,callback)
             console.log(rowCount + ' row(s) returned');
         }
     );
-    var call=0;
+    var count=0;
     request.on('row', function(columns) {
         columns.forEach(function(column) {
-          
+          count++;
             if(column.metadata.colName=="backstroke")
             {
-                console.log(column.value);
+                //console.log(column.value);
                 training="%"+column.value;
             }
             if(column.metadata.colName=="breaststroke")
             {
-                console.log(column.value);
+                //console.log(column.value);
                 training=training+"%"+column.value;
             }
             if(column.metadata.colName=="distperlength")
             {
-                 console.log("dist:" +column.value);
+                 //console.log("dist:" +column.value);
                 training=training+"%"+column.value;
             }
             if(column.metadata.colName=="freestyle")
@@ -172,9 +172,9 @@ function gettrainingdata(userid,callback)
             }
             
         });
-        setTimeout(function () {
-            if(rowcount==1)    
-            callback(null,200);
+        setTimeout(function () {    
+            if(count>42)
+               callback(null,200);
         },5000);
 
     });
