@@ -25,20 +25,25 @@ request.send();
 function getuserid(){
 request.onreadystatechange = function () {
     if (request.readyState === 4 && request.status === 200) {
-      var count=0;
+      var dist=0;
       var str=request.response.split("!");
       jQuery(document).ready(function(){
        $("#training").append("training number //backstroke   //   breaststroke   //    distperlength  //   freestyle<br>");
 });
-      for(var i=1;i<str.length;i++)
+      var i=1;
+      for(i=1;i<str.length;i++)
       {
         var str2=str[i].split("%");
         console.log(str2.length);
         jQuery(document).ready(function(){
-    $("#training").append((count++)+"//"str2[1]+"  // "+str2[2]+"    //   "+str2[3]+"   //    "+str2[4]+"<br>"); 
+          dist=dist+str2[4];
+    $("#training").append(i+"//"str2[1]+"  // "+str2[2]+"    //   "+str2[3]+"   //    "+str2[4]+"<br>"); 
       });
-
       }
+      jQuery(document).ready(function(){
+     var avg=dist/i;
+    $("#training").append("The average dist is: "+avg); 
+      });
     }
     else if(request.status === 404 && request.readyState===4)
     {
