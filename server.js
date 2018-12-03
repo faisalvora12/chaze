@@ -150,7 +150,7 @@ function gettrainingdata(userid,callback)
     request.on('row', function(columns) {
         columns.forEach(function(column) {
           count++;
-            console.log(count);
+            //console.log(count);
             if(c==0 && column.metadata.colName=="backstroke")
             {
                 //console.log(column.value);
@@ -163,7 +163,7 @@ function gettrainingdata(userid,callback)
             }
             if(c==0 && column.metadata.colName=="distperlength")
             {
-                console.log("dist:" +column.value);
+                //console.log("dist:" +column.value);
                 training=training+"%"+column.value;
             }
             if(c==0 && column.metadata.colName=="freestyle")
