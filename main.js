@@ -5,10 +5,9 @@ $(document).ready(function() {
     location.replace('login.html');
   });
 });
-document.getElementById("b").style.visibility = "hidden";
 var request = new XMLHttpRequest();
 window.addEventListener('load', function() {
-
+document.getElementById("b").style.visibility = "hidden";
 request.onreadystatechange = function () {
     if (request.readyState === 4 && request.status === 200) {
         document.getElementById("b").style.visibility = "visible";
