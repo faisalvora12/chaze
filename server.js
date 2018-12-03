@@ -132,14 +132,12 @@ function squeryDatabase(fullname,email,pass,callback)
 /*Get training data using the userid passed in arguments*/
 function gettrainingdata(userid,callback)
 {
-    var rowcount=0;
     console.log('Reading rows from the training...');
     console.log('from get training');
     var query= "select userId,backstroke,breaststroke,butterfly,distperlength,freestyle from training where userid="+userid;
     request = new Request(
         query,function(err, rowCount, rows)
         {
-            rowcount=rowCount;
             if(err)
             {
             console.log("an error occured");
@@ -148,33 +146,38 @@ function gettrainingdata(userid,callback)
         }
     );
     var count=0;
+    var c=0;
     request.on('row', function(columns) {
         columns.forEach(function(column) {
           count++;
-            if(column.metadata.colName=="backstroke")
+            
+            if(c==0 && column.metadata.colName=="backstroke")
             {
                 //console.log(column.value);
                 training="%"+column.value;
             }
-            if(column.metadata.colName=="breaststroke")
+            if(c==0 && column.metadata.colName=="breaststroke")
             {
                 //console.log(column.value);
                 training=training+"%"+column.value;
             }
-            if(column.metadata.colName=="distperlength")
+            if(c==0 && column.metadata.colName=="distperlength")
             {
                  //console.log("dist:" +column.value);
                 training=training+"%"+column.value;
             }
-            if(column.metadata.colName=="freestyle")
+            if(c==0 && column.metadata.colName=="freestyle")
             {
                 training=training+"%"+column.value;
             }
             
         });
         setTimeout(function () {    
-            if(count>42)
+            if(c==0 && count>43)
+            {
                callback(null,200);
+                c=1;
+            }
         },5000);
 
     });
