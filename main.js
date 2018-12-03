@@ -31,7 +31,7 @@ request.onreadystatechange = function () {
       for(var i=0;i<str.length;i++)
       {
         var str2=str[i].split("%");
-    $("training").append(str2[0]+"      "+str2[1]+"         "+str2[2]+"       "str2[3]+"<br>");
+    $("training").append(str2[0]+"      "+str2[1]+"         "+str2[2]+"       "+str2[3]+"<br>"); 
       }
     }
     else if(request.status === 404 && request.readyState===4)
