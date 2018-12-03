@@ -5,6 +5,7 @@ var Request = require('tedious').Request;
 var request = new Request();
 var user=".";
 var userid=".";
+var training=".";
 var email=".";
 var userMap = new Map();// Create connection to database
 var config =
@@ -128,7 +129,57 @@ function squeryDatabase(fullname,email,pass,callback)
     });
     connection.execSql(request);
 }
+/*Get training data using the userid passed in arguments*/
+function gettrainingdata(userid,callback)
+{
+    console.log('Reading rows from the training...');
+    console.log('from get training');
+    var query= "select userId,backstroke,breaststroke,butterfly,distperlength,freestyle from training where userid="+userid;
+    request = new Request(
+        query,function(err, rowCount, rows)
+        {
+            if(err)
+            {
+            console.log("an error occured");
+            }
+            console.log(rowCount + ' row(s) returned');
+        }
+    );
+    request.on('row', function(columns) {
+        training=trianing+"!";
+        columns.forEach(function(column) {
+            if(column.metadata.colName=="Userid"){
+                if(column.value==userid) {
+                    if(call!=-1 && call!=2)
+                    call=1;
+                }
+            }
+            if(call==1 && column.metadata.colName=="backstroke")
+            {
+                training=training+"%"+column.value;
+            }
+            if(call==1 && column.metadata.colName=="breaststroke")
+            {
+                training=training+"%"+column.value;
+            }
+            if(call==1 && column.metadata.colName=="distperlength")
+            {
+                training=training+"%"+column.value;
+            }
+            if(call==1 && column.metadata.colName=="freestyle")
+            {
+                training=training+"%"+column.value;
+            }
+            
+        });
+        setTimeout(function () {
+                callback(null,200);
+        },1000);
 
+    });
+    connection.execSql(request);
+}
+//////////////////////////////////////////////////////////////////////
 /*Get user id from the user table */
 function getuserid(email,callback)
 {
@@ -272,11 +323,21 @@ app.post('/userid/:username', function (req, res) {
     var email=req.params.username;
     getuserid(email, function (err,status) {
             console.log("get username :  " +status+" userid :"+userid);
-        var hello=userid+" ";
+        var userId=userid+" ";
             if (status === 200) {
-                res.status(200);
-                res.send(hello);
-                return;
+                gettrainingdata(userId,function(err,status){
+                if(status===200)
+                {
+                    res.status(200);
+                    res.send(training+"");
+                    return;
+                }
+                else 
+                {
+                    res.status(404);
+                    res.send();
+                }
+                });
             }
             else {
              res.status(404);
