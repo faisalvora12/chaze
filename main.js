@@ -39,9 +39,9 @@ request.onreadystatechange = function () {
         var str2=str[i].split("%");
         jQuery(document).ready(function(){
           dist=parseInt(dist)+parseInt(str2[3]);
-          if(str2[1])back++;
-           if(str2[2])bs++;
-           if(str2[4])free++;
+          if(str2[1]==='true')back++;
+           if(str2[2]==='true')bs++;
+           if(str2[4]==='true')free++;
          
     $("#training").append(i+"//"+str2[1]+"  // "+str2[2]+"    //   "+str2[3]+"   //    "+str2[4]+"<br>"); 
       });
