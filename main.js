@@ -28,13 +28,13 @@ request.onreadystatechange = function () {
         alert("hello");
       var str=request.response.split("!");
       jQuery(document).ready(function(){
-       $("training").append("backstroke      breaststroke       distperlength     freestyle<br>");
+       $("#training").append("backstroke      breaststroke       distperlength     freestyle<br>");
 });
       for(var i=0;i<str.length;i++)
       {
         var str2=str[i].split("%");
         jQuery(document).ready(function(){
-    $("training").append(str2[0]+"      "+str2[1]+"         "+str2[2]+"       "+str2[3]+"<br>"); 
+    $("#training").append(str2[0]+"      "+str2[1]+"         "+str2[2]+"       "+str2[3]+"<br>"); 
       });
 
       }
