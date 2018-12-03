@@ -5,13 +5,13 @@ $(document).ready(function() {
     location.replace('login.html');
   });
 });
-document.getElementById("body").style.visibility = "hidden";
+document.getElementById("b").style.visibility = "hidden";
 var request = new XMLHttpRequest();
 window.addEventListener('load', function() {
 
 request.onreadystatechange = function () {
     if (request.readyState === 4 && request.status === 200) {
-        document.getElementById("myP").style.visibility = "visible";
+        document.getElementById("b").style.visibility = "visible";
         document.getElementById("showuser").innerText=request.response;
       getuserid();
     }
