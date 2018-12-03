@@ -25,7 +25,14 @@ request.send();
 function getuserid(){
 request.onreadystatechange = function () {
     if (request.readyState === 4 && request.status === 200) {
-        document.getElementById("showuser").innerText=request.response;
+        
+      var str=request.response.split("!");
+      $("training").append("backstroke      breaststroke       distperlength     freestyle<br>");
+      for(int i=0;i<str.length;i++)
+      {
+        var str2=str[i].split("%");
+    $("training").append(str2[0]+"      "+str2[1]+"         "+str2[2]+"       "str2[3]+"<br>");
+      }
     }
     else if(request.status === 404 && request.readyState===4)
     {
