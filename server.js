@@ -132,12 +132,14 @@ function squeryDatabase(fullname,email,pass,callback)
 /*Get training data using the userid passed in arguments*/
 function gettrainingdata(userid,callback)
 {
+    var rowcount=".";
     console.log('Reading rows from the training...');
     console.log('from get training');
     var query= "select userId,backstroke,breaststroke,butterfly,distperlength,freestyle from training where userid="+userid;
     request = new Request(
         query,function(err, rowCount, rows)
         {
+            rowcount=rowCount;
             if(err)
             {
             console.log("an error occured");
@@ -148,6 +150,7 @@ function gettrainingdata(userid,callback)
     var call=0;
     request.on('row', function(columns) {
         training=training+"!";
+        rowcount--;
         columns.forEach(function(column) {
             if(column.metadata.colName=="Userid"){
                 if(column.value==userid) {
@@ -157,7 +160,6 @@ function gettrainingdata(userid,callback)
             }
             if(call==1 && column.metadata.colName=="backstroke")
             {
-                console.log(column.value);
                 training="%"+column.value;
             }
             if(call==1 && column.metadata.colName=="breaststroke")
@@ -175,7 +177,9 @@ function gettrainingdata(userid,callback)
             
         });
         setTimeout(function () {
-                callback(null,200);
+             console.log(rowcount);
+            if(rowcount==0)    
+            callback(null,200);
         },1000);
 
     });
