@@ -28,7 +28,7 @@ request.onreadystatechange = function () {
         
       var str=request.response.split("!");
       $("training").append("backstroke      breaststroke       distperlength     freestyle<br>");
-      for(int i=0;i<str.length;i++)
+      for(var i=0;i<str.length;i++)
       {
         var str2=str[i].split("%");
     $("training").append(str2[0]+"      "+str2[1]+"         "+str2[2]+"       "str2[3]+"<br>");
