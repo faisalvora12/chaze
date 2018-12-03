@@ -151,7 +151,9 @@ function gettrainingdata(userid,callback)
     request.on('row', function(columns) {
         training=training+"!";
         columns.forEach(function(column) {
+            console.log(column.metadata.colName);
             if(column.metadata.colName=="Userid"){
+                console.log(column.value);
                 if(column.value==userid) {
                     if(call!=-1 && call!=2)
                     call=1;
