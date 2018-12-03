@@ -149,28 +149,24 @@ function gettrainingdata(userid,callback)
     );
     var call=0;
     request.on('row', function(columns) {
-        rowcount=rowcount-1;
-        console.log(rowcount);
         columns.forEach(function(column) {
-            if(column.metadata.colName=="Userid"){
-                console.log(column.value);
-            }
-            if(call==1 && column.metadata.colName=="backstroke")
+          
+            if(column.metadata.colName=="backstroke")
             {
                 console.log(column.value);
                 training="%"+column.value;
             }
-            if(call==1 && column.metadata.colName=="breaststroke")
+            if(column.metadata.colName=="breaststroke")
             {
                 console.log(column.value);
                 training=training+"%"+column.value;
             }
-            if(call==1 && column.metadata.colName=="distperlength")
+            if(column.metadata.colName=="distperlength")
             {
                  console.log("dist:" +column.value);
                 training=training+"%"+column.value;
             }
-            if(call==1 && column.metadata.colName=="freestyle")
+            if(column.metadata.colName=="freestyle")
             {
                 training=training+"%"+column.value;
             }
@@ -179,7 +175,7 @@ function gettrainingdata(userid,callback)
         setTimeout(function () {
             if(rowcount==1)    
             callback(null,200);
-        },250);
+        },5000);
 
     });
     connection.execSql(request);
