@@ -146,7 +146,7 @@ function gettrainingdata(userid,callback)
         }
     );
     request.on('row', function(columns) {
-        training=trianing+"!";
+        training=training+"!";
         columns.forEach(function(column) {
             if(column.metadata.colName=="Userid"){
                 if(column.value==userid) {
