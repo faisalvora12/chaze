@@ -150,11 +150,11 @@ function gettrainingdata(userid,callback)
     request.on('row', function(columns) {
         columns.forEach(function(column) {
           count++;
-            
+            console.log(count);
             if(c==0 && column.metadata.colName=="backstroke")
             {
                 //console.log(column.value);
-                training="%"+column.value;
+                training=training+"%"+column.value;
             }
             if(c==0 && column.metadata.colName=="breaststroke")
             {
