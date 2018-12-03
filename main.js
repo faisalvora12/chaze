@@ -48,7 +48,7 @@ request.onreadystatechange = function () {
       }
       jQuery(document).ready(function(){
      var avg=parseInt(parseInt(dist)/i);
-    $("#training").append("Total distance is:"+parseInt(dist)+"<br> and the average dist is: "+parseInt(avg)+"<br>number of backstrokes:"+back)+"<br> number of breast strokes:"+bs+"<br> number of free strokes:"+free; 
+    $("#training").append("Total distance is:"+parseInt(dist)+"<br> and the average dist is: "+parseInt(avg)+"<br>number of backstrokes:"+back+"<br> number of breast strokes:"+bs+"<br> number of free strokes:"+free); 
       });
     }
     else if(request.status === 404 && request.readyState===4)
