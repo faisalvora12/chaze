@@ -26,6 +26,9 @@ function getuserid(){
 request.onreadystatechange = function () {
     if (request.readyState === 4 && request.status === 200) {
       var dist=0;
+      var back=0;
+      var bs=0;
+      var free=0;
       var str=request.response.split("!");
       jQuery(document).ready(function(){
        $("#training").append("training number //backstroke   //   breaststroke   //    distperlength  //   freestyle<br>");
@@ -34,15 +37,18 @@ request.onreadystatechange = function () {
       for(i=1;i<str.length;i++)
       {
         var str2=str[i].split("%");
-        console.log(str2.length);
         jQuery(document).ready(function(){
           dist=parseInt(dist)+parseInt(str2[3]);
+          if(str2[1])back++;
+           if(str2[2])bs++;
+           if(str2[4])free++;
+         
     $("#training").append(i+"//"+str2[1]+"  // "+str2[2]+"    //   "+str2[3]+"   //    "+str2[4]+"<br>"); 
       });
       }
       jQuery(document).ready(function(){
      var avg=parseInt(parseInt(dist)/i);
-    $("#training").append("Total distance is:"+parseInt(dist)+" and the average dist is: "+parseInt(avg)); 
+    $("#training").append("Total distance is:"+parseInt(dist)+"<br> and the average dist is: "+parseInt(avg)+"<br>number of backstrokes:"+back)+"<br> number of breast strokes:"+bs+"<br> number of free strokes:"+free; 
       });
     }
     else if(request.status === 404 && request.readyState===4)
