@@ -159,10 +159,12 @@ function gettrainingdata(userid,callback)
             }
             if(call==1 && column.metadata.colName=="backstroke")
             {
+                console.log(column.value);
                 training="%"+column.value;
             }
             if(call==1 && column.metadata.colName=="breaststroke")
             {
+                console.log(column.value);
                 training=training+"%"+column.value;
             }
             if(call==1 && column.metadata.colName=="distperlength")
@@ -178,7 +180,7 @@ function gettrainingdata(userid,callback)
         setTimeout(function () {
              console.log(rowcount);
             rowcount=rowcount-1;
-            if(rowcount==0)    
+            if(rowcount==1)    
             callback(null,200);
         },1000);
 
