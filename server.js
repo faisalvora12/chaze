@@ -149,15 +149,9 @@ function gettrainingdata(userid,callback)
     );
     var call=0;
     request.on('row', function(columns) {
-        training=training+"!";
         columns.forEach(function(column) {
-            console.log(column.metadata.colName);
             if(column.metadata.colName=="Userid"){
                 console.log(column.value);
-                if(column.value==userid) {
-                    if(call!=-1 && call!=2)
-                    call=1;
-                }
             }
             if(call==1 && column.metadata.colName=="backstroke")
             {
@@ -171,6 +165,7 @@ function gettrainingdata(userid,callback)
             }
             if(call==1 && column.metadata.colName=="distperlength")
             {
+                 console.log("dist:" +column.value);
                 training=training+"%"+column.value;
             }
             if(call==1 && column.metadata.colName=="freestyle")
@@ -181,7 +176,6 @@ function gettrainingdata(userid,callback)
         });
         setTimeout(function () {
              console.log(rowcount);
-            rowcount=rowcount-1;
             if(rowcount==1)    
             callback(null,200);
         },1000);
