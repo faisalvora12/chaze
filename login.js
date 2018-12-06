@@ -12,17 +12,42 @@ function signup() {
     }
     var spass = document.getElementById("spass").value;
     var rpass = document.getElementById("rpass").value;
-
+    var toast = new iqwerty.toast.Toast();
+    toast.setText('This is a basic toast message!')
+    .setDuration(5000)
+    .show();
     if (fname.length == 0)
+    {
+         toast.setText('Please fill in the full name')
+         .setDuration(5000)
+         .show();
         alert("Please fill in the full name");
+    }
     else if (email.length == 0)
+    {
+         toast.setText('Please fill in the username')
+         .setDuration(5000)
+         .show();
         alert("Please fill in the username");
+    }
     else if(email.includes("@")==false)
+    {
+        toast.setText('please enter a correct format for email')
+         .setDuration(5000)
+         .show();
         alert("please enter a correct format for email");
+    }
     else if(email.split("@")[0].length==0||email.split("@")[1].length==0)
+    {
+         toast.setText('your email format is incorrect')
+         .setDuration(5000)
+         .show();
         alert("your email format is incorrect");
+    }
     else if (spass.length == 0)
+    {
         alert("Please fill in the password");
+    }
     else if (spass != rpass)
         alert("Your password and repeat password do not match");
     else
@@ -58,9 +83,19 @@ function login() {
     }
     var pass=document.getElementById("pass").value;
     if(email.length==0)
+    {
+        toast.setText('Please fill in the email')
+         .setDuration(5000)
+         .show();
         alert("Please fill in the email");
+    }
     else if(email.includes("@")==false)
+    {
+       toast.setText('please enter a correct format for email')
+         .setDuration(5000)
+         .show();
         alert("please enter a correct format for email");
+    }
     else if(email.split("@")[0].length==0||email.split("@")[1].length==0)
         alert("your email format is incorrect");
     else if(pass.length==0)
