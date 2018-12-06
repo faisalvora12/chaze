@@ -1,4 +1,5 @@
 var ename=".";
+var toast = new iqwerty.toast.Toast();
 function signup() {
     var fname = document.getElementById("fname").value;
     var email = document.getElementById("semail").value;
