@@ -3,6 +3,7 @@
 var Connection = require('tedious').Connection;
 var Request = require('tedious').Request;
 var request = new Request();
+ var crypto = require('crypto');
 var user=".";
 var userid=".";
 var training=".";
@@ -75,9 +76,10 @@ function queryDatabasel(email,pass,callback)
                 //console.log("c was 1");
                 if(column.metadata.colName=="Password") {
                     //console.log("this is password column   "+column.value+"  "+pass);
-                    if (column.value == pass) {
+                                var hash=crypto.createHash('md5').update(pass).digest("hex");
+                    if (column.value == hash) {
                         //console.log("password matched");
-                        userMap.set(user,email,pass);
+                        userMap.set(user,email,hash);
                         callback(null,200);
                         call=1;
                     }
@@ -279,8 +281,9 @@ app.post('/signup/:fullname/:email/:password', function (req, res) {
     else {
         squeryDatabase(req.params.fullname, req.params.email, req.params.password, function (err, status) {
             user = req.params.fullname;
+            var hash=crypto.createHash('md5').update(req.params.password).digest("hex");
             if (status == 200) {
-                var insert = "insert into dbo.users values('" + req.params.email + "','" + req.params.fullname + "','" + req.params.password + "','false');";
+                var insert = "insert into dbo.users values('" + req.params.email + "','" + req.params.fullname + "','" + hash + "','false');";
                 //console.log(insert);
                 var requ = new Request(
                     insert, function (err) {
