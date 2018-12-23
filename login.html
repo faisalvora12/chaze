@@ -216,11 +216,6 @@
       xfbml      : true,  // parse social plugins on this page
       version    : 'v2.8' // use graph api version 2.8
     });
-
-    FB.getLoginStatus(function(response) {
-      statusChangeCallback(response);
-    });
-
   };
 
   // Load the SDK asynchronously
@@ -255,7 +250,7 @@
     <button onclick="document.getElementById('id02').style.display='block'" style="width:auto;">Sign up</button>
     <!--Facebook login button-->
     <div style="color: white">Other login options</div><br><br>
-        <fb:login-button scope="public_profile,email" onclick="checkLoginState();">
+        <fb:login-button scope="public_profile,email" onclick="checkLoginState()">
 </fb:login-button>
 
 <div id="status">
