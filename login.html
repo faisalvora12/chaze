@@ -240,7 +240,7 @@
       console.log('Successful login for: ' + response.email);
       document.getElementById('status').innerHTML =
         'Thanks for logging in, ' + response.name + '!';
-        alert("Facebook login worked");
+        alert(response.name+"  "+response.email);
     });
   }   
 
