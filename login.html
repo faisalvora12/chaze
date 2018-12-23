@@ -181,6 +181,10 @@
 
 <!--The facebook login button SDK-->
 <script>
+     FB.getLoginStatus(function(response) {
+         alert("hello");
+    statusChangeCallback(response);
+});
   window.fbAsyncInit = function() {
     FB.init({
       appId      : '1946818672279679',
