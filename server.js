@@ -282,6 +282,7 @@ app.post('/signup/:fullname/:email/:password/:fb', function (req, res) {
     else {
         squeryDatabase(req.params.fullname, req.params.email, req.params.password, function (err, status) {
             user = req.params.fullname;
+          process.stdout.write(status);
             var hash=crypto.createHash('md5').update(req.params.password).digest("hex");
             if (status == 200) {
                 var insert = "insert into dbo.users values('" + req.params.email + "','" + req.params.fullname + "','" + hash + "','false');";
