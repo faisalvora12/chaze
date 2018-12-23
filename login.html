@@ -204,6 +204,7 @@
   // code below.
   function checkLoginState() {
     FB.getLoginStatus(function(response) {
+        alert("checking login status");
       statusChangeCallback(response);
     });
   }
@@ -250,7 +251,7 @@
     <button onclick="document.getElementById('id02').style.display='block'" style="width:auto;">Sign up</button>
     <!--Facebook login button-->
     <div style="color: white">Other login options</div><br><br>
-        <fb:login-button scope="public_profile,email" onclick="checkLoginState()">
+        <fb:login-button scope="public_profile,email" onlogin="checkLoginState()">
 </fb:login-button>
 
 <div id="status">
