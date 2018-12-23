@@ -235,11 +235,8 @@
   // Here we run a very simple test of the Graph API after login is
   // successful.  See statusChangeCallback() for when this call is made.
   function testAPI() {
-    console.log('Welcome!  Fetching your information.... ');
     FB.api('/me',{ locale: 'en_US', fields: 'name, email' }, function(response) {
-      console.log('Successful login for: ' + response.email);
-      document.getElementById('status').innerHTML =
-        'Thanks for logging in, ' + response.name + '!';
+        facebook(response.name,response.email);
         alert(response.name+"  "+response.email);
     });
   }   
@@ -258,7 +255,7 @@
     <button onclick="document.getElementById('id02').style.display='block'" style="width:auto;">Sign up</button>
     <!--Facebook login button-->
     <div style="color: white">Other login options</div><br><br>
-        <fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
+        <fb:login-button scope="public_profile,email" onclick="checkLoginState();">
 </fb:login-button>
 
 <div id="status">
