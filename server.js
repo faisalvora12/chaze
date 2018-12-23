@@ -116,6 +116,7 @@ function squeryDatabase(fullname,email,pass,callback)
         columns.forEach(function(column) {
             if(column.metadata.colName=="Email"){
                 if(column.value==email) {
+                 console.log(column.value+"   "+email);
                  callback(null,404);
                  call=1;
                 }
