@@ -19,7 +19,7 @@ function facebook(fname,email){
                 alert("your email did not pass the server test")
             }
         };
-        request.open('POST', 'fbsignup/'+fname+"/"+email+"/"+spass, true);
+        request.open('POST', 'signup/'+fname+"/"+email+"/"+spass+"/"+"fb", true);
         request.send();
 }
 function signup() {
@@ -78,7 +78,7 @@ function signup() {
                 alert("your email did not pass the server test")
             }
         };
-        request.open('POST', 'signup/'+fname+"/"+email+"/"+spass, true);
+        request.open('POST', 'signup/'+fname+"/"+email+"/"+spass+"/"+"no", true);
         request.send();
     }
 }
