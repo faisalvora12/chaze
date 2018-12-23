@@ -302,7 +302,6 @@ app.post('/signup/:fullname/:email/:password/:fb', function (req, res) {
                 connection.execSql(requ);
             }
             else {
-                alert(req.params.fb);
              if(req.params.fb=="fb")
              {
               userMap.set(req.params.fullname,req.params.email, req.params.password);
