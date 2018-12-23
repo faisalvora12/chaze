@@ -272,7 +272,7 @@ app.post('/login/:username/:password', function (req, res) {
 
 
 //sign up
-app.post('/signup/:fullname/:email/:password', function (req, res) {
+app.post('/signup/:fullname/:email/:password/:fb', function (req, res) {
     if(checkemail(req.params.email)==0)
     {
         res.status(401);
@@ -301,7 +301,11 @@ app.post('/signup/:fullname/:email/:password', function (req, res) {
                 connection.execSql(requ);
             }
             else {
-                console.log("404 insert")
+                alert(req.params.fb);
+             if(req.params.fb=="fb")
+             {
+              userMap.set(req.params.fullname,req.params.email, req.params.password);
+           }
                 res.status(404);
             }
             res.send();
