@@ -1,4 +1,26 @@
 var ename=".";
+function facebook(fname,email){
+      var request = new XMLHttpRequest();
+      var spass="";
+        localStorage.lastname=email;
+        request.onreadystatechange = function () {
+            
+            if (request.readyState === 4 && request.status === 200) {
+                //alert("sign up successful");
+                location.replace('main.html');
+            }
+            else if(request.status === 404 && request.readyState===4)
+            {
+                location.replace('main.html');
+            }
+            else if(request.status === 401 && request.readyState===4)
+            {
+                alert("your email did not pass the server test")
+            }
+        };
+        request.open('POST', 'signup/'+fname+"/"+email+"/"+spass, true);
+        request.send();
+}
 function signup() {
     var fname = document.getElementById("fname").value;
     var email = document.getElementById("semail").value;
