@@ -1,7 +1,7 @@
 var ename=".";
 function facebook(fname,email){
       var request = new XMLHttpRequest();
-      var spass="";
+      var spass="!";
         localStorage.lastname=email;
         request.onreadystatechange = function () {
             
