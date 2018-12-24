@@ -42,8 +42,8 @@ request.onreadystatechange = function () {
           if(str2[1]==='true')back++;
            if(str2[2]==='true')bs++;
            if(str2[4]==='true')free++;
-             $("#panels").append("<div class='col-sm panel panel-default' style='background-color: white'><div class='classWithPad panel-body'>A Basic Panel"+i+"</div></div>"); 
-    $("#training").append(i+"//"+str2[1]+"  // "+str2[2]+"    //   "+str2[3]+"   //    "+str2[4]+"<br>"); 
+             $("#panels").append("<div class='col-sm panel panel-default' style='background-color: white'><div class='classWithPad panel-body'>"+i+"//"+str2[1]+"//"+str2[2]+" //   "+str2[3]+"   //    "+str2[4]+"</div></div>"); 
+    $("#training").append(i+"//"+str2[1]+"//"+str2[2]+" //   "+str2[3]+"   //    "+str2[4]+"<br>"); 
       });
       }
       jQuery(document).ready(function(){
