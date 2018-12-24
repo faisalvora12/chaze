@@ -83,7 +83,7 @@ $(document).ready(function(){
     $("#settings").css("color", "white");
     $("#feedback").css("color", "white");
     $("#recommend").css("color", "white");
-  });  $("#setting").click(function(){
+  });  $("#settings").click(function(){
     $("#setting").css("color", "aqua");
     $("#records").css("color", "white");
     $("#trends").css("color", "white");
@@ -99,7 +99,7 @@ $(document).ready(function(){
     $("#recommend").css("color", "white");
   });
    $("#recommend").click(function(){
-    $("#train").css("color", "aqua");
+    $("#recommend").css("color", "aqua");
     $("#records").css("color", "white");
     $("#trends").css("color", "white");
     $("#settings").css("color", "white");
