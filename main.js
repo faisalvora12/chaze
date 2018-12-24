@@ -5,14 +5,7 @@ $(document).ready(function() {
     location.replace('login.html');
   });
 });
-$(document).ready(function(){
-  $("#train").click(function(){
-    $("p").css("color", "red");
-  });
-   $("#records").click(function(){
-    $("p").css("color", "blue");
-  });
-});
+
 var request = new XMLHttpRequest();
 window.addEventListener('load', function() {
 document.getElementById("b").style.visibility = "hidden";
@@ -66,3 +59,51 @@ request.open('POST', 'userid/'+localStorage.lastname, true);
 request.send();
 
 }
+
+$(document).ready(function(){
+  $("#train").click(function(){
+    $("#train").css("color", "40a4df");
+    $("#records").css("color", "white");
+    $("#trends").css("color", "white");
+    $("#settings").css("color", "white");
+    $("#feedback").css("color", "white");
+    $("#recommend").css("color", "white");
+  });
+     $("#records").click(function(){
+    $("#records").css("color", "40a4df");
+    $("#train").css("color", "white");
+    $("#trends").css("color", "white");
+    $("#settings").css("color", "white");
+    $("#feedback").css("color", "white");
+    $("#recommend").css("color", "white");
+  });  $("#trends").click(function(){
+    $("#trends").css("color", "40a4df");
+    $("#records").css("color", "white");
+    $("#train").css("color", "white");
+    $("#settings").css("color", "white");
+    $("#feedback").css("color", "white");
+    $("#recommend").css("color", "white");
+  });  $("#setting").click(function(){
+    $("#setting").css("color", "40a4df");
+    $("#records").css("color", "white");
+    $("#trends").css("color", "white");
+    $("#train").css("color", "white");
+    $("#feedback").css("color", "white");
+    $("#recommend").css("color", "white");
+  });  $("#feedback").click(function(){
+    $("#feedback").css("color", "40a4df");
+    $("#records").css("color", "white");
+    $("#trends").css("color", "white");
+    $("#settings").css("color", "white");
+    $("#train").css("color", "white");
+    $("#recommend").css("color", "white");
+  });
+   $("#recommend").click(function(){
+    $("#train").css("color", "40a4df");
+    $("#records").css("color", "white");
+    $("#trends").css("color", "white");
+    $("#settings").css("color", "white");
+    $("#feedback").css("color", "white");
+    $("#train").css("color", "white");
+});
+  });
