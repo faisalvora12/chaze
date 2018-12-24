@@ -6,7 +6,7 @@ $(document).ready(function() {
   });
 });
 $(document).ready(function(){
-  $("#training").click(function(){
+  $("#train").click(function(){
     $("p").css("color", "red");
   });
    $("#records").click(function(){
