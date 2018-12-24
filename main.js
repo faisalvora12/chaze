@@ -62,7 +62,7 @@ request.send();
 
 $(document).ready(function(){
   $("#train").click(function(){
-    $("#train").css("color", "green");
+    $("#train").css("color", "aqua");
     $("#records").css("color", "white");
     $("#trends").css("color", "white");
     $("#settings").css("color", "white");
@@ -70,28 +70,28 @@ $(document).ready(function(){
     $("#recommend").css("color", "white");
   });
      $("#records").click(function(){
-    $("#records").css("color", "40a4df");
+    $("#records").css("color", "aqua");
     $("#train").css("color", "white");
     $("#trends").css("color", "white");
     $("#settings").css("color", "white");
     $("#feedback").css("color", "white");
     $("#recommend").css("color", "white");
   });  $("#trends").click(function(){
-    $("#trends").css("color", "40a4df");
+    $("#trends").css("color", "aqua");
     $("#records").css("color", "white");
     $("#train").css("color", "white");
     $("#settings").css("color", "white");
     $("#feedback").css("color", "white");
     $("#recommend").css("color", "white");
   });  $("#setting").click(function(){
-    $("#setting").css("color", "40a4df");
+    $("#setting").css("color", "aqua");
     $("#records").css("color", "white");
     $("#trends").css("color", "white");
     $("#train").css("color", "white");
     $("#feedback").css("color", "white");
     $("#recommend").css("color", "white");
   });  $("#feedback").click(function(){
-    $("#feedback").css("color", "40a4df");
+    $("#feedback").css("color", "aqua");
     $("#records").css("color", "white");
     $("#trends").css("color", "white");
     $("#settings").css("color", "white");
@@ -99,7 +99,7 @@ $(document).ready(function(){
     $("#recommend").css("color", "white");
   });
    $("#recommend").click(function(){
-    $("#train").css("color", "40a4df");
+    $("#train").css("color", "aqua");
     $("#records").css("color", "white");
     $("#trends").css("color", "white");
     $("#settings").css("color", "white");
