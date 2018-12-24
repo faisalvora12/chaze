@@ -84,7 +84,7 @@ $(document).ready(function(){
     $("#feedback").css("color", "white");
     $("#recommend").css("color", "white");
   });  $("#settings").click(function(){
-    $("#setting").css("color", "aqua");
+    $("#settings").css("color", "aqua");
     $("#records").css("color", "white");
     $("#trends").css("color", "white");
     $("#train").css("color", "white");
