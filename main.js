@@ -62,7 +62,7 @@ request.send();
 
 $(document).ready(function(){
   $("#train").click(function(){
-    $("#train").css("color", "40a4df");
+    $("#train").css("color", "green");
     $("#records").css("color", "white");
     $("#trends").css("color", "white");
     $("#settings").css("color", "white");
