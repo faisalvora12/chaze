@@ -245,16 +245,16 @@
 //Facebook button sdk ends
   //google code
      function onSignIn(googleUser) {
-         alert("yes");
         // Useful data for your client-side scripts:
         var profile = googleUser.getBasicProfile();
         //console.log("ID: " + profile.getId()); // Don't send this directly to your server!
-        console.log('Full Name: ' + profile.getName());
-        console.log("Email: " + profile.getEmail());
+        //console.log('Full Name: ' + profile.getName());
+        //console.log("Email: " + profile.getEmail());
         alert(profile.getName()+"    "+profile.getEmail());
-        // The ID token you need to pass to your backend:
-        var id_token = googleUser.getAuthResponse().id_token;
-        console.log("ID Token: " + id_token);
+         facebook(response.name,response.email);
+                 // The ID token you need to pass to your backend:
+        //var id_token = googleUser.getAuthResponse().id_token;
+        //console.log("ID Token: " + id_token);
       }
 </script>
 <!--facebook and google login code ends-->
