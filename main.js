@@ -5,6 +5,14 @@ $(document).ready(function() {
     location.replace('login.html');
   });
 });
+$(document).ready(function(){
+  $("#training").click(function(){
+    $("p").css("color", "red");
+  });
+   $("#records").click(function(){
+    $("p").css("color", "blue");
+  });
+});
 var request = new XMLHttpRequest();
 window.addEventListener('load', function() {
 document.getElementById("b").style.visibility = "hidden";
