@@ -43,7 +43,7 @@ request.onreadystatechange = function () {
           if(str2[1]==='true')back++;
            if(str2[2]==='true')bs++;
            if(str2[4]==='true')free++;
-             $("#panels").append("    <div class="mybox">Hello<div class='col-sm panel panel-default' style='background-color: white'><div id='"+i+"' class='panel-body classWithPad'>"+i+"//"+str2[1]+"//"+str2[2]+" //   "+str2[3]+"   //    "+str2[4]+"</div></div></div"); 
+             $("#panels").append("    <div class='mybox'>Hello<div class='col-sm panel panel-default' style='background-color: white'><div id='"+i+"' class='panel-body classWithPad'>"+i+"//"+str2[1]+"//"+str2[2]+" //   "+str2[3]+"   //    "+str2[4]+"</div></div></div"); 
       });
       }
       jQuery(document).ready(function(){
