@@ -31,7 +31,6 @@ request.onreadystatechange = function () {
       var bs=0;
       var free=0;
       var str=request.response.split("!");
-      $('#panels div').empty();
       jQuery(document).ready(function(){
        $("#training").append("training number //backstroke   //   breaststroke   //    distperlength  //   freestyle<br>");
 });
