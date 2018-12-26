@@ -43,7 +43,7 @@ request.onreadystatechange = function () {
           if(str2[1]==='true')back++;
            if(str2[2]==='true')bs++;
            if(str2[4]==='true')free++;
-             $("#panels").append("<div class='col-sm panel panel-default' style='background-color: white'><div id='"+i+"'class='classWithPad panel-body'>"+i+"//"+str2[1]+"//"+str2[2]+" //   "+str2[3]+"   //    "+str2[4]+"</div></div>"); 
+             $("#panels").append("<div class='col-sm panel panel-default' style='background-color: white'><div id='"+i+"' class='panel-body'>"+i+"//"+str2[1]+"//"+str2[2]+" //   "+str2[3]+"   //    "+str2[4]+"</div></div>"); 
       });
       }
       jQuery(document).ready(function(){
@@ -61,10 +61,10 @@ request.send();
 }
 
 $(document).ready(function(){
-  $('div.classWithPad').click(function() { 
+  $('div.panel-body').click(function() { 
         var id = $(this).attr('id');
+    alert(id);
         document.getElementById(i).style.color = "blue";
-        return false; 
     }); 
   $("#train").click(function(){
     $("#train").css("color", "aqua");
