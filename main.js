@@ -61,6 +61,9 @@ request.send();
 }
 
 $(document).ready(function(){
+  $(".mybox").click(function(){
+   alert("helloooo");
+});
   $(".panel").click(function() { 
     alert("hello");
        // var id = $(this).attr('id');
