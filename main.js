@@ -61,7 +61,8 @@ request.send();
 }
 
 $(document).ready(function(){
-  $('div.panel-body').click(function() { 
+  $(".panel-body").click(function() { 
+    alert("hello");
         var id = $(this).attr('id');
     alert(id);
         document.getElementById(i).style.color = "blue";
