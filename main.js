@@ -61,21 +61,11 @@ request.send();
 }
 
 $(document).ready(function(){
-  $(".panel").live('click',function() { 
+  $("#panel").live('click',function() { 
     alert("hello");
        // var id = $(this).attr('id');
        // document.getElementById(i).style.color = "blue";
-    }); 
-    $(".classWithPad").click(function() { 
-    alert("hello2");
-       // var id = $(this).attr('id');
-       // document.getElementById(i).style.color = "blue";
-    }); 
-    $("#panel").click(function() { 
-    alert("hello3");
-       // var id = $(this).attr('id');
-       // document.getElementById(i).style.color = "blue";
-    }); 
+    });
   $("#train").click(function(){
     $("#train").css("color", "aqua");
     $("#records").css("color", "white");
