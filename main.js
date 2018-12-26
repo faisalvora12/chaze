@@ -64,7 +64,7 @@ $(document).ready(function(){
   $("#panels").on("click","div.panel",function() { 
         var id = $(this).children("div").attr('id');
     alert(id);
-    document.getElementById(id).style.transform = translateY(4px);
+    document.getElementById(id).style.transform = "translateY(4px)";
      
         document.getElementById(id).style.color = "blue";
     });
