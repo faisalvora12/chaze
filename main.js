@@ -61,7 +61,7 @@ request.send();
 }
 
 $(document).ready(function(){
-  $("#panel").live('click',function() { 
+  $("#panels").on("click","div.panel",function() { 
     alert("hello");
        // var id = $(this).attr('id');
        // document.getElementById(i).style.color = "blue";
