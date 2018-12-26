@@ -62,7 +62,7 @@ request.send();
 
 $(document).ready(function(){
   $("#panels").on("click","div.panel",function() { 
-        var id = $(this).attr('id');
+        var id = $(this).children("div").attr('id');
     alert(id);
         document.getElementById(id).style.color = "blue";
     });
