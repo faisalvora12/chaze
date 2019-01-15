@@ -64,7 +64,7 @@ $(document).ready(function(){
   $("#panels").on("click","div.panel",function() { 
         var idp = $(this).attr('id');
         var id = $(this).children("div").attr('id');
-    alert(id);
+    alert(""+idp);
     document.getElementById(idp).style.transform = "translateY(4px)";//just gives the illution of a click
         document.getElementById(id).style.color = "blue";
     });
