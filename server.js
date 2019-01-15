@@ -158,7 +158,7 @@ function gettrainingdata(userid,callback)
           if(c==0 && column.metadata.colName=="id")
             {
                 //console.log(column.value);
-                training=training+"%"+column.value;
+                training=training+"!"+"%"+column.value;
             }
           if(c==0 && column.metadata.colName=="createdat")
             {
