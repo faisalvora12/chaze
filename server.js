@@ -137,7 +137,7 @@ function gettrainingdata(userid,callback)
 {
     console.log('Reading rows from the training...');
     console.log('from get training');
-    var query= "select id,createdat,userId,backstroke,breaststroke,butterfly,distperlength,freestyle from training where userid="+userid;
+    var query= "select id,createdat,backstroke,breaststroke,distperlength,freestyle from training where userid="+userid;
     request = new Request(
         query,function(err, rowCount, rows)
         {
@@ -155,10 +155,20 @@ function gettrainingdata(userid,callback)
           count++;
            
             //console.log(count);
+          if(c==0 && column.metadata.colName=="id")
+            {
+                //console.log(column.value);
+                training=training+"%"+column.value;
+            }
+          if(c==0 && column.metadata.colName=="createdat")
+            {
+                //console.log(column.value);
+                training=training+"%"+column.value;
+            }
             if(c==0 && column.metadata.colName=="backstroke")
             {
                 //console.log(column.value);
-                training=training+"!"+"%"+column.value;
+                training=training+"%"+column.value;
             }
             if(c==0 && column.metadata.colName=="breaststroke")
             {
