@@ -137,7 +137,7 @@ function gettrainingdata(userid,callback)
 {
     console.log('Reading rows from the training...');
     console.log('from get training');
-    var query= "select userId,backstroke,breaststroke,butterfly,distperlength,freestyle from training where userid="+userid;
+    var query= "select id,createdat,userId,backstroke,breaststroke,butterfly,distperlength,freestyle from training where userid="+userid;
     request = new Request(
         query,function(err, rowCount, rows)
         {
