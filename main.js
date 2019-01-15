@@ -70,7 +70,6 @@ $(document).ready(function(){
     document.getElementById("main").style.visibility = "hidden";
      $("#nextpage").append("<button type='button'>Click Me!</button>");
   });
-    });
   /*changes the color of the cliked option*/
   $("#train").click(function(){
     $("#train").css("color", "aqua");
