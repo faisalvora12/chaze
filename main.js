@@ -64,9 +64,10 @@ $(document).ready(function(){
   $("#panels").on("click","div.panel",function() { 
         var idp = $(this).attr('id');
         var id = $(this).children("div").attr('id');
-    alert(""+idp);
+        alert(idp);
     document.getElementById(idp).style.transform = "translateY(4px)";//just gives the illution of a click
         document.getElementById(id).style.color = "blue";
+            document.getElementById(id).style.color = "red";
     });
   /*changes the color of the cliked option*/
   $("#train").click(function(){
