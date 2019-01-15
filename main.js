@@ -66,8 +66,10 @@ $(document).ready(function(){
         var id = $(this).children("div").attr('id');
         alert(idp);
     document.getElementById(idp).style.transform = "translateY(4px)";//just gives the illution of a click
-            document.getElementById(id).style.color = "red";
+    document.getElementById(id).style.color = "red";
     document.getElementById("main").style.visibility = "hidden";
+     $("#nextpage").append("<button type="button">Click Me!</button>");
+    
     });
   /*changes the color of the cliked option*/
   $("#train").click(function(){
