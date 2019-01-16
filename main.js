@@ -72,8 +72,7 @@ $(document).ready(function(){
     document.getElementById(idp).style.transform = "translateY(4px)";//just gives the illution of a click
     document.getElementById("main").style.visibility = "hidden";
      $("#nextpage").append("<button class='button' onclick='train()' type='button'>BACK</button>");
-    alert(id);
-    alert(text);
+    alert(($(this).children("label").innerText));
       document.body.scrollTop = 0;
   document.documentElement.scrollTop = 0;
   });
