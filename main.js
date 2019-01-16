@@ -72,8 +72,9 @@ $(document).ready(function(){
     document.getElementById(id).style.color = "#650000";
     document.getElementById("main").style.visibility = "hidden";
      $("#nextpage").append("<button class='button' onclick='train()' type='button'>BACK</button>");
-      document.getElementById("main").scrollTop(0);
-    document.getElementById("b").scrollTop(0);
+  
+      document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
   });
   /*changes the color of the cliked option*/
   $("#train").click(function(){
