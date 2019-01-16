@@ -268,7 +268,6 @@ function getuserid(email,callback)
 
 /*client side code*/
 const express = require('express');
-const path = require('path');
 const app=express();
 const XMLHttpRequest = require('xmlhttprequest').XMLHttpRequest;
 
