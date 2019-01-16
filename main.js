@@ -63,6 +63,7 @@ function train()
 {
    document.getElementById("main").style.visibility = "visible";
   $( ".button" ).remove();
+    $( ".remove" ).remove();
 }
 $(document).ready(function(){
   $("#panels").on("click","div.panel",function() { 
@@ -72,10 +73,14 @@ $(document).ready(function(){
     document.getElementById(idp).style.transform = "translateY(4px)";//just gives the illution of a click
     document.getElementById("main").style.visibility = "hidden";
      $("#nextpage").append("<button class='button' onclick='train()' type='button'>BACK</button>");
-
+  
     var el = document.getElementById(id);
-var text = (el.innerText || el.textContent);   
-    alert(text);
+    var text = (el.innerText || el.textContent);   
+    $("#nextpage").append("<div class='remove'>"+text+"</div>");
+    var training=text.split("//");
+    var trainingid=training[1];
+    alert(trainingid);
+    
     document.body.scrollTop = 0;
   document.documentElement.scrollTop = 0;
   });
