@@ -67,7 +67,7 @@ function train()
 $(document).ready(function(){
   $("#panels").on("click","div.panel",function() { 
         var idp = $(this).attr('id');
-        var id = $(this).children("div").attr('id');
+        var id = $(this).children("label").attr('id');
         var text = (id.innerText || id.textContent); 
     document.getElementById(idp).style.transform = "translateY(4px)";//just gives the illution of a click
     document.getElementById("main").style.visibility = "hidden";
