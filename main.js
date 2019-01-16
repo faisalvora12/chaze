@@ -63,8 +63,8 @@ function train()
 {
    document.getElementById("main").style.visibility = "visible";
   $( ".button" ).remove();
-  document.body.scrollTop = 0;
-  document.documentElement.scrollTop = 0;
+  document.getElementById("main").scrollTop(0);
+    document.getElementById("b").scrollTop(0);
 }
 $(document).ready(function(){
   $("#panels").on("click","div.panel",function() { 
