@@ -43,7 +43,7 @@ request.onreadystatechange = function () {
           if(str2[3]==='true')back++;
            if(str2[4]==='true')bs++;
            if(str2[6]==='true')free++;
-             $("#panels").append("<div id='dummy"+i+"' class='col-sm panel panel-default' style='background-color: white'><div id='"+i+"' class='panel-body classWithPad'> training "+i+"<>"+"//"+str2[1]+"//"+str2[2]+" //   "+str2[3]+"   //    "+str2[4]+"   //    "+str2[5]+"   //    "+str2[6]+"</div></div>"); 
+             $("#panels").append("<div id='dummy"+i+"' class='col-sm panel panel-default' style='background-color: white'><div id='"+i+"' class='panel-body classWithPad'><label id=label'"+i+"'> training "+i+"//"+str2[1]+"//"+str2[2]+" //   "+str2[3]+"   //    "+str2[4]+"   //    "+str2[5]+"   //    "+str2[6]+"</label></div></div>"); 
       });
       }
       jQuery(document).ready(function(){
@@ -72,9 +72,7 @@ $(document).ready(function(){
     document.getElementById(id).style.color = "#8b0000";
     document.getElementById("main").style.visibility = "hidden";
      $("#nextpage").append("<button class='button' onclick='train()' type='button'>BACK</button>");
-      var text  = id.textContent || id.innerText;
-    alert(id)
-      alert(text);
+     
       document.body.scrollTop = 0;
   document.documentElement.scrollTop = 0;
   });
