@@ -72,8 +72,10 @@ $(document).ready(function(){
     document.getElementById(id).style.color = "#8b0000";
     document.getElementById("main").style.visibility = "hidden";
      $("#nextpage").append("<button class='button' onclick='train()' type='button'>BACK</button>");
-      var t=id.value;
+      var t=id.textContent;
+    var t1=id.innerHTML;
     alert(t);
+    alert(t1);
       document.body.scrollTop = 0;
   document.documentElement.scrollTop = 0;
   });
