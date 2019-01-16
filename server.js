@@ -4,9 +4,17 @@ var Connection = require('tedious').Connection;
 var Request = require('tedious').Request;
 var request = new Request();
  var crypto = require('crypto');
+
+/*blob initialization*/
+const path = require('path');
+const storage = require('azure-storage');
+const blobService = storage.createBlobService();
+/*ends*/
+
 var user=".";
 var userid=".";
 var training=".";
+var blob=".";
 var email=".";
 var userMap = new Map();// Create connection to database
 var config =
@@ -197,6 +205,22 @@ function gettrainingdata(userid,callback)
     });
     connection.execSql(request);
 }
+//********************getting blob data**********************/
+function getblobdata(trainingdata,callback);
+{
+   const listContainers = async () => {
+    return new Promise((resolve, reject) => {
+        blobService.listContainersSegmented(null, (err, data) => {
+            if (err) {
+                reject(err);
+            } else {
+                resolve({ message: `${data.entries.length} containers`, containers: data.entries });
+            }
+        });
+    });
+};
+}
+/**********************************************/
 //////////////////////////////////////////////////////////////////////
 /*Get user id from the user table */
 function getuserid(email,callback)
@@ -339,7 +363,26 @@ app.post('/get/:username', function (req, res) {
     res.send();
 
 });
+//get blob data
+app.post('/blob/:trainingid', function (req, res) {
+     getblobdata(req.params.trainingid,function(err,status){
+                if(status===200)
+                {
+                    res.status(200);
+                    res.send(blob+"");
+                    return;
+                }
+                else 
+                {
+                    res.status(404);
+                    res.send();
+                }
+        });
+    res.status(404);
+    res.send();
 
+});
+//get username and get trainings based on username 
 app.post('/userid/:username', function (req, res) {
     console.log("entered get");
    
