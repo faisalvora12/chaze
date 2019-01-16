@@ -68,10 +68,12 @@ $(document).ready(function(){
   $("#panels").on("click","div.panel",function() { 
         var idp = $(this).attr('id');
         var id = $(this).children("div").attr('id');
+        var text = (id.innerText || id.textContent); 
     document.getElementById(idp).style.transform = "translateY(4px)";//just gives the illution of a click
     document.getElementById("main").style.visibility = "hidden";
      $("#nextpage").append("<button class='button' onclick='train()' type='button'>BACK</button>");
-     
+    alert(id);
+    alert(text);
       document.body.scrollTop = 0;
   document.documentElement.scrollTop = 0;
   });
