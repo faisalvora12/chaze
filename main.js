@@ -63,6 +63,8 @@ function train()
 {
    document.getElementById("main").style.visibility = "visible";
   $( ".button" ).remove();
+  document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
 }
 $(document).ready(function(){
   $("#panels").on("click","div.panel",function() { 
@@ -71,7 +73,7 @@ $(document).ready(function(){
     document.getElementById(idp).style.transform = "translateY(4px)";//just gives the illution of a click
     document.getElementById(id).style.color = "#650000";
     document.getElementById("main").style.visibility = "hidden";
-     $("#nextpage").append("<button class='button' onclick='train()' type='button'>Click Me!</button>");
+     $("#nextpage").append("<button class='button' onclick='train()' type='button'>BACK</button>");
   });
   /*changes the color of the cliked option*/
   $("#train").click(function(){
