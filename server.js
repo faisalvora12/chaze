@@ -208,7 +208,7 @@ function gettrainingdata(userid,callback)
 //********************getting blob data**********************/
 function getblobdata(trainingdata,callback)
 {
-   const listContainers = async () => {
+  /* const listContainers = async () => {
     return new Promise((resolve, reject) => {
         blobService.listContainersSegmented(null, (err, data) => {
             if (err) {
@@ -218,7 +218,7 @@ function getblobdata(trainingdata,callback)
             }
         });
     });
-};
+};*/
 }
 /**********************************************/
 //////////////////////////////////////////////////////////////////////
