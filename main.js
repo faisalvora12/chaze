@@ -80,7 +80,23 @@ $(document).ready(function(){
     var training=text.split("//");
     var trainingid=training[1];
     alert(trainingid);
+/*********************************************************/    
     
+    //getting data from blob storage
+    request.onreadystatechange = function () {
+    if (request.readyState === 4 && request.status === 200) {
+        
+    }
+    else if(request.status === 404 && request.readyState===4)
+    {
+        
+    }
+};
+request.open('POST', 'blob/'+trainingid, true);
+request.send();
+});
+  /********************************************************************************/
+    //getting data from blob storage ends
     document.body.scrollTop = 0;
   document.documentElement.scrollTop = 0;
   });
