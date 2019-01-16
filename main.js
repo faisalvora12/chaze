@@ -63,8 +63,6 @@ function train()
 {
    document.getElementById("main").style.visibility = "visible";
   $( ".button" ).remove();
-  document.getElementById("main").scrollTop(0);
-    document.getElementById("b").scrollTop(0);
 }
 $(document).ready(function(){
   $("#panels").on("click","div.panel",function() { 
@@ -74,6 +72,8 @@ $(document).ready(function(){
     document.getElementById(id).style.color = "#650000";
     document.getElementById("main").style.visibility = "hidden";
      $("#nextpage").append("<button class='button' onclick='train()' type='button'>BACK</button>");
+      document.getElementById("main").scrollTop(0);
+    document.getElementById("b").scrollTop(0);
   });
   /*changes the color of the cliked option*/
   $("#train").click(function(){
