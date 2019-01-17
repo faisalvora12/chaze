@@ -93,7 +93,6 @@ $(document).ready(function(){
 };
 request.open('POST', 'blob/'+trainingid, true);
 request.send();
-});
   /********************************************************************************/
     //getting data from blob storage ends
     document.body.scrollTop = 0;
