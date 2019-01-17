@@ -100,6 +100,7 @@ request.send();
   });
   /*changes the color of the cliked option*/
   $("#train").click(function(){
+     document.getElementById("main").style.visibility = "visible";
     $("#train").css("color", "aqua");
     $("#records").css("color", "white");
     $("#trends").css("color", "white");
@@ -108,6 +109,7 @@ request.send();
     $("#recommend").css("color", "white");
   });
      $("#records").click(function(){
+    document.getElementById("main").style.visibility = "hidden";
     $("#records").css("color", "aqua");
     $("#train").css("color", "white");
     $("#trends").css("color", "white");
@@ -115,6 +117,7 @@ request.send();
     $("#feedback").css("color", "white");
     $("#recommend").css("color", "white");
   });  $("#trends").click(function(){
+       document.getElementById("main").style.visibility = "hidden";
     $("#trends").css("color", "aqua");
     $("#records").css("color", "white");
     $("#train").css("color", "white");
@@ -122,6 +125,7 @@ request.send();
     $("#feedback").css("color", "white");
     $("#recommend").css("color", "white");
   });  $("#settings").click(function(){
+       document.getElementById("main").style.visibility = "hidden";
     $("#settings").css("color", "aqua");
     $("#records").css("color", "white");
     $("#trends").css("color", "white");
@@ -129,6 +133,7 @@ request.send();
     $("#feedback").css("color", "white");
     $("#recommend").css("color", "white");
   });  $("#feedback").click(function(){
+       document.getElementById("main").style.visibility = "hidden";
     $("#feedback").css("color", "aqua");
     $("#records").css("color", "white");
     $("#trends").css("color", "white");
@@ -137,6 +142,7 @@ request.send();
     $("#recommend").css("color", "white");
   });
    $("#recommend").click(function(){
+     document.getElementById("main").style.visibility = "hidden";
     $("#recommend").css("color", "aqua");
     $("#records").css("color", "white");
     $("#trends").css("color", "white");
