@@ -101,6 +101,8 @@ request.send();
   /*changes the color of the cliked option*/
   $("#train").click(function(){
      document.getElementById("main").style.visibility = "visible";
+      document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
     $("#train").css("color", "aqua");
     $("#records").css("color", "white");
     $("#trends").css("color", "white");
@@ -110,6 +112,8 @@ request.send();
   });
      $("#records").click(function(){
     document.getElementById("main").style.visibility = "hidden";
+         document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
     $("#records").css("color", "aqua");
     $("#train").css("color", "white");
     $("#trends").css("color", "white");
@@ -118,6 +122,8 @@ request.send();
     $("#recommend").css("color", "white");
   });  $("#trends").click(function(){
        document.getElementById("main").style.visibility = "hidden";
+         document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
     $("#trends").css("color", "aqua");
     $("#records").css("color", "white");
     $("#train").css("color", "white");
@@ -126,6 +132,8 @@ request.send();
     $("#recommend").css("color", "white");
   });  $("#settings").click(function(){
        document.getElementById("main").style.visibility = "hidden";
+         document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
     $("#settings").css("color", "aqua");
     $("#records").css("color", "white");
     $("#trends").css("color", "white");
@@ -134,6 +142,8 @@ request.send();
     $("#recommend").css("color", "white");
   });  $("#feedback").click(function(){
        document.getElementById("main").style.visibility = "hidden";
+         document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
     $("#feedback").css("color", "aqua");
     $("#records").css("color", "white");
     $("#trends").css("color", "white");
@@ -143,6 +153,8 @@ request.send();
   });
    $("#recommend").click(function(){
      document.getElementById("main").style.visibility = "hidden";
+       document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
     $("#recommend").css("color", "aqua");
     $("#records").css("color", "white");
     $("#trends").css("color", "white");
