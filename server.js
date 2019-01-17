@@ -8,7 +8,7 @@ var request = new Request();
 /*blob initialization*/
 const path = require('path');
 const storage = require('azure-storage');
-const blobService = storage.createBlobService();
+//const blobService = storage.createBlobService();
 /*ends*/
 
 var user=".";
