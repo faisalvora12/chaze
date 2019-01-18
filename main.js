@@ -88,9 +88,8 @@ blobService.listContainersSegmented(null, function (error, results) {
         // List container error
     } else {
         for (var i = 0, container; container = results.entries[i]; i++) {
-            console.log(container);
+            alert("hi");
         }
-     a=1;
     }
 });
     alert(a);
