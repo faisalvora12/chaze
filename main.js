@@ -92,6 +92,10 @@ blobService.listContainersSegmented(null, function (error, results) {
           alert(container.name);
         }
     }
+  //timeout code
+  setTimeout(function () {
+        callback(null, 200);
+        },750);//timeout ends
 });
     alert(a);
     blobService.listBlobsSegmented(a, null, function (error, results) {
@@ -102,6 +106,10 @@ blobService.listContainersSegmented(null, function (error, results) {
             alert(blob.name);
         }
     }
+      //timeout code
+  setTimeout(function () {
+        callback(null, 200);
+        },750);//timeout ends
 });
   
     //getting data from blob storage
