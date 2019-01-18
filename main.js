@@ -59,6 +59,21 @@ request.open('POST', 'userid/'+localStorage.lastname, true);
 request.send();
 
 }
+function blob(name)
+{
+    blobService.listBlobsSegmented(name, null, function (error, results) {
+    if (error) {
+        // List blobs error
+    } else {
+        for (var i = 0, blob; blob = results.entries[i]; i++) {
+            alert(blob.name);
+        }
+    }
+      //timeout code
+  setTimeout(function () {
+        },1750);//timeout ends
+  });
+}
 function train()
 {
    document.getElementById("main").style.visibility = "visible";
@@ -88,7 +103,7 @@ blobService.listContainersSegmented(null, function (error, results) {
         // List container error
     } else {
         for (var i = 0, container; container = results.entries[i]; i++) {
-          a=container.name;  
+          blob(container.name);  
           alert(container.name);
         }
     }
@@ -97,19 +112,7 @@ blobService.listContainersSegmented(null, function (error, results) {
         },50);//timeout ends
 });
     alert(a);
-    blobService.listBlobsSegmented(a, null, function (error, results) {
-    if (error) {
-        // List blobs error
-    } else {
-        for (var i = 0, blob; blob = results.entries[i]; i++) {
-            alert(blob.name);
-        }
-    }
-      //timeout code
-  setTimeout(function () {
-        },1750);//timeout ends
-});
-  
+    
     //getting data from blob storage
     /*request.onreadystatechange = function () {
     if (request.readyState === 4 && request.status === 200) {
