@@ -208,17 +208,8 @@ function gettrainingdata(userid,callback)
 //********************getting blob data**********************/
 function getblobdata(trainingdata,callback)
 {
-  /* const listContainers = async () => {
-    return new Promise((resolve, reject) => {
-        blobService.listContainersSegmented(null, (err, data) => {
-            if (err) {
-                reject(err);
-            } else {
-                resolve({ message: `${data.entries.length} containers`, containers: data.entries });
-            }
-        });
-    });
-};*/
+  var blobUri = 'https://' + 'chazestorage' + '.blob.core.windows.net';
+var blobService = AzureStorage.Blob.createBlobServiceWithSas(blobUri, '?sv=2018-03-28&ss=b&srt=sco&sp=rwdlac&se=2119-01-18T08:03:19Z&st=2019-01-18T00:03:19Z&spr=https&sig=ZHPdLCVN2ylcrU0n07Xz16upTxCaiQRsl1SvvCHvEFk%3D');
 }
 /**********************************************/
 //////////////////////////////////////////////////////////////////////
