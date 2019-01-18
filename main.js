@@ -59,7 +59,7 @@ request.open('POST', 'userid/'+localStorage.lastname, true);
 request.send();
 
 }
-function blob(name)
+function blob(name,blobService)
 {
     blobService.listBlobsSegmented(name, null, function (error, results) {
     if (error) {
