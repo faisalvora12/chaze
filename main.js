@@ -67,6 +67,7 @@ function blob(name,blobService)
     } else {
         for (var i = 0, blob; blob = results.entries[i]; i++) {
             alert(blob.name);
+          alert(blob.data);
         }
     }
       //timeout code
@@ -111,9 +112,7 @@ blobService.listContainersSegmented(null, function (error, results) {
   setTimeout(function () {
         },50);//timeout ends
 });
-    alert(a);
-    
-    //getting data from blob storage
+  //getting data from blob storage
     /*request.onreadystatechange = function () {
     if (request.readyState === 4 && request.status === 200) {
         
