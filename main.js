@@ -66,7 +66,7 @@ function blob(name,blobService)
         // List blobs error
     } else {
         for (var i = 0, blob; blob = results.entries[i]; i++) {
-            alert(blob.name);
+            alert(blob.name+" "+blob.contentSettings+" "+blob.etag+" "+blob.serverEncrypted);
           alert(Object.keys(blob));
         }
     }
