@@ -67,7 +67,7 @@ function blob(name,blobService)
     } else {
         for (var i = 0, blob; blob = results.entries[i]; i++) {
             alert(blob.name);
-          alert(blob.data);
+          alert(Object.keys(blob));
         }
     }
       //timeout code
