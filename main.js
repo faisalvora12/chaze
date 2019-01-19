@@ -68,6 +68,13 @@ function blob(name,blobService)
         for (var i = 0, blob; blob = results.entries[i]; i++) {
             alert(blob.name+" "+blob.contentSettings+" "+blob.etag+" "+blob.serverEncrypted);
           alert(Object.keys(blob));
+          const fs = require('fs') 
+  
+fs.readFile(blob, (err, data) => { 
+    if (err) throw err; 
+  
+    console.log(data.toString()); 
+}) 
         }
     }
       //timeout code
