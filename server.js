@@ -350,7 +350,7 @@ app.post('/get/:username', function (req, res) {
 app.post('/blob/:trainingid/:blob', function (req, res) {
  console.log(req.params.blob);
  res.status(200);
- res.send;
+ res.send();
      /*getblobdata(req.params.trainingid,function(err,status){
                 //if(status===200)
                 //{
