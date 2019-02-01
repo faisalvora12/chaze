@@ -348,26 +348,18 @@ app.post('/get/:username', function (req, res) {
 });
 //get blob data
 app.post('/blob/:trainingid/:blob', function (req, res) {
- console.log(req.params.blob);
+ console.log(req.params.blob.name);
+ var fs = require('fs');
+ 
+fs.readFile(req.params.blob.name, 'utf8', function(err, contents) {
+    console.log(contents);
+});
  res.status(200);
  res.send();
-     /*getblobdata(req.params.trainingid,function(err,status){
-                //if(status===200)
-                //{
-                    res.status(200);
-                    res.send(blob+"");
-                    return;
-                }
-                else 
-                {
-                    res.status(404);
-                    res.send();
-                }
-        });
-    res.status(404);
-    res.send();
-*/
+
 });
+
+
 //get username and get trainings based on username 
 app.post('/userid/:username', function (req, res) {
 
