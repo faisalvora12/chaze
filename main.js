@@ -75,11 +75,11 @@ function blob(trainingid,name,blobService)
           /* sending the file to the server*/
           request.onreadystatechange = function () {
     if (request.readyState === 4 && request.status === 200) {
-        
+        alert("the server got the file ");
     }
     else if(request.status === 404 && request.readyState===4)
     {
-        
+        alert("the server did not complete get blob data");
     }
 };
 request.open('POST', 'blob/'+trainingid+"/"+blob, true);
