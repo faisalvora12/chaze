@@ -36,7 +36,7 @@ connection.on('connect', function(err)
     {
         if (err)
         {
-            console.log(err)
+     
         }
         else
         {
@@ -49,44 +49,40 @@ connection.on('connect', function(err)
 /*            LOGIN           */
 function queryDatabasel(email,pass,callback)
 {
-    console.log('Reading rows from the Table...');
-    console.log('from login');
+
     // Read all rows from table
     request = new Request(
         "select * from dbo.Users",
         function(err, rowCount, rows)
         {
-            //console.log(rowCount + ' row(s) returned');
         }
     );
     var c=0;
     var call=0;
     request.on('row', function(columns) {
         columns.forEach(function(column) {
-            //console.log("%s\t%s", column.metadata.colName, column.value);
             if(column.metadata.colName=="Email"){
                 if(column.value==email) {
                     email=column.value;
-                    //console.log("c became 1");
+         
                     c=1;
                 }
                 else {
-                    //console.log("c became 0");
+               
                     c = 0;
                 }
             }
             if(c==1)
             {
                 if(column.metadata.colName=="FullName") {
-                    //console.log("this is password column   "+column.value+"  "+pass);
+                   
                     user=column.value;
                 }
-                //console.log("c was 1");
+                
                 if(column.metadata.colName=="Password") {
-                    //console.log("this is password column   "+column.value+"  "+pass);
                                 var hash=crypto.createHash('md5').update(pass).digest("hex");
                     if (column.value == hash) {
-                        //console.log("password matched");
+                      
                         userMap.set(user,email,hash);
                         callback(null,200);
                         call=1;
@@ -106,14 +102,12 @@ function queryDatabasel(email,pass,callback)
 /*                    SIGN UP              */
 function squeryDatabase(fullname,email,pass,callback)
 {
-    console.log('Reading rows from the Table...');
-    console.log('from sign in');
+ 
     // Read all rows from table
     request = new Request(
         "select * from dbo.users",
         function(err, rowCount, rows)
         {
-            //console.log(rowCount + ' row(s) returned');
 
         }
     );
@@ -124,7 +118,7 @@ function squeryDatabase(fullname,email,pass,callback)
         columns.forEach(function(column) {
             if(column.metadata.colName=="Email"){
                 if(column.value==email) {
-                 console.log(column.value+"   "+email);
+            
                  callback(null,404);
                  call=1;
                 }
@@ -143,8 +137,7 @@ function squeryDatabase(fullname,email,pass,callback)
 /*Get training data using the userid passed in arguments*/
 function gettrainingdata(userid,callback)
 {
-    console.log('Reading rows from the training...');
-    console.log('from get training');
+   
     var query= "select id,createdat,backstroke,breaststroke,distperlength,freestyle from training where userid="+userid;
     request = new Request(
         query,function(err, rowCount, rows)
@@ -153,7 +146,7 @@ function gettrainingdata(userid,callback)
             {
             console.log("an error occured");
             }
-            console.log(rowCount + ' row(s) returned');
+            
         }
     );
     var count=0;
@@ -218,15 +211,14 @@ callback(null,200);
 function getuserid(email,callback)
 {
  
-    console.log('Reading rows from the Table...');
-    console.log('from get userid');
+
     
     // Read all rows from table
     request = new Request(
         "select * from dbo.users",
         function(err, rowCount, rows)
         {
-            console.log(rowCount + ' row(s) returned');
+          
         }
     );
     
@@ -248,7 +240,7 @@ function getuserid(email,callback)
         });
         setTimeout(function () {
             if(call==-1) {
-                console.log(userid);
+            
                 callback(null,200);
                 call=2;
             }
@@ -283,9 +275,9 @@ app.post('/login/:username/:password', function (req, res) {
     }
     else {
         queryDatabasel(req.params.username, req.params.password, function (err, status) {
-            //console.log("login:  " +status);
+            
             if (status === 200) {
-                   console.log("logged in");
+              
                 res.status(200);
             }
             else {
@@ -311,7 +303,7 @@ app.post('/signup/:fullname/:email/:password/:fb', function (req, res) {
             var hash=crypto.createHash('md5').update(req.params.password).digest("hex");
             if (status == 200) {
                 var insert = "insert into dbo.users values('" + req.params.email + "','" + req.params.fullname + "','" + hash + "','false');";
-                //console.log(insert);
+               
                 var requ = new Request(
                     insert, function (err) {
                         if (err) {
@@ -320,7 +312,7 @@ app.post('/signup/:fullname/:email/:password/:fb', function (req, res) {
                         }
                         else {
                             userMap.set(req.params.fullname,req.params.email, req.params.password);
-                            console.log("row inserted");
+                           
                             res.status(200);
                         }
                     });
@@ -343,7 +335,7 @@ app.post('/signup/:fullname/:email/:password/:fb', function (req, res) {
 app.post('/get/:username', function (req, res) {
     var email=req.params.username;
     for (var entry of userMap.entries()) {
-        console.log(entry[1]+"  "+email);
+       
         if (entry[1] == email) {
             res.status(200);
             res.send(entry[0]);
@@ -356,30 +348,32 @@ app.post('/get/:username', function (req, res) {
 });
 //get blob data
 app.post('/blob/:trainingid/:blob', function (req, res) {
-     getblobdata(req.params.trainingid,function(err,status){
+ console.log(req.params.blob);
+ res.status(200);
+ res.send;
+     /*getblobdata(req.params.trainingid,function(err,status){
                 //if(status===200)
                 //{
                     res.status(200);
                     res.send(blob+"");
                     return;
-               /* }
+                }
                 else 
                 {
                     res.status(404);
                     res.send();
-                }*/
+                }
         });
     res.status(404);
     res.send();
-
+*/
 });
 //get username and get trainings based on username 
 app.post('/userid/:username', function (req, res) {
-    console.log("entered get");
+
    
     var email=req.params.username;
     getuserid(email, function (err,status) {
-            console.log("get username :  " +status+" userid :"+userid);
         var userId=userid+" ";
             if (status === 200) {
                 gettrainingdata(userId,function(err,status){
