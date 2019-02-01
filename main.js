@@ -59,15 +59,14 @@ request.open('POST', 'userid/'+localStorage.lastname, true);
 request.send();
 
 }
-function blob(name,blobService)
+function blob(trainingid,name,blobService)
 {
     blobService.listBlobsSegmented(name, null, function (error, results) {
     if (error) {
         // List blobs error
     } else {
         for (var i = 0, blob; blob = results.entries[i]; i++) {
-            alert(blob.name+" "+blob.contentSettings+" "+blob.etag+" "+blob.serverEncrypted);
-          alert(Object.keys(blob));
+          alert(trainingid+"       "+blob.name);
         }
     }
       var reader=new FileReader();
@@ -105,8 +104,8 @@ blobService.listContainersSegmented(null, function (error, results) {
         // List container error
     } else {
         for (var i = 0, container; container = results.entries[i]; i++) {
-          blob(container.name,blobService);  
-          alert(container.name);
+          if(container.name=="trainings")
+          blob(trainingid,container.name,blobService);  
         }
     }
   //timeout code
