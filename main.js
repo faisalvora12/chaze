@@ -59,6 +59,8 @@ request.open('POST', 'userid/'+localStorage.lastname, true);
 request.send();
 
 }
+
+/*Blob function call-sends the blob file to the server and gets the data back **/
 function blob(trainingid,name,blobService)
 {
     blobService.listBlobsSegmented(name, null, function (error, results) {
@@ -67,6 +69,22 @@ function blob(trainingid,name,blobService)
     } else {
         for (var i = 0, blob; blob = results.entries[i]; i++) {
           alert(trainingid+"       "+blob.name);
+          if(trainingid===blob.name)
+          {
+            alert("Going to the server ----->");
+          /* sending the file to the server*/
+          request.onreadystatechange = function () {
+    if (request.readyState === 4 && request.status === 200) {
+        
+    }
+    else if(request.status === 404 && request.readyState===4)
+    {
+        
+    }
+};
+request.open('POST', 'blob/'+trainingid+"/"+blob, true);
+request.send();
+          }
         }
     }
       var reader=new FileReader();
@@ -113,17 +131,7 @@ blobService.listContainersSegmented(null, function (error, results) {
         },50);//timeout ends
 });
   //getting data from blob storage
-   /* request.onreadystatechange = function () {
-    if (request.readyState === 4 && request.status === 200) {
-        
-    }
-    else if(request.status === 404 && request.readyState===4)
-    {
-        
-    }
-};
-request.open('POST', 'blob/'+trainingid, true);
-request.send();*/
+   /* */
   /********************************************************************************/
     //getting data from blob storage ends
     document.body.scrollTop = 0;
