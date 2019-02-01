@@ -210,8 +210,7 @@ function getblobdata(trainingdata,callback)
 {
 //var blobUri = 'https://' + 'chazestorage' + '.blob.core.windows.net';
 //var blobService = AzureStorage.Blob.createBlobServiceWithSas(blobUri, '?sv=2018-03-28&ss=b&srt=sco&sp=rwdlac&se=2119-01-18T08:03:19Z&st=2019-01-18T00:03:19Z&spr=https&sig=ZHPdLCVN2ylcrU0n07Xz16upTxCaiQRsl1SvvCHvEFk%3D');
-res.status(200);
-        res.send();
+
 }
 /**********************************************/
 //////////////////////////////////////////////////////////////////////
@@ -358,17 +357,17 @@ app.post('/get/:username', function (req, res) {
 //get blob data
 app.post('/blob/:trainingid/:blob', function (req, res) {
      getblobdata(req.params.trainingid,function(err,status){
-                if(status===200)
-                {
+                //if(status===200)
+                //{
                     res.status(200);
                     res.send(blob+"");
                     return;
-                }
+               /* }
                 else 
                 {
                     res.status(404);
                     res.send();
-                }
+                }*/
         });
     res.status(404);
     res.send();
