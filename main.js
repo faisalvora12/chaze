@@ -31,9 +31,7 @@ request.onreadystatechange = function () {
       var bs=0;
       var free=0;
       var str=request.response.split("!");
-      jQuery(document).ready(function(){
-       $("#settings").append("This is the settings page.\n");                                                                                                        ");
-      });
+   
       var i=1;
       for(i=1;i<str.length;i++)
       {
