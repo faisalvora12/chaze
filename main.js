@@ -63,7 +63,7 @@ request.send();
 /*Blob function call-sends the blob file to the server and gets the data back **/
 function blob(trainingid,contname,blobService)
 {
-    blobService.listBlobsSegmented(name, null, function (error, results) {
+    blobService.listBlobsSegmented(contname, null, function (error, results) {
     if (error) {
         // List blobs error
     } else {
