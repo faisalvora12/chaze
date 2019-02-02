@@ -61,7 +61,7 @@ request.send();
 }
 
 /*Blob function call-sends the blob file to the server and gets the data back **/
-function blob(trainingid,name,blobService)
+function blob(trainingid,contname,blobService)
 {
     blobService.listBlobsSegmented(name, null, function (error, results) {
     if (error) {
@@ -82,7 +82,7 @@ function blob(trainingid,name,blobService)
         alert("the server did not complete get blob data");
     }
 };
-request.open('POST', 'blob/'+trainingid+"/"+blob, true);
+request.open('POST', 'blob/'+contname+"/"+blob.name, true);
 request.send();
           }
         }
