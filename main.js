@@ -151,11 +151,11 @@ blobService.listContainersSegmented(null, function (error, results) {
       document.body.scrollTop = 0;
   document.documentElement.scrollTop = 0;
     $("#train").css("color", "aqua");
-    $("#records").css("color", "white");
-    $("#trends").css("color", "white");
-    $("#settings").css("color", "white");
-    $("#feedback").css("color", "white");
-    $("#recommend").css("color", "white");
+    $("#navrecords").css("color", "white");
+    $("#navtrends").css("color", "white");
+    $("#navsettings").css("color", "white");
+    $("#navfeedback").css("color", "white");
+    $("#navrecommend").css("color", "white");
   });
   
   
@@ -163,7 +163,7 @@ blobService.listContainersSegmented(null, function (error, results) {
   
   
   
-     $("#records").click(function(){
+     $("#navrecords").click(function(){
    document.getElementById("records").style.visibility = "visible";
      document.getElementById("settings").style.visibility = "hidden";
      document.getElementById("main").style.visibility = "hidden";
@@ -172,18 +172,18 @@ blobService.listContainersSegmented(null, function (error, results) {
       document.getElementById("trends").style.visibility = "hidden";
        document.body.scrollTop = 0;
   document.documentElement.scrollTop = 0;
-    $("#records").css("color", "aqua");
+    $("#navrecords").css("color", "aqua");
     $("#train").css("color", "white");
-    $("#trends").css("color", "white");
-    $("#settings").css("color", "white");
-    $("#feedback").css("color", "white");
-    $("#recommend").css("color", "white");
+    $("#navtrends").css("color", "white");
+    $("#navsettings").css("color", "white");
+    $("#navfeedback").css("color", "white");
+    $("#navrecommend").css("color", "white");
   }); 
   
   
   
   
-  $("#trends").click(function(){
+  $("#navtrends").click(function(){
        document.getElementById("trends").style.visibility = "visible";
      document.getElementById("settings").style.visibility = "hidden";
      document.getElementById("records").style.visibility = "hidden";
@@ -192,19 +192,19 @@ blobService.listContainersSegmented(null, function (error, results) {
       document.getElementById("main").style.visibility = "hidden";
          document.body.scrollTop = 0;
   document.documentElement.scrollTop = 0;
-    $("#trends").css("color", "aqua");
-    $("#records").css("color", "white");
+    $("#navtrends").css("color", "aqua");
+    $("#navrecords").css("color", "white");
     $("#train").css("color", "white");
-    $("#settings").css("color", "white");
-    $("#feedback").css("color", "white");
-    $("#recommend").css("color", "white");
+    $("#navsettings").css("color", "white");
+    $("#navfeedback").css("color", "white");
+    $("#navrecommend").css("color", "white");
   }); 
   
   
   
   
   
-  $("#settings").click(function(){
+  $("#navsettings").click(function(){
         document.getElementById("main").style.visibility = "hidden";
      document.getElementById("settings").style.visibility = "visible";
      document.getElementById("records").style.visibility = "hidden";
@@ -214,19 +214,19 @@ blobService.listContainersSegmented(null, function (error, results) {
   
     document.body.scrollTop = 0;
   document.documentElement.scrollTop = 0;
-    $("#settings").css("color", "aqua");
-    $("#records").css("color", "white");
-    $("#trends").css("color", "white");
+    $("#navsettings").css("color", "aqua");
+    $("#navrecords").css("color", "white");
+    $("#navtrends").css("color", "white");
     $("#train").css("color", "white");
-    $("#feedback").css("color", "white");
-    $("#recommend").css("color", "white");
+    $("#navfeedback").css("color", "white");
+    $("#navrecommend").css("color", "white");
   }); 
   
   
   
   
   
-  $("#feedback").click(function(){
+  $("#navfeedback").click(function(){
         document.getElementById("feedback").style.visibility = "hidden";
      document.getElementById("settings").style.visibility = "visible";
      document.getElementById("records").style.visibility = "hidden";
@@ -236,17 +236,17 @@ blobService.listContainersSegmented(null, function (error, results) {
     
          document.body.scrollTop = 0;
   document.documentElement.scrollTop = 0;
-    $("#feedback").css("color", "aqua");
-    $("#records").css("color", "white");
-    $("#trends").css("color", "white");
-    $("#settings").css("color", "white");
+    $("#navfeedback").css("color", "aqua");
+    $("#navrecords").css("color", "white");
+    $("#navtrends").css("color", "white");
+    $("#navsettings").css("color", "white");
     $("#train").css("color", "white");
-    $("#recommend").css("color", "white");
+    $("#navrecommend").css("color", "white");
   });
   
   
   
-   $("#recommend").click(function(){
+   $("#navrecommend").click(function(){
          document.getElementById("recommend").style.visibility = "visible";
      document.getElementById("settings").style.visibility = "hidden";
      document.getElementById("records").style.visibility = "hidden";
@@ -255,11 +255,11 @@ blobService.listContainersSegmented(null, function (error, results) {
       document.getElementById("trends").style.visibility = "hidden";
        document.body.scrollTop = 0;
   document.documentElement.scrollTop = 0;
-    $("#recommend").css("color", "aqua");
-    $("#records").css("color", "white");
-    $("#trends").css("color", "white");
-    $("#settings").css("color", "white");
-    $("#feedback").css("color", "white");
+    $("#navrecommend").css("color", "aqua");
+    $("#navrecords").css("color", "white");
+    $("#navtrends").css("color", "white");
+    $("#navsettings").css("color", "white");
+    $("#navfeedback").css("color", "white");
     $("#train").css("color", "white");
 });
   });
