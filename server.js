@@ -348,11 +348,8 @@ app.post('/get/:username', function (req, res) {
 });
 //get blob data
 app.post('/blob/:trainingid/:blob', function (req, res) {
- console.log(req.params.blob.name);
- var fs = require('fs');
- 
-fs.readFile(req.params.blob.name, 'utf8', function(err, contents) {
-    console.log(contents);
+ console.log("\n"+req.params.blob.name+"    "+req.params.trainingid+"\n");
+
 });
  res.status(200);
  res.send();
