@@ -210,9 +210,6 @@ callback(null,200);
 /*Get user id from the user table */
 function getuserid(email,callback)
 {
- 
-
-    
     // Read all rows from table
     request = new Request(
         "select * from dbo.users",
@@ -347,8 +344,25 @@ app.post('/get/:username', function (req, res) {
 
 });
 //get blob data
-app.post('/blob/:contname/:blob', function (req, res) {
- console.log("\n"+req.params.contname+"    "+req.params.blob+"\n");
+app.post('/blob/:containerName/:blobName', function (req, res) {
+ console.log("\n"+req.params.containerName+"    "+req.params.blobName+"\n");
+var containerName=req.params.containerName;
+ var blobName=req.params.blobName;
+
+ const downloadBlob = async (containerName, blobName) => {
+    const dowloadFilePath = path.resolve('./' + blobName.replace('.txt', '.downloaded.txt'));
+    return new Promise((resolve, reject) => {
+        blobService.getBlobToText(containerName, blobName, (err, data) => {
+            if (err) {
+                reject(err);
+            } else {
+                resolve({ message: `Blob downloaded "${data}"`, text: data });
+            }
+        });
+    });
+};
+ console.log(downloadBlob);
+   //download blob ends
  res.status(200);
  res.send();
 
