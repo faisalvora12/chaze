@@ -347,9 +347,8 @@ app.post('/get/:username', function (req, res) {
 
 });
 //get blob data
-app.post('/blob/:trainingid/:blob', function (req, res) {
- var a=req.params.blob;
- console.log("\n"+a.name+"    "+req.params.trainingid+"\n");
+app.post('/blob/:contname/:blob', function (req, res) {
+ console.log("\n"+req.params.contname+"    "+req.params.blob+"\n");
  res.status(200);
  res.send();
 
