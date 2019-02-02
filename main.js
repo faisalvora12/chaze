@@ -31,7 +31,9 @@ request.onreadystatechange = function () {
       var bs=0;
       var free=0;
       var str=request.response.split("!");
-   
+      jQuery(document).ready(function(){
+       $("#training").append("training number //backstroke   //   breaststroke   //    distperlength  //   freestyle<br>");
+});
       var i=1;
       for(i=1;i<str.length;i++)
       {
@@ -136,130 +138,67 @@ blobService.listContainersSegmented(null, function (error, results) {
   document.documentElement.scrollTop = 0;
   });
   /*changes the color of the cliked option*/
-  
-  
-  
-  
   $("#train").click(function(){
      document.getElementById("main").style.visibility = "visible";
-     document.getElementById("settings").style.visibility = "hidden";
-     document.getElementById("records").style.visibility = "hidden";
-     document.getElementById("feedback").style.visibility = "hidden";
-     document.getElementById("recommend").style.visibility = "hidden";
-      document.getElementById("trends").style.visibility = "hidden";
-   
       document.body.scrollTop = 0;
   document.documentElement.scrollTop = 0;
     $("#train").css("color", "aqua");
-    $("#navrecords").css("color", "white");
-    $("#navtrends").css("color", "white");
-    $("#navsettings").css("color", "white");
-    $("#navfeedback").css("color", "white");
-    $("#navrecommend").css("color", "white");
+    $("#records").css("color", "white");
+    $("#trends").css("color", "white");
+    $("#settings").css("color", "white");
+    $("#feedback").css("color", "white");
+    $("#recommend").css("color", "white");
   });
-  
-  
-  
-  
-  
-  
-     $("#navrecords").click(function(){
-   document.getElementById("records").style.visibility = "visible";
-     document.getElementById("settings").style.visibility = "hidden";
-     document.getElementById("main").style.visibility = "hidden";
-     document.getElementById("feedback").style.visibility = "hidden";
-     document.getElementById("recommend").style.visibility = "hidden";
-      document.getElementById("trends").style.visibility = "hidden";
-       document.body.scrollTop = 0;
-  document.documentElement.scrollTop = 0;
-    $("#navrecords").css("color", "aqua");
-    $("#train").css("color", "white");
-    $("#navtrends").css("color", "white");
-    $("#navsettings").css("color", "white");
-    $("#navfeedback").css("color", "white");
-    $("#navrecommend").css("color", "white");
-  }); 
-  
-  
-  
-  
-  $("#navtrends").click(function(){
-       document.getElementById("trends").style.visibility = "visible";
-     document.getElementById("settings").style.visibility = "hidden";
-     document.getElementById("records").style.visibility = "hidden";
-     document.getElementById("feedback").style.visibility = "hidden";
-     document.getElementById("recommend").style.visibility = "hidden";
-      document.getElementById("main").style.visibility = "hidden";
+     $("#records").click(function(){
+    document.getElementById("main").style.visibility = "hidden";
          document.body.scrollTop = 0;
   document.documentElement.scrollTop = 0;
-    $("#navtrends").css("color", "aqua");
-    $("#navrecords").css("color", "white");
+    $("#records").css("color", "aqua");
     $("#train").css("color", "white");
-    $("#navsettings").css("color", "white");
-    $("#navfeedback").css("color", "white");
-    $("#navrecommend").css("color", "white");
-  }); 
-  
-  
-  
-  
-  
-  $("#navsettings").click(function(){
-        document.getElementById("main").style.visibility = "hidden";
-     document.getElementById("settings").style.visibility = "visible";
-     document.getElementById("records").style.visibility = "hidden";
-     document.getElementById("feedback").style.visibility = "hidden";
-     document.getElementById("recommend").style.visibility = "hidden";
-      document.getElementById("trends").style.visibility = "hidden";
-  
-    document.body.scrollTop = 0;
-  document.documentElement.scrollTop = 0;
-    $("#navsettings").css("color", "aqua");
-    $("#navrecords").css("color", "white");
-    $("#navtrends").css("color", "white");
-    $("#train").css("color", "white");
-    $("#navfeedback").css("color", "white");
-    $("#navrecommend").css("color", "white");
-  }); 
-  
-  
-  
-  
-  
-  $("#navfeedback").click(function(){
-        document.getElementById("feedback").style.visibility = "hidden";
-     document.getElementById("settings").style.visibility = "visible";
-     document.getElementById("records").style.visibility = "hidden";
-     document.getElementById("main").style.visibility = "hidden";
-     document.getElementById("recommend").style.visibility = "hidden";
-      document.getElementById("trends").style.visibility = "hidden";
-    
+    $("#trends").css("color", "white");
+    $("#settings").css("color", "white");
+    $("#feedback").css("color", "white");
+    $("#recommend").css("color", "white");
+  });  $("#trends").click(function(){
+       document.getElementById("main").style.visibility = "hidden";
          document.body.scrollTop = 0;
   document.documentElement.scrollTop = 0;
-    $("#navfeedback").css("color", "aqua");
-    $("#navrecords").css("color", "white");
-    $("#navtrends").css("color", "white");
-    $("#navsettings").css("color", "white");
+    $("#trends").css("color", "aqua");
+    $("#records").css("color", "white");
     $("#train").css("color", "white");
-    $("#navrecommend").css("color", "white");
+    $("#settings").css("color", "white");
+    $("#feedback").css("color", "white");
+    $("#recommend").css("color", "white");
+  });  $("#settings").click(function(){
+       document.getElementById("main").style.visibility = "hidden";
+         document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
+    $("#settings").css("color", "aqua");
+    $("#records").css("color", "white");
+    $("#trends").css("color", "white");
+    $("#train").css("color", "white");
+    $("#feedback").css("color", "white");
+    $("#recommend").css("color", "white");
+  });  $("#feedback").click(function(){
+       document.getElementById("main").style.visibility = "hidden";
+         document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
+    $("#feedback").css("color", "aqua");
+    $("#records").css("color", "white");
+    $("#trends").css("color", "white");
+    $("#settings").css("color", "white");
+    $("#train").css("color", "white");
+    $("#recommend").css("color", "white");
   });
-  
-  
-  
-   $("#navrecommend").click(function(){
-         document.getElementById("recommend").style.visibility = "visible";
-     document.getElementById("settings").style.visibility = "hidden";
-     document.getElementById("records").style.visibility = "hidden";
-     document.getElementById("feedback").style.visibility = "hidden";
+   $("#recommend").click(function(){
      document.getElementById("main").style.visibility = "hidden";
-      document.getElementById("trends").style.visibility = "hidden";
        document.body.scrollTop = 0;
   document.documentElement.scrollTop = 0;
-    $("#navrecommend").css("color", "aqua");
-    $("#navrecords").css("color", "white");
-    $("#navtrends").css("color", "white");
-    $("#navsettings").css("color", "white");
-    $("#navfeedback").css("color", "white");
+    $("#recommend").css("color", "aqua");
+    $("#records").css("color", "white");
+    $("#trends").css("color", "white");
+    $("#settings").css("color", "white");
+    $("#feedback").css("color", "white");
     $("#train").css("color", "white");
 });
   });
