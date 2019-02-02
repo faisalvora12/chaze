@@ -32,7 +32,7 @@ request.onreadystatechange = function () {
       var free=0;
       var str=request.response.split("!");
       jQuery(document).ready(function(){
-       $("#setting").append("This is the settings page.\n");                                                                                                        ");
+       $("#settings").append("This is the settings page.\n");                                                                                                        ");
       });
       var i=1;
       for(i=1;i<str.length;i++)
