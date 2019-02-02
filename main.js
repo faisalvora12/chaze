@@ -32,8 +32,8 @@ request.onreadystatechange = function () {
       var free=0;
       var str=request.response.split("!");
       jQuery(document).ready(function(){
-       $("#training").append("training number //backstroke   //   breaststroke   //    distperlength  //   freestyle<br>");
-});
+       $("#setting").append("This is the settings page.\n");                                                                                                        ");
+      });
       var i=1;
       for(i=1;i<str.length;i++)
       {
@@ -138,8 +138,18 @@ blobService.listContainersSegmented(null, function (error, results) {
   document.documentElement.scrollTop = 0;
   });
   /*changes the color of the cliked option*/
+  
+  
+  
+  
   $("#train").click(function(){
      document.getElementById("main").style.visibility = "visible";
+     document.getElementById("settings").style.visibility = "hidden";
+     document.getElementById("records").style.visibility = "hidden";
+     document.getElementById("feedback").style.visibility = "hidden";
+     document.getElementById("recommend").style.visibility = "hidden";
+      document.getElementById("trends").style.visibility = "hidden";
+   
       document.body.scrollTop = 0;
   document.documentElement.scrollTop = 0;
     $("#train").css("color", "aqua");
@@ -149,9 +159,20 @@ blobService.listContainersSegmented(null, function (error, results) {
     $("#feedback").css("color", "white");
     $("#recommend").css("color", "white");
   });
+  
+  
+  
+  
+  
+  
      $("#records").click(function(){
-    document.getElementById("main").style.visibility = "hidden";
-         document.body.scrollTop = 0;
+   document.getElementById("records").style.visibility = "visible";
+     document.getElementById("settings").style.visibility = "hidden";
+     document.getElementById("main").style.visibility = "hidden";
+     document.getElementById("feedback").style.visibility = "hidden";
+     document.getElementById("recommend").style.visibility = "hidden";
+      document.getElementById("trends").style.visibility = "hidden";
+       document.body.scrollTop = 0;
   document.documentElement.scrollTop = 0;
     $("#records").css("color", "aqua");
     $("#train").css("color", "white");
@@ -159,8 +180,18 @@ blobService.listContainersSegmented(null, function (error, results) {
     $("#settings").css("color", "white");
     $("#feedback").css("color", "white");
     $("#recommend").css("color", "white");
-  });  $("#trends").click(function(){
-       document.getElementById("main").style.visibility = "hidden";
+  }); 
+  
+  
+  
+  
+  $("#trends").click(function(){
+       document.getElementById("trends").style.visibility = "visible";
+     document.getElementById("settings").style.visibility = "hidden";
+     document.getElementById("records").style.visibility = "hidden";
+     document.getElementById("feedback").style.visibility = "hidden";
+     document.getElementById("recommend").style.visibility = "hidden";
+      document.getElementById("main").style.visibility = "hidden";
          document.body.scrollTop = 0;
   document.documentElement.scrollTop = 0;
     $("#trends").css("color", "aqua");
@@ -169,9 +200,21 @@ blobService.listContainersSegmented(null, function (error, results) {
     $("#settings").css("color", "white");
     $("#feedback").css("color", "white");
     $("#recommend").css("color", "white");
-  });  $("#settings").click(function(){
-       document.getElementById("main").style.visibility = "hidden";
-         document.body.scrollTop = 0;
+  }); 
+  
+  
+  
+  
+  
+  $("#settings").click(function(){
+        document.getElementById("main").style.visibility = "hidden";
+     document.getElementById("settings").style.visibility = "visible";
+     document.getElementById("records").style.visibility = "hidden";
+     document.getElementById("feedback").style.visibility = "hidden";
+     document.getElementById("recommend").style.visibility = "hidden";
+      document.getElementById("trends").style.visibility = "hidden";
+  
+    document.body.scrollTop = 0;
   document.documentElement.scrollTop = 0;
     $("#settings").css("color", "aqua");
     $("#records").css("color", "white");
@@ -179,8 +222,20 @@ blobService.listContainersSegmented(null, function (error, results) {
     $("#train").css("color", "white");
     $("#feedback").css("color", "white");
     $("#recommend").css("color", "white");
-  });  $("#feedback").click(function(){
-       document.getElementById("main").style.visibility = "hidden";
+  }); 
+  
+  
+  
+  
+  
+  $("#feedback").click(function(){
+        document.getElementById("feedback").style.visibility = "hidden";
+     document.getElementById("settings").style.visibility = "visible";
+     document.getElementById("records").style.visibility = "hidden";
+     document.getElementById("main").style.visibility = "hidden";
+     document.getElementById("recommend").style.visibility = "hidden";
+      document.getElementById("trends").style.visibility = "hidden";
+    
          document.body.scrollTop = 0;
   document.documentElement.scrollTop = 0;
     $("#feedback").css("color", "aqua");
@@ -190,8 +245,16 @@ blobService.listContainersSegmented(null, function (error, results) {
     $("#train").css("color", "white");
     $("#recommend").css("color", "white");
   });
+  
+  
+  
    $("#recommend").click(function(){
+         document.getElementById("recommend").style.visibility = "visible";
+     document.getElementById("settings").style.visibility = "hidden";
+     document.getElementById("records").style.visibility = "hidden";
+     document.getElementById("feedback").style.visibility = "hidden";
      document.getElementById("main").style.visibility = "hidden";
+      document.getElementById("trends").style.visibility = "hidden";
        document.body.scrollTop = 0;
   document.documentElement.scrollTop = 0;
     $("#recommend").css("color", "aqua");
