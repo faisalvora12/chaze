@@ -68,10 +68,8 @@ function blob(trainingid,contname,blobService)
         // List blobs error
     } else {
         for (var i = 0, blob; blob = results.entries[i]; i++) {
-          alert(trainingid+"       "+blob.name);
           if(trainingid===blob.name)
           {
-            alert("Going to the server ----->");
           /* sending the file to the server*/
           request.onreadystatechange = function () {
     if (request.readyState === 4 && request.status === 200) {
@@ -87,11 +85,8 @@ request.send();
           }
         }
     }
-      var reader=new FileReader();
-      //timeout code
-  setTimeout(function () {
-        },1750);//timeout ends
   });
+  
 }
 function train()
 {
