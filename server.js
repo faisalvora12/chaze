@@ -335,11 +335,7 @@ app.post('/get/:username', function (req, res) {
     res.send();
 
 });
-//get blob data
-app.post('/blob/:containerName/:blobName', function (req, res) {
- console.log("\n"+req.params.containerName+"    "+req.params.blobName+"\n");
-var containerName=req.params.containerName;
- var blobName=req.params.blobName;
+//blob asasync code
  const downloadBlob = async (containerName, blobName) => {
     const dowloadFilePath =  path.resolve(path.resolve(__dirname) + "/" + blobName);
     console.log(dowloadFilePath);
@@ -353,7 +349,14 @@ var containerName=req.params.containerName;
         });
     });
 };
- console.log(downloadBlob);
+
+//get blob data
+app.post('/blob/:containerName/:blobName', function (req, res) {
+ console.log("\n"+req.params.containerName+"    "+req.params.blobName+"\n");
+var containerName=req.params.containerName;
+ var blobName=req.params.blobName;
+await downloadBlob(containerName, blobName);
+ 
    //download blob ends
  res.status(200);
  res.send();
