@@ -251,7 +251,7 @@ function getuserid(email,callback)
             if (err) {
                 reject(err);
             } else {
-             blob=${data};
+             blob=data;
                // console.log(`${data}`);
             }
         });
