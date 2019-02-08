@@ -252,7 +252,6 @@ function getuserid(email,callback)
                 reject(err);
             } else {
              blob=data;
-              console.log(blob);
                // console.log(`${data}`);
             }
         });
@@ -371,7 +370,7 @@ var containerName=req.params.containerName;
 asyncblob(containerName,blobName);
    //download blob ends
  res.status(200);
- res.send();
+ res.send(blob+"");
 
 });
 
