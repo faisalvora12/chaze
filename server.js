@@ -134,6 +134,7 @@ function squeryDatabase(fullname,email,pass,callback)
     });
     connection.execSql(request);
 }
+
 /*Get training data using the userid passed in arguments*/
 function gettrainingdata(userid,callback)
 {
@@ -239,6 +240,27 @@ function getuserid(email,callback)
     });
     connection.execSql(request);
 }
+//blob asasync code
+ const downloadBlob = async (containerName, blobName) => {
+    const dowloadFilePath =  path.resolve(path.resolve(__dirname) + "/" + blobName);
+    console.log(dowloadFilePath);
+    return new Promise((resolve, reject) => {
+        blobService.getBlobToText(containerName, blobName, (err, data) => {
+            if (err) {
+                reject(err);
+            } else {
+                console.log(`${data}`);
+            }
+        });
+    });
+};
+
+async function asyncblob(containerName,blobName)
+{
+ await downloadBlob(containerName, blobName);
+}
+
+
 
 /*client side code*/
 const express = require('express');
@@ -335,27 +357,14 @@ app.post('/get/:username', function (req, res) {
     res.send();
 
 });
-//blob asasync code
- const downloadBlob = async (containerName, blobName) => {
-    const dowloadFilePath =  path.resolve(path.resolve(__dirname) + "/" + blobName);
-    console.log(dowloadFilePath);
-    return new Promise((resolve, reject) => {
-        blobService.getBlobToText(containerName, blobName, (err, data) => {
-            if (err) {
-                reject(err);
-            } else {
-                resolve({ message: `Blob downloaded "${data}"`, text: data });
-            }
-        });
-    });
-};
+
 
 //get blob data
 app.post('/blob/:containerName/:blobName', function (req, res) {
  console.log("\n"+req.params.containerName+"    "+req.params.blobName+"\n");
 var containerName=req.params.containerName;
  var blobName=req.params.blobName;
-await downloadBlob(containerName, blobName);
+asyncblob(containerName,blobName);
  
    //download blob ends
  res.status(200);
