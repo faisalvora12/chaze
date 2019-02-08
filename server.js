@@ -349,7 +349,7 @@ app.post('/blob/:containerName/:blobName', function (req, res) {
 var containerName=req.params.containerName;
  var blobName=req.params.blobName;
 
- /*const downloadBlob = async (containerName, blobName) => {
+ const downloadBlob = async (containerName, blobName) => {
     const dowloadFilePath = path.resolve('./' + blobName.replace('.txt', '.downloaded.txt'));
     return new Promise((resolve, reject) => {
         blobService.getBlobToText(containerName, blobName, (err, data) => {
@@ -362,7 +362,7 @@ var containerName=req.params.containerName;
     });
 };
  console.log(downloadBlob);
-   *///download blob ends
+   //download blob ends
  res.status(200);
  res.send();
 
