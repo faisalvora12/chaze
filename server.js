@@ -245,6 +245,8 @@ function getuserid(email,callback)
     const dowloadFilePath =  path.resolve(path.resolve(__dirname) + "/" + blobName);
     console.log(dowloadFilePath);
     return new Promise((resolve, reject) => {
+     var connectionString = "DefaultEndpointsProtocol=https;AccountName=chazestorage;AccountKey=DwW+/PUZTVGYWFhoP2F1LUKorUgNh4Sp3BW/E831kS6AvnzCpzGh5DLKXD4wnrgQQDtAYeL0hy7oLVJTtKOYKA==;EndpointSuffix=core.windows.net";
+     const blobService = storage.createBlobService(connectionString);
         blobService.getBlobToText(containerName, blobName, (err, data) => {
             if (err) {
                 reject(err);
