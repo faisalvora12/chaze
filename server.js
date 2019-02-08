@@ -243,7 +243,6 @@ function getuserid(email,callback)
 /*client side code*/
 const express = require('express');
 const app=express();
-const XMLHttpRequest = require('xmlhttprequest').XMLHttpRequest;
 
 function checkemail(email){
     var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
