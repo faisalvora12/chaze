@@ -73,9 +73,8 @@ function blob(trainingid,contname,blobService)
           /* sending the file to the server*/
           request.onreadystatechange = function () {
     if (request.readyState === 4 && request.status === 200) {
-        alert("the server got the file ");
             var str=request.response;
-            alert(str);
+                $("#nextpage").append(str+"");
     }
     else if(request.status === 404 && request.readyState===4)
     {
