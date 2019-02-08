@@ -261,6 +261,10 @@ function getuserid(email,callback)
 async function asyncblob(containerName,blobName)
 {
  await downloadBlob(containerName, blobName);
+   setTimeout(function () {
+ console.log("waiting");
+            }
+        },7000);
 }
 
 
