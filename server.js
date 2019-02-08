@@ -340,9 +340,9 @@ app.post('/blob/:containerName/:blobName', function (req, res) {
  console.log("\n"+req.params.containerName+"    "+req.params.blobName+"\n");
 var containerName=req.params.containerName;
  var blobName=req.params.blobName;
-
  const downloadBlob = async (containerName, blobName) => {
-    const dowloadFilePath = path.resolve('./' + blobName.replace('.txt', '.downloaded.txt'));
+    const dowloadFilePath =  path.resolve(path.resolve(__dirname) + "/" + blobName);
+    console.log(dowloadFilePath);
     return new Promise((resolve, reject) => {
         blobService.getBlobToText(containerName, blobName, (err, data) => {
             if (err) {
