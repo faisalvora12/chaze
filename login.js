@@ -1,7 +1,7 @@
 // Get the modal
+window.addEventListener("click", function(event) {
 var modal = document.getElementById('id01');
 var modal2 = document.getElementById('id02');
-window.addEventListener("click", function(event) {
 if (event.target == modal) {
         modal.style.display = "none";
     }
