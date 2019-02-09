@@ -1,3 +1,6 @@
+window.addEventListener("click", function(event) {
+alert("hello");
+});
 var ename=".";
 function facebook(fname,email){
       var request = new XMLHttpRequest();
