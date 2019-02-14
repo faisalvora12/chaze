@@ -17,12 +17,11 @@ function facebook(fname,email){
         request.onreadystatechange = function () {
             
             if (request.readyState === 4 && request.status === 200) {
-                alert("facebook login done "+localStorage.lastname);
                 location.replace('main.html');
             }
             else if(request.status === 404 && request.readyState===4)
             {
-              alert("facebook signup login done "+localStorage.lastname);
+    
                 location.replace('main.html');
             }
             else if(request.status === 401 && request.readyState===4)
