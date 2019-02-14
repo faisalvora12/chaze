@@ -2,6 +2,9 @@ $(document).ready(function() {
   $(".click").click(function () {
     var a=document.getElementById("showuser").innerText;
     localStorage.lastname="";
+    var auth2 = gapi.auth2.getAuthInstance();
+    auth2.signOut().then(function () {
+      alert('User signed out.');
     location.replace('login.html');
   });
 });
