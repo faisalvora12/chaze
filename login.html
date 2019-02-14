@@ -39,9 +39,8 @@
   // Button.  See the onlogin handler attached to it in the sample
   // code below.
   function checkLoginState(a) {
-      //alert(a);
+     
     FB.getLoginStatus(function(response) {
-        //alert("checking login status");
       statusChangeCallback(response);
     });
   }
@@ -70,7 +69,6 @@
   function testAPI() {
     FB.api('/me',{ locale: 'en_US', fields: 'name, email' }, function(response) {
         facebook(response.name,response.email);
-        //alert("Facebook login: Hello "+response.name);
     });
   }   
 
@@ -83,9 +81,7 @@
         //console.log("ID: " + profile.getId()); // Don't send this directly to your server!
         //console.log('Full Name: ' + profile.getName());
         //console.log("Email: " + profile.getEmail());
-       // alert(profile.getName()+"    "+profile.getEmail());
          googleUser.disconnect();
-         alert("google sign in successful");
          facebook(profile.getName(),profile.getEmail());
                  // The ID token you need to pass to your backend:
         //var id_token = googleUser.getAuthResponse().id_token;
