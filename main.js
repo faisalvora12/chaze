@@ -34,9 +34,7 @@ request.onreadystatechange = function () {
       var bs=0;
       var free=0;
       var str=request.response.split("!");
-      jQuery(document).ready(function(){
-       $("#training").append("training number //backstroke   //   breaststroke   //    distperlength  //   freestyle<br>");
-});
+     
       var i=1;
       for(i=1;i<str.length;i++)
       {
@@ -77,6 +75,7 @@ function blob(trainingid,contname,blobService)
           request.onreadystatechange = function () {
     if (request.readyState === 4 && request.status === 200) {
             var str=request.response;
+        $( ".lds-hourglass" ).remove();
                 $("#nextpage").append("<div class='remove'>"+str+"</div>");
     }
     else if(request.status === 404 && request.readyState===4)
@@ -103,10 +102,9 @@ $(document).ready(function(){
         var idp = $(this).attr('id');
         var id = $(this).children("label").attr('id');
         var text = (id.innerText || id.textContent); 
-    document.getElementById(idp).style.transform = "translateY(4px)";//just gives the illution of a click
+   // document.getElementById(idp).style.transform = "translateY(4px)";//just gives the illution of a click
     document.getElementById("main").style.visibility = "hidden";
-     $("#nextpage").append("<button class='button' onclick='train()' type='button'>BACK</button>");
-  
+     $("#nextpage").append("<button class='button' onclick='train()' type='button'>BACK</button><br><br><div class="lds-hourglass"></div>>");
     var el = document.getElementById(id);
     var text = (el.innerText || el.textContent);   
     $("#nextpage").append("<div class='remove'>"+text+"</div>");
