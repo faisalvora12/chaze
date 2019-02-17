@@ -68,7 +68,7 @@
   // successful.  See statusChangeCallback() for when this call is made.
   function testAPI() {
     FB.api('/me',{ locale: 'en_US', fields: 'name, email' }, function(response) {
-        facebook(response.name,response.email);
+        facebook(null,response.name,response.email);
     });
   }   
 
