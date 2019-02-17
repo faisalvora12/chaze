@@ -371,10 +371,10 @@ asyncblob(containerName,blobName);
    //download blob ends
    setTimeout(function () {
  console.log("waiting");
-        },7000);
+       
  res.status(200);
  res.send(blob+"");
-
+ },7000);
 });
 
 
