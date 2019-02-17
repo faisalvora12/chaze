@@ -15,6 +15,7 @@ document.getElementById("b").style.visibility = "hidden";
 request.onreadystatechange = function () {
     if (request.readyState === 4 && request.status === 200) {
         document.getElementById("b").style.visibility = "visible";
+      
         document.getElementById("showuser").innerText=request.response;
       getuserid();
     }
