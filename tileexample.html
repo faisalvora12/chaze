@@ -88,12 +88,12 @@
 	function set_gradients(chart){
 		var scales = chart.scales;
 		var color = chart.ctx.createRadialGradient(
-		  0,//scales.scale.xCenter,
-		  0,//scales.scale.yCenter,
-		  0,//scales.scale.drawingArea / 6,
-		  0,//scales.scale.xCenter,
-		  0,//scales.scale.yCenter,
-		  0,//scales.scale.drawingArea
+		  scales.scale.xCenter,
+		  scales.scale.yCenter,
+		  scales.scale.drawingArea / 6,
+		  scales.scale.xCenter,
+		  scales.scale.yCenter,
+		  scales.scale.drawingArea
         );
         // add gradients stops
         color.addColorStop(0, 'rgba(102, 204, 255,0.3)');
