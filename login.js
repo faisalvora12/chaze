@@ -10,9 +10,10 @@ if (event.target == modal) {
     }
 });
 var ename=".";
-function facebook(fname,email){
+function facebook(image,fname,email){
       var request = new XMLHttpRequest();
       var spass="!";
+        localStorage.image=image;
         localStorage.lastname=email;
         request.onreadystatechange = function () {
             
@@ -37,6 +38,7 @@ function signup() {
     var email = document.getElementById("semail").value;
     if(typeof(Storage)!=="undefined")
     {
+        localStorage.image=null;
         localStorage.lastname=email;
     }
     else
