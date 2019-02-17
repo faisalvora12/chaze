@@ -105,7 +105,7 @@ $(document).ready(function(){
    // document.getElementById(idp).style.transform = "translateY(4px)";//just gives the illution of a click
     document.getElementById("main").style.visibility = "hidden";
      $("#nextpage").append("<button class='button' onclick='train()' type='button'>BACK</button>");
-     $("#nextpage").append("<div style='top:50%,left:50%' class='lds-hourglass'></div>");
+     $("#nextpage").append("<div style='  height: 200px;width: 400px;background: black;position: fixed;top: 50%;left: 50%;margin-top: -100px;margin-left: -200px;' class='lds-hourglass'></div>");
     var el = document.getElementById(id);
     var text = (el.innerText || el.textContent);   
     //$("#nextpage").append("<div class='remove'>"+text+"</div>");
