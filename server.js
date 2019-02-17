@@ -261,9 +261,6 @@ function getuserid(email,callback)
 async function asyncblob(containerName,blobName)
 {
  await downloadBlob(containerName, blobName);
-   setTimeout(function () {
- console.log("waiting");
-        },7000);
 }
 
 
@@ -370,8 +367,11 @@ app.post('/blob/:containerName/:blobName', function (req, res) {
  console.log("\n"+req.params.containerName+"    "+req.params.blobName+"\n");
 var containerName=req.params.containerName;
  var blobName=req.params.blobName;
-await asyncblob(containerName,blobName);
+asyncblob(containerName,blobName);
    //download blob ends
+   setTimeout(function () {
+ console.log("waiting");
+        },7000);
  res.status(200);
  res.send(blob+"");
 
