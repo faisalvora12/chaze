@@ -14,7 +14,7 @@
 
 	<div class="tile">
 			<div class="radar">
-					<canvas id="myRadar" width="350" height="350"></canvas>
+					<canvas align="center" id="myRadar" width="100" height="100"></canvas>
 					<div class="radar.data">
 					<h4>Monday evening swim</h4>
 					<p>Monday, Feb 23, 2019<br> Velocity: 9.9 m/s<br>Avg. Efficiency: 1.2<br>Total Distance: 650m<br>Avg. Stroke Frequency: 2.3 strokes/s</p>
@@ -22,8 +22,6 @@
 			</div>
 	</div>
 	
-
-
   <script>
 	let radarChart = document.getElementById('myRadar').getContext('2d');
 	document.getElementById('myRadar').addEventListener("mouseover", function( event ) {
@@ -48,7 +46,7 @@
         color.addColorStop(0, 'rgba(102, 204, 255,0.3)');
         color.addColorStop(0.5, 'rgba(0, 153, 255, 0.3)');
         color.addColorStop(0.75, 'rgba(0, 51, 204,0.3)');
-		color.addColorStop(1, 'rgba(0, 0, 102, 0.6)');
+	color.addColorStop(1, 'rgba(0, 0, 102, 0.6)');
 		
 	
 	var config = {
@@ -90,12 +88,12 @@
 	function set_gradients(chart){
 		var scales = chart.scales;
 		var color = chart.ctx.createRadialGradient(
-		  scales.scale.xCenter,
-		  scales.scale.yCenter,
-		  scales.scale.drawingArea / 6,
-		  scales.scale.xCenter,
-		  scales.scale.yCenter,
-		  scales.scale.drawingArea
+		  //scales.scale.xCenter,
+		  //scales.scale.yCenter,
+		  //scales.scale.drawingArea / 6,
+		  //scales.scale.xCenter,
+		  //scales.scale.yCenter,
+		  //scales.scale.drawingArea
         );
         // add gradients stops
         color.addColorStop(0, 'rgba(102, 204, 255,0.3)');
