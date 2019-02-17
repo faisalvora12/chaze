@@ -104,7 +104,7 @@ $(document).ready(function(){
         var text = (id.innerText || id.textContent); 
    // document.getElementById(idp).style.transform = "translateY(4px)";//just gives the illution of a click
     document.getElementById("main").style.visibility = "hidden";
-     $("#nextpage").append("<button class='button' onclick='train()' type='button'>BACK</button><br><br><div class="lds-hourglass"></div>>");
+     $("#nextpage").append("<button class='button' onclick='train()' type='button'>BACK</button><br><br><div class='lds-hourglass'></div>>");
     var el = document.getElementById(id);
     var text = (el.innerText || el.textContent);   
     $("#nextpage").append("<div class='remove'>"+text+"</div>");
