@@ -370,7 +370,7 @@ app.post('/blob/:containerName/:blobName', function (req, res) {
  console.log("\n"+req.params.containerName+"    "+req.params.blobName+"\n");
 var containerName=req.params.containerName;
  var blobName=req.params.blobName;
-asyncblob(containerName,blobName);
+await asyncblob(containerName,blobName);
    //download blob ends
  res.status(200);
  res.send(blob+"");
