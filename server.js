@@ -374,7 +374,7 @@ asyncblob(containerName,blobName);
        
  res.status(200);
  res.send(blob+"");
- },7000);
+ },700);
 });
 
 
