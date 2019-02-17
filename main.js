@@ -5,7 +5,10 @@ $(document).ready(function() {
     location.replace('login.html');
   });
 });
-
+function tile()
+{
+location.replace('tileexample.html');
+}
 var request = new XMLHttpRequest();
 window.addEventListener('load', function() {
 document.getElementById("b").style.visibility = "hidden";
