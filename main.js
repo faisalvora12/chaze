@@ -62,7 +62,7 @@ var myChart = new Chart(ctx, {
     ]
   }
 });
-          //$("#panels").append("<div id='dummy"+i+"' class='col-sm panel panel-default' style='background-color: white'><label id='"+i+"' class='panel-body classWithPad'> training "+i+"//"+str2[1]+"//"+str2[2]+" //   "+str2[3]+"   //    "+str2[4]+"   //    "+str2[5]+"   //    "+str2[6]+"</label></div>"); 
+          $("#panels").append("<div id='dummy"+i+"' class='col-sm panel panel-default' style='background-color: white'><label id='"+i+"' class='panel-body classWithPad'> training "+i+"//"+str2[1]+"//"+str2[2]+" //   "+str2[3]+"   //    "+str2[4]+"   //    "+str2[5]+"   //    "+str2[6]+"</label></div>"); 
       });
       }
       jQuery(document).ready(function(){
