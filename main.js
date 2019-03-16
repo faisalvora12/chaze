@@ -98,6 +98,7 @@ function train()
   document.getElementById("nextpage").style.display = "none";
   $( ".button" ).remove();
     $( ".remove" ).remove();
+     $( ".lds-hourglass" ).remove();
 }
 $(document).ready(function(){
   $("#panels").on("click","div.panel",function() { 
@@ -108,7 +109,7 @@ $(document).ready(function(){
     document.getElementById("main").style.visibility = "hidden";
     document.getElementById("nextpage").style.display = "inline-block";
      $("#nextpage").append("<button class='button' onclick='train()' type='button'>BACK</button>");
-     //$("#nextpage").append("<div style='height: 200px;width: 400px;top: 50%;left: 50%;margin-top: -100px;margin-left: -200px;' class='lds-hourglass'></div>");
+     $("#nextpage").append("<div style='height: 200px;width: 400px;top: 50%;left: 50%;margin-top: -100px;margin-left: -200px;' class='lds-hourglass'></div>");
     var el = document.getElementById(id);
     var text = (el.innerText || el.textContent);   
     //$("#nextpage").append("<div class='remove'>"+text+"</div>");
@@ -126,7 +127,7 @@ blobService.listContainersSegmented(null, function (error, results) {
           if(container.name=="trainings")
           blob(trainingid,container.name,blobService);
         }
-      // $( ".lds-hourglass" ).remove();
+       $( ".lds-hourglass" ).remove();
     }
   //timeout code
   setTimeout(function () {
@@ -154,6 +155,7 @@ blobService.listContainersSegmented(null, function (error, results) {
   });
      $("#records").click(function(){
     document.getElementById("main").style.visibility = "hidden";
+     document.getElementById("nextpage").style.display = "none";
          document.body.scrollTop = 0;
   document.documentElement.scrollTop = 0;
     $("#records").css("color", "aqua");
@@ -164,6 +166,7 @@ blobService.listContainersSegmented(null, function (error, results) {
     $("#recommend").css("color", "white");
   });  $("#trends").click(function(){
        document.getElementById("main").style.visibility = "hidden";
+         document.getElementById("nextpage").style.display = "none";
          document.body.scrollTop = 0;
   document.documentElement.scrollTop = 0;
     $("#trends").css("color", "aqua");
@@ -174,6 +177,7 @@ blobService.listContainersSegmented(null, function (error, results) {
     $("#recommend").css("color", "white");
   });  $("#settings").click(function(){
        document.getElementById("main").style.visibility = "hidden";
+       document.getElementById("nextpage").style.display = "none";
          document.body.scrollTop = 0;
   document.documentElement.scrollTop = 0;
     $("#settings").css("color", "aqua");
@@ -184,6 +188,7 @@ blobService.listContainersSegmented(null, function (error, results) {
     $("#recommend").css("color", "white");
   });  $("#feedback").click(function(){
        document.getElementById("main").style.visibility = "hidden";
+       document.getElementById("nextpage").style.display = "none";
          document.body.scrollTop = 0;
   document.documentElement.scrollTop = 0;
     $("#feedback").css("color", "aqua");
@@ -195,6 +200,7 @@ blobService.listContainersSegmented(null, function (error, results) {
   });
    $("#recommend").click(function(){
      document.getElementById("main").style.visibility = "hidden";
+     document.getElementById("nextpage").style.display = "none";
        document.body.scrollTop = 0;
   document.documentElement.scrollTop = 0;
     $("#recommend").css("color", "aqua");
