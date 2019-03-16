@@ -107,6 +107,7 @@ $(document).ready(function(){
         var text = (id.innerText || id.textContent); 
    // document.getElementById(idp).style.transform = "translateY(4px)";//just gives the illution of a click
     document.getElementById("main").style.visibility = "hidden";
+        $( ".remove" ).remove();
     document.getElementById("nextpage").style.display = "inline-block";
      $("#nextpage").append("<button class='button' onclick='train()' type='button'>BACK</button>");
      $("#nextpage").append("<div style='height: 200px;width: 400px;top: 50%;left: 50%;margin-top: -100px;margin-left: -200px;' class='lds-hourglass'></div>");
