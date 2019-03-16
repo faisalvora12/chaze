@@ -67,7 +67,11 @@ var myChart = new Chart(ctx, {
   label: "Africa",
   borderColor: gradientStroke,//"#3e95cd",
   fill: true,
-  backgroundColor: gradientStroke
+  backgroundColor: gradientStroke,
+pointBorderColor:          gradientStroke,
+pointBackgroundColor:      gradientStroke,
+pointHoverBackgroundColor: gradientStroke,
+pointHoverBorderColor:     gradientStroke
       }
     ]
   }
