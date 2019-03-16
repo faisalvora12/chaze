@@ -97,7 +97,6 @@ function train()
    document.getElementById("main").style.visibility = "visible";
   $( ".button" ).remove();
     $( ".remove" ).remove();
-  $( ".lds-hourglass" ).remove();
 }
 $(document).ready(function(){
   $("#panels").on("click","div.panel",function() { 
@@ -107,7 +106,7 @@ $(document).ready(function(){
    // document.getElementById(idp).style.transform = "translateY(4px)";//just gives the illution of a click
     document.getElementById("main").style.visibility = "hidden";
      $("#nextpage").append("<button class='button' onclick='train()' type='button'>BACK</button>");
-     $("#nextpage").append("<div style='height: 200px;width: 400px;top: 50%;left: 50%;margin-top: -100px;margin-left: -200px;' class='lds-hourglass'></div>");
+     //$("#nextpage").append("<div style='height: 200px;width: 400px;top: 50%;left: 50%;margin-top: -100px;margin-left: -200px;' class='lds-hourglass'></div>");
     var el = document.getElementById(id);
     var text = (el.innerText || el.textContent);   
     //$("#nextpage").append("<div class='remove'>"+text+"</div>");
@@ -124,8 +123,8 @@ blobService.listContainersSegmented(null, function (error, results) {
         for (var i = 0, container; container = results.entries[i]; i++) {
           if(container.name=="trainings")
           blob(trainingid,container.name,blobService);
-          $( ".lds-hourglass" ).remove();
         }
+      // $( ".lds-hourglass" ).remove();
     }
   //timeout code
   setTimeout(function () {
@@ -141,7 +140,7 @@ blobService.listContainersSegmented(null, function (error, results) {
   /*changes the color of the cliked option*/
   $("#train").click(function(){
      document.getElementById("main").style.visibility = "visible";
-     document.getElementById("nextpage").style.visibility = "hidden";
+     document.getElementById("nextpage").style.display = "none";
       document.body.scrollTop = 0;
   document.documentElement.scrollTop = 0;
     $("#train").css("color", "aqua");
