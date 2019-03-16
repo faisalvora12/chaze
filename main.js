@@ -97,6 +97,7 @@ function train()
    document.getElementById("main").style.visibility = "visible";
   $( ".button" ).remove();
     $( ".remove" ).remove();
+  $( ".lds-hourglass" ).remove();
 }
 $(document).ready(function(){
   $("#panels").on("click","div.panel",function() { 
