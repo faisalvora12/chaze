@@ -65,6 +65,7 @@ request.send();
 /*Blob function call-sends the blob file to the server and gets the data back **/
 function blob(trainingid,contname,blobService)
 {
+  
     blobService.listBlobsSegmented(contname, null, function (error, results) {
     if (error) {
         // List blobs error
@@ -76,7 +77,6 @@ function blob(trainingid,contname,blobService)
           request.onreadystatechange = function () {
     if (request.readyState === 4 && request.status === 200) {
             var str=request.response;
-        $( ".lds-hourglass" ).remove();
                 $("#nextpage").append("<div class='remove'>"+str+"</div>");
     }
     else if(request.status === 404 && request.readyState===4)
@@ -107,7 +107,7 @@ $(document).ready(function(){
    // document.getElementById(idp).style.transform = "translateY(4px)";//just gives the illution of a click
     document.getElementById("main").style.visibility = "hidden";
      $("#nextpage").append("<button class='button' onclick='train()' type='button'>BACK</button>");
-     $("#nextpage").append("<div style='height: 200px;width: 400px;position: fixed;top: 50%;left: 50%;margin-top: -100px;margin-left: -200px;' class='lds-hourglass'></div>");
+     $("#nextpage").append("<div style='height: 200px;width: 400px;top: 50%;left: 50%;margin-top: -100px;margin-left: -200px;' class='lds-hourglass'></div>");
     var el = document.getElementById(id);
     var text = (el.innerText || el.textContent);   
     //$("#nextpage").append("<div class='remove'>"+text+"</div>");
@@ -123,7 +123,8 @@ blobService.listContainersSegmented(null, function (error, results) {
     } else {
         for (var i = 0, container; container = results.entries[i]; i++) {
           if(container.name=="trainings")
-          blob(trainingid,container.name,blobService);  
+          blob(trainingid,container.name,blobService);
+          $( ".lds-hourglass" ).remove();
         }
     }
   //timeout code
