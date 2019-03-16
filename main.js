@@ -61,7 +61,7 @@ var myChart = new Chart(ctx, {
      data: africa,
   label: "Africa",
   borderColor: "#3e95cd",
-  fill: false
+  fill: true
       }
     ]
   }
