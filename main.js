@@ -141,6 +141,7 @@ blobService.listContainersSegmented(null, function (error, results) {
   /*changes the color of the cliked option*/
   $("#train").click(function(){
      document.getElementById("main").style.visibility = "visible";
+     document.getElementById("nextpage").style.visibility = "hidden";
       document.body.scrollTop = 0;
   document.documentElement.scrollTop = 0;
     $("#train").css("color", "aqua");
