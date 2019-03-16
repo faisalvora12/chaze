@@ -46,12 +46,12 @@ request.onreadystatechange = function () {
            if(str2[4]==='true')bs++;
            if(str2[6]==='true')free++;
           //$("#panels").append("<canvas id='myChart"+i+"' width='150' height='100'></canvas>")   
-       $("#panels").append("<div id='dummy"+i+"' class='col-sm panel panel-default' style='background-color: white'><label id='"+i+"' class='panel-body classWithPad'><canvas id='myChart"+i+"' width='1500' height='1000'></canvas> Training "+i+"<br>Total# lanes:85 <br>Total time: 500 secs<br>Avg power:30<br>Avg speed:50"/*+"//"+str2[1]+"//"+str2[2]+" //   "+str2[3]+"   //    "+str2[4]+"   //    "+str2[5]+"   //    "+str2[6]*/+"</label></div>"); 
+       $("#panels").append("<div id='dummy"+i+"' class='col-sm panel panel-default' style='background-color: white'><label id='"+i+"' class='panel-body classWithPad'><canvas id='myChart"+i+"' width='700' height='500'></canvas> Training "+i+"<br>Total# lanes:85 <br>Total time: 500 secs<br>Avg power:30<br>Avg speed:50"/*+"//"+str2[1]+"//"+str2[2]+" //   "+str2[3]+"   //    "+str2[4]+"   //    "+str2[5]+"   //    "+str2[6]*/+"</label></div>"); 
           // Our labels along the x-axis
 var years = [1500,1600,1700,1750,1800,1850,1900,1950,1999,2050];
 // For drawing the lines
 var africa = [86,114,106,106,107,111,133,221,783,2478];
-   var ctx = document.getElementById("myChart"+i);
+   var ctx = document.getElementById("myChart"+i).getContext("2d");
  var gradientStroke = ctx.createLinearGradient(500, 0, 100, 0);
 gradientStroke.addColorStop(0, "#80b6f4");
 gradientStroke.addColorStop(0.2, "#94d973");
