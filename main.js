@@ -95,6 +95,7 @@ request.send();
 function train()
 {
    document.getElementById("main").style.visibility = "visible";
+  document.getElementById("nextpage").style.display = "none";
   $( ".button" ).remove();
     $( ".remove" ).remove();
 }
