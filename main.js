@@ -45,12 +45,12 @@ request.onreadystatechange = function () {
           if(str2[3]==='true')back++;
            if(str2[4]==='true')bs++;
            if(str2[6]==='true')free++;
-          $("#panels").append("<canvas id='myChart' width='1600' height='900'></canvas>")   
+          $("#panels").append("<canvas id='myChart"+i+"' width='150' height='100'></canvas>")   
           // Our labels along the x-axis
 var years = [1500,1600,1700,1750,1800,1850,1900,1950,1999,2050];
 // For drawing the lines
 var africa = [86,114,106,106,107,111,133,221,783,2478];
-   var ctx = document.getElementById("myChart");
+   var ctx = document.getElementById("myChart"+i);
 var myChart = new Chart(ctx, {
   type: 'line',
   data: {
