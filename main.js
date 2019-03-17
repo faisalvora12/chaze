@@ -52,19 +52,31 @@ var years = [1500,1600,1700,1750,1800,1850,1900,1950,1999,2050];
 // For drawing the lines
 var africa = [86,114,106,106,107,111,133,221,783,2478];
    var ctx = document.getElementById("myChart"+i).getContext("2d");
- var gradientStroke = ctx.createLinearGradient(500, 0, 100, 0);
+var gradientStroke = ctx.createLinearGradient(0, 0, 0, 600);
+gradientStroke.addColorStop(0, 'blue');
+gradientStroke.addColorStop(1, 'lightblue');
+ /*var gradientStroke = ctx.createLinearGradient(500, 0, 100, 0);
 gradientStroke.addColorStop(0, "#80b6f4");
 gradientStroke.addColorStop(0.2, "#94d973");
 gradientStroke.addColorStop(0.5, "#fad874");
-gradientStroke.addColorStop(1, "#f49080");
-var myChart = new Chart(ctx, {
+gradientStroke.addColorStop(1, "#f49080");*/
+  var myChart = new Chart(ctx, {
   type: 'line',
   data: {
+     xAxes: [{
+            gridLines: {
+                display:false
+            }
+        }],
+      yAxes: [{
+            gridLines: {
+                display:false
+            }   
+        }],
     labels: years,
     datasets: [
       { 
      data: africa,
-  label: "Africa",
   borderColor: gradientStroke,//"#3e95cd",
   fill: true,
   backgroundColor: gradientStroke,
