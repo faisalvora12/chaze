@@ -80,7 +80,11 @@ function queryDatabasel(email,pass,callback)
                 }
                 
                 if(column.metadata.colName=="Password") {
-                                var hash=crypto.createHash('sha256').update(pass).digest("hex");
+                     var hash=crypto.createHash('sha256').update(pass).digest("hex");
+                    /*var salt = crypto.randomBytes(8).toString('hex').slice(0,16);  
+                 var hash = crypto.createHmac('sha512', salt);
+                     hash.update(PASSWORD);
+                    var hash = hash.digest('hex');*/
                     if (column.value == hash) {
                       
                         userMap.set(user,email,hash);
@@ -315,7 +319,11 @@ app.post('/signup/:fullname/:email/:password/:fb', function (req, res) {
             user = req.params.fullname;
           process.stdout.write(status);
             var hash=crypto.createHash('sha256').update(req.params.password).digest("hex");
-            if (status == 200) {
+              /*var salt = crypto.randomBytes(8).toString('hex').slice(0,16);  
+                 var hash = crypto.createHmac('sha512', salt);
+                     hash.update(PASSWORD);
+                    var hash = hash.digest('hex');*/
+          if (status == 200) {
                 var insert = "insert into dbo.users values('" + req.params.email + "','" + req.params.fullname + "','" + hash + "','false');";
                
                 var requ = new Request(
