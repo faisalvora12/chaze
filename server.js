@@ -80,7 +80,7 @@ function queryDatabasel(email,pass,callback)
                 }
                 
                 if(column.metadata.colName=="Password") {
-                                var hash=crypto.createHash('md5').update(pass).digest("hex");
+                                var hash=crypto.createHash('sha256').update(pass).digest("hex");
                     if (column.value == hash) {
                       
                         userMap.set(user,email,hash);
@@ -314,7 +314,7 @@ app.post('/signup/:fullname/:email/:password/:fb', function (req, res) {
         squeryDatabase(req.params.fullname, req.params.email, req.params.password, function (err, status) {
             user = req.params.fullname;
           process.stdout.write(status);
-            var hash=crypto.createHash('md5').update(req.params.password).digest("hex");
+            var hash=crypto.createHash('sha256').update(req.params.password).digest("hex");
             if (status == 200) {
                 var insert = "insert into dbo.users values('" + req.params.email + "','" + req.params.fullname + "','" + hash + "','false');";
                
