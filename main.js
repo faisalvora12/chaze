@@ -63,16 +63,9 @@ gradientStroke.addColorStop(1, "#f49080");*/
   var myChart = new Chart(ctx, {
   type: 'line',
   data: {
-     xAxes: [{
-            gridLines: {
-                display:false
-            }
-        }],
-      yAxes: [{
-            gridLines: {
-                display:false
-            }   
-        }],
+     options: {
+        legends:{ display: false}
+     },
     labels: years,
     datasets: [
       { 
