@@ -321,7 +321,7 @@ app.post('/signup/:fullname/:email/:password/:fb', function (req, res) {
             var hash=crypto.createHash('sha256').update(req.params.password).digest("hex");
               var salt = crypto.randomBytes(8).toString('hex').slice(0,16);  
                  var hash = crypto.createHmac('sha512', salt);
-                     hash.update(PASSWORD);
+                     hash.update(req.params.password);
                     var hash = hash.digest('hex');
           if (status == 200) {
                 var insert = "insert into dbo.users values('" + req.params.email + "','" + req.params.fullname + "','" + hash + "','false','" + salt + "');";
