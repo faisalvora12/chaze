@@ -54,8 +54,9 @@ function queryDatabasel(email,pass,callback)
     request = new Request(
         "select email,fullname,salt,password from dbo.Users",
         function(err, rowCount, rows)
-        {
-          console.log("problem with login selct statement");
+        { 
+          if(err)
+            console.log("problem with login selct statement");
         }
     );
     var c=0;
