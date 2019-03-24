@@ -66,7 +66,7 @@ function queryDatabasel(email,pass,callback)
             if(column.metadata.colName=="Email"){
                 if(column.value==email) {
                     email=column.value;
-         
+                console.log("reached email");
                     c=1;
                 }
                 else {
@@ -77,12 +77,13 @@ function queryDatabasel(email,pass,callback)
             if(c==1)
             {
                 if(column.metadata.colName=="FullName") {
-                   
+                   console.log("reached fullname");
                     user = column.value;
                 }
                 if(column.metadata.colName=="Salt")
                 {
                   salt = column.value;
+                 console.log("reached salt");
                 }
                 if(column.metadata.colName=="Password") {
                  console.log("\n"+pass+"\n");
