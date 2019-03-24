@@ -66,7 +66,6 @@ function queryDatabasel(email,pass,callback)
             if(column.metadata.colName=="email"){
                if(column.value==email) {
                     email=column.value;
-                console.log("reached email");
                     c=1;
                 }
                 else {
@@ -81,9 +80,11 @@ function queryDatabasel(email,pass,callback)
                 }
                 if(column.metadata.colName=="salt")
                 {
+                 console.log("\n   "+column.value+"\n")
                   salt = column.value;
                 }
                 if(column.metadata.colName=="password") {
+                 console.log(salt+"\n")
                      //var hash=crypto.createHash('sha256').update(pass).digest("hex");
                     //var salt = crypto.randomBytes(8).toString('hex').slice(0,16);  
                  var hash = crypto.createHmac('sha512', salt);
