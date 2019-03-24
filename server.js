@@ -52,9 +52,10 @@ function queryDatabasel(email,pass,callback)
 
     // Read all rows from table
     request = new Request(
-        "select * from dbo.Users",
+        "select email,fullname,salt,password from dbo.Users",
         function(err, rowCount, rows)
         {
+          console.log("problem with login selct statement");
         }
     );
     var c=0;
@@ -76,17 +77,20 @@ function queryDatabasel(email,pass,callback)
             {
                 if(column.metadata.colName=="FullName") {
                    
-                    user=column.value;
+                    user = column.value;
                 }
-                
+                if(column.metadata.colName=="Salt")
+                {
+                  salt = column.value;
+                }
                 if(column.metadata.colName=="Password") {
-                     var hash=crypto.createHash('sha256').update(pass).digest("hex");
-                    /*var salt = crypto.randomBytes(8).toString('hex').slice(0,16);  
+                     //var hash=crypto.createHash('sha256').update(pass).digest("hex");
+                    //var salt = crypto.randomBytes(8).toString('hex').slice(0,16);  
                  var hash = crypto.createHmac('sha512', salt);
-                     hash.update(PASSWORD);
-                    var hash = hash.digest('hex');*/
+                     hash.update(pass);
+                   hash = hash.digest('hex');
                     if (column.value == hash) {
-                      
+           
                         userMap.set(user,email,hash);
                         callback(null,200);
                         call=1;
@@ -318,11 +322,11 @@ app.post('/signup/:fullname/:email/:password/:fb', function (req, res) {
         squeryDatabase(req.params.fullname, req.params.email, req.params.password, function (err, status) {
             user = req.params.fullname;
           process.stdout.write(status);
-            var hash=crypto.createHash('sha256').update(req.params.password).digest("hex");
+            //var hash=crypto.createHash('sha256').update(req.params.password).digest("hex");
               var salt = crypto.randomBytes(8).toString('hex').slice(0,16);  
                  var hash = crypto.createHmac('sha512', salt);
                      hash.update(req.params.password);
-                    var hash = hash.digest('hex');
+                  hash = hash.digest('hex');
           if (status == 200) {
                 var insert = "insert into dbo.users values('" + req.params.email + "','" + req.params.fullname + "','" + hash + "','false','" + salt + "');";
                
