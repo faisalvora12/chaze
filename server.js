@@ -63,7 +63,6 @@ function queryDatabasel(email,pass,callback)
     var call=0;
     request.on('row', function(columns) {
         columns.forEach(function(column) {
-               console.log("\nemail:  "+column.metadata.colName+"    "+email); 
             if(column.metadata.colName=="email"){
                if(column.value==email) {
                     email=column.value;
@@ -78,21 +77,19 @@ function queryDatabasel(email,pass,callback)
             if(c==1)
             {
                 if(column.metadata.colName=="fullname") {
-                   console.log("reached fullname");
                     user = column.value;
                 }
                 if(column.metadata.colName=="salt")
                 {
                   salt = column.value;
-                 console.log("reached salt");
                 }
                 if(column.metadata.colName=="password") {
-                 console.log("\n"+pass+"\n");
                      //var hash=crypto.createHash('sha256').update(pass).digest("hex");
                     //var salt = crypto.randomBytes(8).toString('hex').slice(0,16);  
                  var hash = crypto.createHmac('sha512', salt);
                      hash.update(pass);
                    hash = hash.digest('hex');
+                    console.log("\n"+column.value+"   "+hash+"\n");
                     if (column.value == hash) {
            
                         userMap.set(user,email,hash);
