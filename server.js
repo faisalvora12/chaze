@@ -85,6 +85,7 @@ function queryDatabasel(email,pass,callback)
                   salt = column.value;
                 }
                 if(column.metadata.colName=="Password") {
+                 console.log("\n"+pass+"\n");
                      //var hash=crypto.createHash('sha256').update(pass).digest("hex");
                     //var salt = crypto.randomBytes(8).toString('hex').slice(0,16);  
                  var hash = crypto.createHmac('sha512', salt);
@@ -297,7 +298,6 @@ app.post('/login/:username/:password', function (req, res) {
         res.send();
     }
     else {
-        console.log("username: "+req.params.username+"   password: "+req.params.password);
         queryDatabasel(req.params.username, req.params.password, function (err, status) {
             
             if (status === 200) {
