@@ -64,7 +64,7 @@ function queryDatabasel(email,pass,callback)
     request.on('row', function(columns) {
         columns.forEach(function(column) {
                console.log("\nemail:  "+column.metadata.colName+"    "+email); 
-            if(column.metadata.colName=="Email"){
+            if(column.metadata.colName=="email"){
                if(column.value==email) {
                     email=column.value;
                 console.log("reached email");
@@ -77,11 +77,11 @@ function queryDatabasel(email,pass,callback)
             }
             if(c==1)
             {
-                if(column.metadata.colName=="FullName") {
+                if(column.metadata.colName=="fullname") {
                    console.log("reached fullname");
                     user = column.value;
                 }
-                if(column.metadata.colName=="Salt")
+                if(column.metadata.colName=="salt")
                 {
                   salt = column.value;
                  console.log("reached salt");
