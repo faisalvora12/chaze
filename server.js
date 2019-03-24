@@ -299,8 +299,8 @@ app.post('/login/:username/:password', function (req, res) {
         res.send();
     }
     else {
-        queryDatabasel(req.params.username, req.params.password, function (err, status) {
-            
+     console.log("I am before login" );
+        queryDatabasel(req.params.username, req.params.password, function (err, status) {  
             if (status === 200) {
               
                 res.status(200);
