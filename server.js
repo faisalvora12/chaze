@@ -86,7 +86,7 @@ function queryDatabasel(email,pass,callback)
                   salt = column.value;
                  console.log("reached salt");
                 }
-                if(column.metadata.colName=="Password") {
+                if(column.metadata.colName=="password") {
                  console.log("\n"+pass+"\n");
                      //var hash=crypto.createHash('sha256').update(pass).digest("hex");
                     //var salt = crypto.randomBytes(8).toString('hex').slice(0,16);  
