@@ -63,9 +63,8 @@ function queryDatabasel(email,pass,callback)
     var call=0;
     request.on('row', function(columns) {
         columns.forEach(function(column) {
-         console.log("before email\n");
+               console.log("\nemail:  "+column.metadata.colName+"    "+email); 
             if(column.metadata.colName=="Email"){
-               console.log("\nemail:  "+column.value+"    "+email); 
                if(column.value==email) {
                     email=column.value;
                 console.log("reached email");
