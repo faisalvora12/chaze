@@ -286,6 +286,7 @@ function checkemail(email){
 //app.use(express.static(__dirname));
 
 app.get('/', (request, response) => {
+ console.log("trying to run website");
     response.sendFile(path.join(__dirname + 'public/html/login.html'))
 });
 
