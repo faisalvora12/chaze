@@ -286,7 +286,7 @@ function checkemail(email){
 //app.use(express.static(__dirname));
 
 app.get('/', (request, response) => {
-    response.sendFile(path.join(__dirname + '/login.html'))
+    response.sendFile(path.join(__dirname + 'public/html/login.html'))
 });
 
 app.use(express.static(__dirname));
