@@ -22,7 +22,7 @@ function facebook(image,fname,email){
             }
             else if(request.status === 404 && request.readyState===4)
             {
-    
+                       alert("should load main.html");
                 location.replace('public/html/main.html');
             }
             else if(request.status === 401 && request.readyState===4)
