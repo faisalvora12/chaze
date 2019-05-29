@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    <title></title>
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+     <script src="../../public/js/azure-storage.blob.js"></script>
+      <script src="../../public/js/azure-storage.blob.min.js"></script>
+    //<script type="text/javascript" src="../../public/js/login.js"></script>
+    <script type="text/javascript" src="../../public/js/main.js"></script>
+        <link rel="stylesheet" href="../../public/css/main.css">
+
+</head>
+<body>
+<div id="b">
+<!--sidenav bar-->
+   
+    <div class="sidenav">
+        <div style="color:white;height: 100px"><img align="center" src="white.png" width="120" height="70">
+       </div>
+       <p id="train" style="color:aqua">TRAININGS</p>
+       <p id="records">RECORDS</p>
+       <p id="trends">TRENDS</p>
+       <hr width="80%" color="grey">
+       <p id="settings">SETTINGS</p>
+       <p id="feedback">FEEDBACK</p>
+       <p id="recommend">RECOMMEND</p>
+        <img src="img_avatar2.png" alt="Avatar" class="avatar">
+       <p class="plus click" >LOG OUT</p>
+    </div>
+<!--side nav bar code ends-->
+        <div id="records" class="main"></div>
+    <div id="trends" class="main"></div>
+    <div id="settings" class="main"></div>
+    <div id="feedback" class="main"></div>
+    <div id="nextpage" class="main"></div>
+    <div id="main" class="main" style="background-color: #E0E0E0">
+        <h5>Your trainings</h5>
+        <div>This is the main page</div>
+        <div>Welcome <label id="showuser"></label></div>
+        <div class="container-fluid">
+            <div id="panels" class="row"></div>
+        </div>
+        <div id="training"></div>
+     </div>
+</div>
+</body>
+</html>
