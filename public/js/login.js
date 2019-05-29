@@ -18,12 +18,12 @@ function facebook(image,fname,email){
         request.onreadystatechange = function () {
             
             if (request.readyState === 4 && request.status === 200) {
-                location.replace('public/main.html');
+                location.replace('main.html');
             }
             else if(request.status === 404 && request.readyState===4)
             {
                        alert("should load main.html");
-                location.replace('public/main.html');
+                location.replace('main.html');
             }
             else if(request.status === 401 && request.readyState===4)
             {
@@ -124,7 +124,7 @@ function login() {
         var request = new XMLHttpRequest();
         request.onreadystatechange = function () {
             if (request.readyState === 4 && request.status === 200) {
-                location.replace('public/main.html');
+                location.replace('main.html');
             }
             else if(request.status === 404 && request.readyState===4)
             {
