@@ -2,12 +2,12 @@ $(document).ready(function() {
   $(".click").click(function () {
     var a=document.getElementById("showuser").innerText;
     localStorage.lastname="";
-    location.replace('login.html');
+    location.replace('public/login.html');
   });
 });
 function tile()
 {
-location.replace('tileexample.html');
+location.replace('public/tileexample.html');
 }
 var request = new XMLHttpRequest();
 window.addEventListener('load', function() {
@@ -21,7 +21,7 @@ request.onreadystatechange = function () {
     }
     else if(request.status === 404 && request.readyState===4)
     {
-        location.replace('login.html');
+        location.replace('public/login.html');
     }
 };
 request.open('POST', 'get/'+localStorage.lastname, true);
