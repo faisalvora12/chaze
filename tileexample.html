@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/responsive/1.0.5/responsive.min.js"></script>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="tiles.css">
+  <title>My Chart.js Chart</title>
+</head>
+<body>
+
+	<div class="tile">
+			<div class="radar">
+					<canvas align="center" id="myRadar" width="100" height="100"></canvas>
+					<div class="radar.data">
+					<h4>Monday evening swim</h4>
+					<p>Monday, Feb 23, 2019<br> Velocity: 9.9 m/s<br>Avg. Efficiency: 1.2<br>Total Distance: 650m<br>Avg. Stroke Frequency: 2.3 strokes/s</p>
+				</div>
+			</div>
+	</div>
+	
+  <script>
+	let radarChart = document.getElementById('myRadar').getContext('2d');
+	document.getElementById('myRadar').addEventListener("mouseover", function( event ) {
+		var curr_ds = config.data.datasets[0];
+		var new_ds = {
+			labels: ['Power', 'Speed', 'HR', 'Lengths'],
+			data:curr_ds.data,
+			lineTension: 0.1,
+			pointRadius: 0,
+			backgroundColor: color
+		}
+		config.data.datasets.pop();
+		config.data.datasets.push(new_ds);
+		window.tileRadarChart.update();
+		
+	}, false);
+	let canvas = document.getElementById('myRadar');
+	var x = radarChart.canvas.height/2;
+	var y = radarChart.canvas.width/2;
+	var color = radarChart.createRadialGradient(x,y,x/6,x,y,x);
+        // add gradients stops
+        color.addColorStop(0, 'rgba(102, 204, 255,0.3)');
+        color.addColorStop(0.5, 'rgba(0, 153, 255, 0.3)');
+        color.addColorStop(0.75, 'rgba(0, 51, 204,0.3)');
+	color.addColorStop(1, 'rgba(0, 0, 102, 0.6)');
+		
+	
+	var config = {
+		scaleOverride: true,
+		scaleSteps: 50,
+		scaleStepWidth: 50,
+		scaleStartValue: 0,
+		type: 'radar',
+		data: {
+			//labels: ['Power', 'Speed', 'HR', 'Lengths'],
+			labels: ['', '', '', ''],
+			datasets: [{
+				data:[15,20,14,16],
+				lineTension: 0.1,
+				pointRadius: 0,
+				backgroundColor: color
+			}]
+		},
+		options: {
+			legend: {
+				display: false	
+			},
+			scale: {
+				display: true,
+				ticks: {
+					beginAtZero: true,
+					display: false
+				},
+				gridLines: {
+					display: true
+				}
+			}
+		}
+	};
+	
+	window.onload = function(){
+		window.tileRadarChart = new Chart(radarChart, config); 
+	}
+	function set_gradients(chart){
+		var scales = chart.scales;
+		var color = chart.ctx.createRadialGradient(
+		  scales.scale.xCenter,
+		  scales.scale.yCenter,
+		  scales.scale.drawingArea / 6,
+		  scales.scale.xCenter,
+		  scales.scale.yCenter,
+		  scales.scale.drawingArea
+        );
+        // add gradients stops
+        color.addColorStop(0, 'rgba(102, 204, 255,0.3)');
+        color.addColorStop(0.5, 'rgba(0, 153, 255, 0.3)');
+        color.addColorStop(0.75, 'rgba(0, 51, 204,0.3)');
+        color.addColorStop(1, 'rgba(0, 0, 102, 0.6)');
+        // changes the background color option
+        chart.data.datasets[0].backgroundColor = color;
+	}
+	Chart.plugins.register({
+		afterLayout: function(tileRadarChart, options) {
+			set_gradients(tileRadarChart);
+	  }
+	});
+  </script>
+</body>
+</html>
