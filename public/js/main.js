@@ -2,7 +2,7 @@ $(document).ready(function() {
   $(".click").click(function () {
     var a=document.getElementById("showuser").innerText;
     localStorage.lastname="";
-    location.replace('public/login.html');
+    location.replace('login.html');
   });
 });
 function tile()
@@ -21,7 +21,7 @@ request.onreadystatechange = function () {
     }
     else if(request.status === 404 && request.readyState===4)
     {
-        location.replace('public/login.html');
+        location.replace('login.html');
     }
 };
 request.open('POST', 'get/'+localStorage.lastname, true);
