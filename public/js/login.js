@@ -18,7 +18,7 @@ function facebook(image,fname,email){
         request.onreadystatechange = function () {
             
             if (request.readyState === 4 && request.status === 200) {
-                location.replace('publicmain.html');
+                location.replace('public/main.html');
             }
             else if(request.status === 404 && request.readyState===4)
             {
