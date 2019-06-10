@@ -331,7 +331,7 @@ app.post('/signup/:fullname/:email/:password/:fb', function (req, res) {
                      hash.update(req.params.password);
                   hash = hash.digest('hex');
           if (status == 200) {
-                var insert = "insert into dbo.users values('" + req.params.email + "','" + req.params.fullname + "','" + hash + "','false','" + salt + "');";
+                var insert = "insert into dbo.users(Email,Fullname,Password,Deleted,Salt) values('" + req.params.email + "','" + req.params.fullname + "','" + hash + "','false','" + salt + "');";
                
                 var requ = new Request(
                     insert, function (err) {
