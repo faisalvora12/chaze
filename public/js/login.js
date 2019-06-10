@@ -78,12 +78,10 @@ function signup() {
         var request = new XMLHttpRequest();
         request.onreadystatechange = function () {
             if (request.readyState === 4 && request.status === 200) {
-                alert("sign up successful");
                 location.replace('main.html');
             }
             else if(request.status === 404 && request.readyState===4)
             {
-                 alert('reached here');
                 alert('That email already exists');
             }
             else if(request.status === 401 && request.readyState===4)
