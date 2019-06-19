@@ -141,7 +141,7 @@ function login() {
 
 function clickgoogle(){
         $(document).ready(function() {
-        $("#google").click();
+        $("#google").trigger("click");
          });
         alert("I just clicked");
 }
