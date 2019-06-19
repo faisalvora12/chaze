@@ -139,6 +139,7 @@ function login() {
     }
 }
 function clickgoogle(){
+        alert("I am in google ");
         $("#google").click()
 }
 function clickfacebook(){
