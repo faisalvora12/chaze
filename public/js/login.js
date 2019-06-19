@@ -138,6 +138,7 @@ function login() {
         request.send();
     }
 }
+$(document).ready(function() {
 function clickgoogle(){
         alert("I am in google ");
         $("#google").click();
@@ -146,5 +147,5 @@ function clickgoogle(){
 function clickfacebook(){
         $("#facebook").click();
 }
-
+});
 
