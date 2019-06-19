@@ -138,14 +138,18 @@ function login() {
         request.send();
     }
 }
-$(document).ready(function() {
+
 function clickgoogle(){
         alert("I am in google ");
+        $(document).ready(function() {
         $("#google").click();
+         });
         alert("I just clicked");
 }
 function clickfacebook(){
+        $(document).ready(function() {
         $("#facebook").click();
+         });
 }
-});
+
 
