@@ -131,7 +131,7 @@ function login() {
             }
             else if(request.status === 401 && request.readyState===4)
             {
-                alert("your email did not pass the server test")
+                alert("your email did not pass the server test");
             }
         };
         request.open('POST', 'login/'+email+"/"+pass, true);
@@ -140,10 +140,11 @@ function login() {
 }
 function clickgoogle(){
         alert("I am in google ");
-        $("#google").click()
+        $("#google").click();
+        alert("I just clicked");
 }
 function clickfacebook(){
-        $("#facebook").click()
+        $("#facebook").click();
 }
 
 
