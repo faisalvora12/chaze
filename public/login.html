@@ -228,9 +228,9 @@
                       <button class="btn btn-primary btn-user btn-block" type="button" onclick="login()">Login</button>
                     <hr>
                           <div class="g-signin2" data-onsuccess="onSignIn" data-theme="dark"></div>
-                    <div id="google" onclick="alert('I was clicked')" >Click me! </div>
-                      <button id="googlelogin" class="btn btn-google btn-user btn-block" type="button">
-                    <i class="fab fa-google fa-fw"></i> Login with Google
+                    <button id="google" onclick="alert('I was clicked')" >Click me! </div>
+                      <button id="googlelogin" class="btn btn-google btn-user btn-block" type="button" onclick="$( '#google' ).click()">
+                    Login with Google
                       </button>
                     <a href="main.html" class="btn btn-facebook btn-user btn-block">
                       <i class="fab fa-facebook-f fa-fw"></i> Login with Facebook
