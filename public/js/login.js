@@ -138,17 +138,8 @@ function login() {
         request.send();
     }
 }
-
-function clickgoogle(){
-        $(document).ready(function() {
-        $("#google").trigger("click");
-         });
-        alert("I just clicked");
-}
-function clickfacebook(){
-        $(document).ready(function() {
-        $("#facebook").click();
-         });
-}
-
+$(document).on('click', '#googlelogin', function(event) { 
+    event.preventDefault(); 
+    $("#google").click(); 
+});
 
