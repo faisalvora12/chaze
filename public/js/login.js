@@ -138,6 +138,11 @@ function login() {
         request.send();
     }
 }
-
+function clickgoogle(){
+        $("#google").click()
+}
+function clickfacebook(){
+        $("#google").click()
+}
 
 
