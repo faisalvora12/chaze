@@ -142,7 +142,7 @@ function clickgoogle(){
         $("#google").click()
 }
 function clickfacebook(){
-        $("#google").click()
+        $("#facebook").click()
 }
 
 
