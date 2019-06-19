@@ -140,7 +140,6 @@ function login() {
 }
 
 function clickgoogle(){
-        alert("I am in google ");
         $(document).ready(function() {
         $("#google").click();
          });
