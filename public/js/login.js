@@ -138,7 +138,9 @@ function login() {
         request.send();
     }
 }
-
+function cikk(){
+        alert("inside cikk");
+}
 function click()
 {
         alert("I am inside click");
