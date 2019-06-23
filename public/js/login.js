@@ -140,7 +140,5 @@ function login() {
 }
 function cikk(){
         alert("inside cikk");
-        $(document).on('click', '.g-signin2', function () {
-    alert("hello");
-});
+        document.querySelector('.g-signin2').click();
 }
