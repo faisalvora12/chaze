@@ -141,4 +141,9 @@ function login() {
 function cikk(){
         alert("inside cikk");
         document.querySelector('.g-signin2').click();
+        document.querySelector('.abcRioButtonContentWrapper').click();
+        document.querySelector('.abcRioButton').click();
+        document.querySelector('.abcRioButtonBlue').click();
+        document.querySelector('.abcRioButtonSvg').click();
+        
 }
