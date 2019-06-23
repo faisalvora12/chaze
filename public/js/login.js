@@ -142,11 +142,11 @@ function cikkgoogle(){
         document.querySelector('.abcRioButtonContentWrapper').click();
         document.querySelector('.abcRioButton').click();
         document.querySelector('.abcRioButtonBlue').click();
-        document.querySelector('.abcRioButtonSvg').click();
+        //document.querySelector('.abcRioButtonSvg').click();
         
 }
 function cikkface()
 {
    document.querySelector('.fb_iframe_widget').click();     
-       
+      alert("inside facebook"); 
 }
