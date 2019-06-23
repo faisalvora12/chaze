@@ -147,5 +147,5 @@ function cikkgoogle(){
 }
 function cikkface()
 {
-   document.querySelector('fb').click();     
+   document.querySelector('fb:login-button').click();     
 }
