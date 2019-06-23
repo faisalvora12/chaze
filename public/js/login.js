@@ -147,6 +147,8 @@ function cikkgoogle(){
 }
 function cikkface()
 {
-   $("#faceclick").click();    
-      alert("inside facebook"); 
+        $(document).ready(function() {
+         $("#faceclick").click();   
+        });
+ alert("inside facebook"); 
 }
