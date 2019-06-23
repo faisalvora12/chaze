@@ -140,8 +140,6 @@ function login() {
 }
 function cikk(){
         alert("inside cikk");
-}
-function click()
-{
-        alert("I am inside click");
+          document.getElementById("google").click();
+
 }
