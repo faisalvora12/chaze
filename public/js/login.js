@@ -147,6 +147,6 @@ function cikkgoogle(){
 }
 function cikkface()
 {
-   document.querySelector('.fb_iframe_widget').click();     
+   $("#faceclick").click();    
       alert("inside facebook"); 
 }
