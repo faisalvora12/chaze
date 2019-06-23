@@ -115,7 +115,7 @@
 </fb:login-button><br><br>
          <!--input type="button" value="Sign in using Facebook" onclick="checkLoginState();"/-->
 
-    <div id="google" class="g-signin2" data-onsuccess="onSignIn" data-theme="dark"></div>
+    
 <div id="status">
 </div>
     <!--Facebook login button code ends-->
@@ -227,9 +227,11 @@
                 
                       <button class="btn btn-primary btn-user btn-block" type="button" onclick="login()">Login</button>
                     <hr>
-                          <div id="google" class="g-signin2" data-onsuccess="onSignIn" data-theme="dark"></div>
-                      <button id="googlelogin" class="btn btn-google btn-user btn-block" type="button" onclick="click()">
-                    Login with Google
+                          <button id="google" class="g-signin2" data-onsuccess="onSignIn" data-theme="dark"></button>
+                      <button class="btn btn-google btn-user btn-block" type="button" onclick="click()">Login with Google
+                      
+                      </button>
+                      <button class="btn btn-google btn-user btn-block" type="button" onclick="login()">Login with Google 2
                       </button>
                     <a href="main.html" class="btn btn-facebook btn-user btn-block">
                       <i class="fab fa-facebook-f fa-fw"></i> Login with Facebook
