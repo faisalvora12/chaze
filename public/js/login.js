@@ -140,6 +140,7 @@ function login() {
 }
 function cikk(){
         alert("inside cikk");
-          document.getElementById("google").click();
-
+        $(document).on('click', '.g-signin2', function () {
+    alert("hello");
+});
 }
