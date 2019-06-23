@@ -139,3 +139,7 @@ function login() {
     }
 }
 
+function click()
+{
+        alert("I am inside click");
+}
