@@ -48,16 +48,14 @@
   // This function is called when someone finishes with the Login
   // Button.  See the onlogin handler attached to it in the sample
   // code below.
-    $(document).ready(function(){
-  $( "#f" ).click(function() {
+  
   function checkLoginState(a) {
      
     FB.getLoginStatus(function(response) {
       statusChangeCallback(response);
     });
   }
-  });
- });
+ 
   window.fbAsyncInit = function() {
     FB.init({
       appId      : '1946818672279679',
