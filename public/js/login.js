@@ -147,7 +147,7 @@ function cikkgoogle(){
 }
 function cikkface()
 {
-   document.querySelector('#faceclick').click();
+   document.querySelector('._4z_f fwb').click();
 
  alert("inside facebook"); 
 }
