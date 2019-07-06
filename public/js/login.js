@@ -148,7 +148,6 @@ function cikkgoogle(){
 function cikkface()
 {
    document.querySelector('.fb-login-button').click();
-   document.querySelector('._4z_b _4z_8 _4z_d').click();
   document.querySelector('.pluginLoginButton').click();
   document.querySelector('.pluginLoginButtonmedium').click();
  alert("inside facebook"); 
