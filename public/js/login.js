@@ -78,7 +78,7 @@ function signup() {
         var request = new XMLHttpRequest();
         request.onreadystatechange = function () {
             if (request.readyState === 4 && request.status === 200) {
-                location.replace('main.html');
+                location.replace('index.html');
             }
             else if(request.status === 404 && request.readyState===4)
             {
@@ -123,7 +123,7 @@ function login() {
         var request = new XMLHttpRequest();
         request.onreadystatechange = function () {
             if (request.readyState === 4 && request.status === 200) {
-                location.replace('main.html');
+                location.replace('index.html');
             }
             else if(request.status === 404 && request.readyState===4)
             {
@@ -145,11 +145,4 @@ function cikkgoogle(){
         //document.querySelector('.abcRioButtonSvg').click();
         
 }
-function cikkface()
-{
-        document.querySelector('#faceclick').click();
-        $(document).ready(function() {
-         $("#faceclick").click();   
-        });
- alert("inside facebook"); 
-}
+

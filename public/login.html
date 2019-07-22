@@ -48,13 +48,14 @@
   // This function is called when someone finishes with the Login
   // Button.  See the onlogin handler attached to it in the sample
   // code below.
+  
   function checkLoginState(a) {
      
     FB.getLoginStatus(function(response) {
       statusChangeCallback(response);
     });
   }
-
+ 
   window.fbAsyncInit = function() {
     FB.init({
       appId      : '1946818672279679',
@@ -114,7 +115,7 @@
           <div class="card-body p-0">
             <!-- Nested Row within Card Body -->
             <div class="row">
-              <div class="col-lg-6 d-none d-lg-block bg-login-image"></div>
+              <div class="col-lg-6 d-none d-lg-block" style="background-color:powderblue;"></div><!--bg-login-image-->
               <div class="col-lg-6">
                 <div class="p-5">
                   <div class="text-center">
@@ -139,9 +140,10 @@
                       <div style="display: none;" id="google" class="g-signin2" data-onsuccess="onSignIn" data-theme="dark"></div>
                       <button class="btn btn-google btn-user btn-block" type="button" onclick="cikkgoogle()">                          
 Login with Google            </button>
-                      <fb:login-button id="faceclick" scope="public_profile,email" onlogin="checkLoginState('yes')">
-</fb:login-button>
-                    <button class="btn btn-facebook btn-user btn-block" type="button" onclick="cikkface()">Login with Facebook
+                      <div class="fb-login-button" id="faceclick" scope="public_profile,email" onlogin="checkLoginState('yes')">Facebook
+                          
+</div>
+                    <button id="f" class="btn btn-facebook btn-user btn-block" type="button" onclick="cikkface()" >Login with Facebook
                     </button>
                   </form>
                   <hr>
