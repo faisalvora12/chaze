@@ -84,13 +84,11 @@ function queryDatabasel(email,pass,callback)
                   salt = column.value;
                 }
                 if(column.metadata.colName=="password") {
-                 console.log(salt+"\n")
                      //var hash=crypto.createHash('sha256').update(pass).digest("hex");
                     //var salt = crypto.randomBytes(8).toString('hex').slice(0,16);  
                  var hash = crypto.createHmac('sha512', salt);
                      hash.update(pass);
                    hash = hash.digest('hex');
-                    console.log("\n"+column.value+"   "+hash+"\n");
                     if (column.value == hash) {
            
                         userMap.set(user,email,hash);
@@ -286,7 +284,6 @@ function checkemail(email){
 //app.use(express.static(__dirname));
 
 app.get('/', (request, response) => {
- console.log("trying to run website");
     response.sendFile(path.join(__dirname + '/public/login.html'))
 });
 
@@ -299,7 +296,7 @@ app.post('/login/:username/:password', function (req, res) {
         res.send();
     }
     else {
-     console.log("I am before login" );
+  
         queryDatabasel(req.params.username, req.params.password, function (err, status) {  
             if (status === 200) {
               
