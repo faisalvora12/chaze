@@ -1,110 +1,115 @@
 <!DOCTYPE html>
-<html lang ="en">
+<html lang="en">
+
 <head>
-    
-    <meta charset="utf-8">
+
+  <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
   <meta name="author" content="">
-      <script src="vendor/jquery/jquery.min.js"></script>
-    <script type="text/javascript" src="public/js/login.js"></script>
-    <meta name="google-signin-scope" content="profile email">
-    <meta name="google-signin-client_id" content="85688924520-dovo7jila2utlti0ferm0sdl88afi7h9.apps.googleusercontent.com">
-    <script src="https://apis.google.com/js/platform.js" async defer></script>
-    <!-- Custom fonts for this template-->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script type="text/javascript" src="public/js/login.js"></script>
+  <meta name="google-signin-scope" content="profile email">
+  <meta name="google-signin-client_id"
+    content="85688924520-dovo7jila2utlti0ferm0sdl88afi7h9.apps.googleusercontent.com">
+  <script src="https://apis.google.com/js/platform.js" async defer></script>
+  <!-- Custom fonts for this template-->
   <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
-  <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
-    
-    <link rel="stylesheet" href="css/login.css">
- 
+  <link
+    href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+    rel="stylesheet">
+
+  <link rel="stylesheet" href="css/login.css">
+
 </head>
-    <!--check if the user is already logged in - FB.getLoginStatus(function(response) {
+<!--check if the user is already logged in - FB.getLoginStatus(function(response) {
     statusChangeCallback(response);
 });-->
+
 <body style="background-color:black">
 
-<!--The facebook and google login button SDK-->
-<script>
+  <!--The facebook and google login button SDK-->
+  <script>
     //facebook login code
- // This is called with the results from from FB.getLoginStatus().
-  function statusChangeCallback(response) {
-    console.log('statusChangeCallback');
-    console.log(response);
-    // The response object is returned with a status field that lets the
-    // app know the current login status of the person.
-    // Full docs on the response object can be found in the documentation
-    // for FB.getLoginStatus().
-    if (response.status === 'connected') {
-      // Logged into your app and Facebook.
-      testAPI();
-    } else {
-      // The person is not logged into your app or we are unable to tell.
-      document.getElementById('status').innerHTML = 'Please log ' +
-        'into this app.';
-    }
-  }
-
-  // This function is called when someone finishes with the Login
-  // Button.  See the onlogin handler attached to it in the sample
-  // code below.
-  
-  function checkLoginState(a) {
-     
-    FB.getLoginStatus(function(response) {
-      statusChangeCallback(response);
-    });
-  }
- 
-  window.fbAsyncInit = function() {
-    FB.init({
-      appId      : '1946818672279679',
-      cookie     : true,  // enable cookies to allow the server to access 
-                          // the session
-      xfbml      : true,  // parse social plugins on this page
-      version    : 'v2.8' // use graph api version 2.8
-    });
-  };
-
-  // Load the SDK asynchronously
-  (function(d, s, id) {
-    var js, fjs = d.getElementsByTagName(s)[0];
-    if (d.getElementById(id)) return;
-    js = d.createElement(s); js.id = id;
-    js.src = "https://connect.facebook.net/en_US/sdk.js";
-    fjs.parentNode.insertBefore(js, fjs);
-  }(document, 'script', 'facebook-jssdk'));
-
-  // Here we run a very simple test of the Graph API after login is
-  // successful.  See statusChangeCallback() for when this call is made.
-  function testAPI() {
-    FB.api('/me',{ locale: 'en_US', fields: 'name, email' }, function(response) {
-        facebook(null,response.name,response.email);
-    });
-  }   
-
-
-//Facebook button sdk ends
-  //google code
-     function onSignIn(googleUser) {
-         
-        // Useful data for your client-side scripts:
-        var profile = googleUser.getBasicProfile();
-        //console.log("ID: " + profile.getId()); // Don't send this directly to your server!
-        //console.log('Full Name: ' + profile.getName());
-        //console.log("Email: " + profile.getEmail());
-         var image=profile.getImageUrl();
-         googleUser.disconnect();
-         facebook(image,profile.getName(),profile.getEmail());
-                 // The ID token you need to pass to your backend:
-        //var id_token = googleUser.getAuthResponse().id_token;
-        //console.log("ID Token: " + id_token);
+    // This is called with the results from from FB.getLoginStatus().
+    function statusChangeCallback(response) {
+      console.log('statusChangeCallback');
+      console.log(response);
+      // The response object is returned with a status field that lets the
+      // app know the current login status of the person.
+      // Full docs on the response object can be found in the documentation
+      // for FB.getLoginStatus().
+      if (response.status === 'connected') {
+        // Logged into your app and Facebook.
+        testAPI();
+      } else {
+        // The person is not logged into your app or we are unable to tell.
+        document.getElementById('status').innerHTML = 'Please log ' +
+          'into this app.';
       }
-</script>
-<!--facebook and google login code ends-->
+    }
+
+    // This function is called when someone finishes with the Login
+    // Button.  See the onlogin handler attached to it in the sample
+    // code below.
+
+    function checkLoginState(a) {
+
+      FB.getLoginStatus(function (response) {
+        statusChangeCallback(response);
+      });
+    }
+
+    window.fbAsyncInit = function () {
+      FB.init({
+        appId: '1946818672279679',
+        cookie: true,  // enable cookies to allow the server to access 
+        // the session
+        xfbml: true,  // parse social plugins on this page
+        version: 'v2.8' // use graph api version 2.8
+      });
+    };
+
+    // Load the SDK asynchronously
+    (function (d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = "https://connect.facebook.net/en_US/sdk.js";
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+
+    // Here we run a very simple test of the Graph API after login is
+    // successful.  See statusChangeCallback() for when this call is made.
+    function testAPI() {
+      FB.api('/me', { locale: 'en_US', fields: 'name, email' }, function (response) {
+        facebook(null, response.name, response.email);
+      });
+    }
 
 
-    <div class="container">
+    //Facebook button sdk ends
+    //google code
+    function onSignIn(googleUser) {
+
+      // Useful data for your client-side scripts:
+      var profile = googleUser.getBasicProfile();
+      //console.log("ID: " + profile.getId()); // Don't send this directly to your server!
+      //console.log('Full Name: ' + profile.getName());
+      //console.log("Email: " + profile.getEmail());
+      var image = profile.getImageUrl();
+      googleUser.disconnect();
+      facebook(image, profile.getName(), profile.getEmail());
+      // The ID token you need to pass to your backend:
+      //var id_token = googleUser.getAuthResponse().id_token;
+      //console.log("ID Token: " + id_token);
+    }
+  </script>
+  <!--facebook and google login code ends-->
+
+
+  <div class="container">
 
     <!-- Outer Row -->
     <div class="row justify-content-center">
@@ -115,7 +120,8 @@
           <div class="card-body p-0">
             <!-- Nested Row within Card Body -->
             <div class="row">
-              <div class="col-lg-6 d-none d-lg-block" style="background-color:powderblue;"></div><!--bg-login-image-->
+              <div class="col-lg-6 d-none d-lg-block" style="background-color:powderblue;"></div>
+              <!--bg-login-image-->
               <div class="col-lg-6">
                 <div class="p-5">
                   <div class="text-center">
@@ -123,7 +129,8 @@
                   </div>
                   <form class="user">
                     <div class="form-group">
-                      <input type="email" class="form-control form-control-user" id="lemail" aria-describedby="emailHelp" placeholder="Enter Email Address...">
+                      <input type="email" class="form-control form-control-user" id="lemail"
+                        aria-describedby="emailHelp" placeholder="Enter Email Address...">
                     </div>
                     <div class="form-group">
                       <input type="password" class="form-control form-control-user" id="pass" placeholder="Password">
@@ -134,16 +141,19 @@
                         <label class="custom-control-label" for="customCheck">Remember Me</label>
                       </div>
                     </div>
-                
-                      <button class="btn btn-primary btn-user btn-block" type="button" onclick="login()">Login</button>
+
+                    <button class="btn btn-primary btn-user btn-block" type="button" onclick="login()">Login</button>
                     <hr>
-                      <div style="display: none;" id="google" class="g-signin2" data-onsuccess="onSignIn" data-theme="dark"></div>
-                      <button class="btn btn-google btn-user btn-block" type="button" onclick="cikkgoogle()">                          
-Login with Google            </button>
-                      <div class="fb-login-button" id="faceclick" scope="public_profile,email" onlogin="checkLoginState('yes')">Facebook
-                          
-</div>
-                    <button id="f" class="btn btn-facebook btn-user btn-block" type="button" onclick="cikkface()" >Login with Facebook
+                    <div style="display: none;" id="google" class="g-signin2" data-onsuccess="onSignIn"
+                      data-theme="dark"></div>
+                    <button class="btn btn-google btn-user btn-block" type="button" onclick="cikkgoogle()">
+                      Login with Google </button>
+                    <div class="fb-login-button" id="faceclick" scope="public_profile,email"
+                      onlogin="checkLoginState('yes')">Facebook
+
+                    </div>
+                    <button id="f" class="btn btn-facebook btn-user btn-block" type="button" onclick="cikkface()">Login
+                      with Facebook
                     </button>
                   </form>
                   <hr>
@@ -164,14 +174,15 @@ Login with Google            </button>
     </div>
 
   </div>
-     <!-- Bootstrap core JavaScript-->
+  <!-- Bootstrap core JavaScript-->
   <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
   <!-- Core plugin JavaScript-->
   <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
-    
-    <!-- Custom scripts for all pages-->
+
+  <!-- Custom scripts for all pages-->
   <script src="js/common.js"></script>
 
 </body>
+
 </html>
