@@ -40,7 +40,13 @@ function getuserid() {
           if (str2[3] === 'true') back++;
           if (str2[4] === 'true') bs++;
           if (str2[6] === 'true') free++;
-          $(".container-fluid").append("<div class='col-xl-4 col-md-6 col-lg-4'><div class='card shadow mb-4'><!-- Card Header - Dropdown --><div class='card-header py-3 d-flex flex-row align-items-center justify-content-between'><h6 class='m-0 font-weight-bold text-primary'>Morning Swim</h6></div><!-- Card Body --><div class='card-body'><div class='chart-area'><canvas id='myAreaChart'></canvas></div></div></div></div>");
+          var add = "";
+          for ( j = 1 ; j <= 3 ; j++ )
+          {
+            add = add + "<div class='col-xl-4 col-md-6 col-lg-4'><div class='card shadow mb-4'><!-- Card Header - Dropdown --><div class='card-header py-3 d-flex flex-row align-items-center justify-content-between'><h6 class='m-0 font-weight-bold text-primary'>Morning Swim</h6></div><!-- Card Body --><div class='card-body'><div class='chart-area'><canvas id='myAreaChart'></canvas></div></div></div></div>";
+          }
+          alert(add);
+          $(".container-fluid").append(add);
           //$("#panels").append("<div id='dummy" + i + "' class='col-sm panel panel-default' style='background-color: white'><label id='" + i + "' class='panel-body classWithPad'><canvas id='myChart" + i + "' width='500' height='350'></canvas> Training " + i + "<br>Total# lanes:85 <br>Total time: 500 secs<br>Avg power:30<br>Avg speed:50" + "</label></div>");
         });
       }
