@@ -41,29 +41,7 @@ function getuserid() {
           if (str2[4] === 'true') bs++;
           if (str2[6] === 'true') free++;
           $(".container-fluid").append("<div>Hello!</div>");
-          $("#panels").append("<div id='dummy" + i + "' class='col-sm panel panel-default' style='background-color: white'><label id='" + i + "' class='panel-body classWithPad'><canvas id='myChart" + i + "' width='500' height='350'></canvas> Training " + i + "<br>Total# lanes:85 <br>Total time: 500 secs<br>Avg power:30<br>Avg speed:50" + "</label></div>");
-         
-          var myChart = new Chart(ctx, {
-            type: 'line',
-            data: {
-              options: {
-                legends: { display: false }
-              },
-              labels: years,
-              datasets: [
-                {
-                  data: africa,
-                  borderColor: gradientStroke,//"#3e95cd",
-                  fill: true,
-                  backgroundColor: gradientStroke,
-                  pointBorderColor: gradientStroke,
-                  pointBackgroundColor: gradientStroke,
-                  pointHoverBackgroundColor: gradientStroke,
-                  pointHoverBorderColor: gradientStroke
-                }
-              ]
-            }
-          });
+          //$("#panels").append("<div id='dummy" + i + "' class='col-sm panel panel-default' style='background-color: white'><label id='" + i + "' class='panel-body classWithPad'><canvas id='myChart" + i + "' width='500' height='350'></canvas> Training " + i + "<br>Total# lanes:85 <br>Total time: 500 secs<br>Avg power:30<br>Avg speed:50" + "</label></div>");
         });
       }
       jQuery(document).ready(function () {
@@ -106,8 +84,9 @@ function blob(trainingid, contname, blobService) {
   });
 
 }
+/*
 $(document).ready(function () {
-  /*$("#panels").on("click", "div.panel", function () {
+  $("#panels").on("click", "div.panel", function () {
     var idp = $(this).attr('id');
     var id = $(this).children("label").attr('id');
     var text = (id.innerText || id.textContent);
@@ -135,11 +114,8 @@ $(document).ready(function () {
       setTimeout(function () {
       }, 50);//timeout ends
     });
-    //getting data from blob storage
-    /* */
-    /********************************************************************************/
-    //getting data from blob storage ends
-    document.body.scrollTop = 0;
-    document.documentElement.scrollTop = 0;
+   
+  document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
   });
-});
+});*/
