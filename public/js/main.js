@@ -41,20 +41,8 @@ function getuserid() {
           if (str2[4] === 'true') bs++;
           if (str2[6] === 'true') free++;
           $(".container-fluid").append("<div>Hello!</div>");
-          /*$("#panels").append("<div id='dummy" + i + "' class='col-sm panel panel-default' style='background-color: white'><label id='" + i + "' class='panel-body classWithPad'><canvas id='myChart" + i + "' width='500' height='350'></canvas> Training " + i + "<br>Total# lanes:85 <br>Total time: 500 secs<br>Avg power:30<br>Avg speed:50" + "</label></div>");
-           Our labels along the x-axis
-          var years = [1500, 1600, 1700, 1750, 1800, 1850, 1900, 1950, 1999, 2050];
-          // For drawing the lines
-          var africa = [86, 114, 106, 106, 107, 111, 133, 221, 783, 2478];
-          var ctx = document.getElementById("myChart" + i).getContext("2d");
-          var gradientStroke = ctx.createLinearGradient(0, 0, 0, 600);
-          gradientStroke.addColorStop(0, 'blue');
-          gradientStroke.addColorStop(1, 'lightblue');
-          /*var gradientStroke = ctx.createLinearGradient(500, 0, 100, 0);
-         gradientStroke.addColorStop(0, "#80b6f4");
-         gradientStroke.addColorStop(0.2, "#94d973");
-         gradientStroke.addColorStop(0.5, "#fad874");
-         gradientStroke.addColorStop(1, "#f49080");
+          $("#panels").append("<div id='dummy" + i + "' class='col-sm panel panel-default' style='background-color: white'><label id='" + i + "' class='panel-body classWithPad'><canvas id='myChart" + i + "' width='500' height='350'></canvas> Training " + i + "<br>Total# lanes:85 <br>Total time: 500 secs<br>Avg power:30<br>Avg speed:50" + "</label></div>");
+         
           var myChart = new Chart(ctx, {
             type: 'line',
             data: {
@@ -75,7 +63,7 @@ function getuserid() {
                 }
               ]
             }
-          });*/
+          });
         });
       }
       jQuery(document).ready(function () {
